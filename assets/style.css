@@ -1,0 +1,44 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.bg-color1{
+	background-color: #2596BE;
+}
+.f-color1{
+	color: #2596BE;
+}
+.f-color2{
+	color: #ff7e00;
+}
+.b-color1{
+	border-color: #2596BE;
+}
+.red{
+	color: red !important;
+}
+.none{
+	display: none;
+}
+#item-img{
+	height: 250px;
+	width: 250px;
+	background-size: cover;
+	background-size: 130%;
+	background-position: center;
+	background-repeat: no-repeat;
+	border:1px solid #ccc;
+	cursor: pointer;
+	text-align: center;
+	opacity: 0.8;
+	background-color: #ccc;
+	color: #fff;
+}

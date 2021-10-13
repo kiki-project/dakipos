@@ -20,10 +20,10 @@
               <div class="col-md-12 f-color1">
               <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Data Umum</a>
+                  <a class="nav-link active" id="bar1" onclick="bar('bar1')" href="#">Data Umum</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Satuan & Harga</a>
+                  <a class="nav-link" id="bar2" onclick="bar('bar2')" href="#">Satuan & Harga</a>
                 </li>
               </ul>
               <br>
@@ -429,7 +429,10 @@
           }
       });
   });
-
+  function bar(a){
+    $('.nav-link').removeClass('active');
+    $('#'+a).addClass('active');
+  }
 
    function btn_submit(submit){
     $("#frm-item").submit(function(event){

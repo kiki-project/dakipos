@@ -30,12 +30,7 @@
               </div>
               <div class="tab-content">
                 <div class="tab-pane active" id="data-umum">
-                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                </div>
-                <div class="tab-pane" id="satuan-harga">
-                  <h3>Standard tab panel</h3>
-                </div>
-              </div>
+                  
               <div class="col-md-6">
                  <div class="form-group">
                   <label>Type :</label><br>
@@ -283,6 +278,11 @@
                   }
                  ?>
               </div>
+                </div>
+                <div class="tab-pane" id="satuan-harga">
+                  <h3>Standard tab panel</h3>
+                </div>
+              </div>
             </div>
           </div>
             <div class="card-footer" style="text-align: right;">
@@ -437,11 +437,6 @@
           }
       });
   });
-  function bar(a){
-    $('.nav-link').removeClass('active');
-    $('#'+a).addClass('active');
-  }
-
    function btn_submit(submit){
     $("#frm-item").submit(function(event){
         event.preventDefault(); //prevent default action 

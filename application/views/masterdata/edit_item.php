@@ -28,9 +28,14 @@
               </ul>
               <br>
               </div>
-              <div class="tab-content ">
-              <div class="tab-pane active" id="data-umum">
-                
+              <div class="tab-content">
+                <div class="tab-pane active" id="data-umum">
+                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+                </div>
+                <div class="tab-pane" id="satuan-harga">
+                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+                </div>
+              </div>
               <div class="col-md-6">
                  <div class="form-group">
                   <label>Type :</label><br>
@@ -279,11 +284,6 @@
                  ?>
               </div>
             </div>
-              </div>
-              <div class="tab-panel" id="satuan-harga">
-                  satuan harga
-              </div>
-              </div>
           </div>
             <div class="card-footer" style="text-align: right;">
               <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>

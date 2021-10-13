@@ -20,14 +20,17 @@
               <div class="col-md-12 f-color1">
               <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" id="bar1" onclick="bar('bar1')" href="#">Data Umum</a>
+                  <a class="nav-link active"  data-toggle="tab" href="#data-umum">Data Umum</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="bar2" onclick="bar('bar2')" href="#">Satuan & Harga</a>
+                  <a class="nav-link" data-toggle="tab" href="#satuan-harga">Satuan & Harga</a>
                 </li>
               </ul>
               <br>
               </div>
+              <div class="tab-content ">
+              <div class="tab-pane active" id="data-umum">
+                
               <div class="col-md-6">
                  <div class="form-group">
                   <label>Type :</label><br>
@@ -276,6 +279,11 @@
                  ?>
               </div>
             </div>
+              </div>
+              <div class="tab-panel" id="satuan-harga">
+                  satuan harga
+              </div>
+              </div>
           </div>
             <div class="card-footer" style="text-align: right;">
               <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>

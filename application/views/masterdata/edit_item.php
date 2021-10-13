@@ -154,43 +154,36 @@
                 </div>
                 <!-- satuan harga -->
                 <div class="tab-pane" id="satuan-harga">  
+                  <div class="row">
                   <div class="col-md-6">
-                  <div class="form-row">
-                  <div class="form-group col-md-6">
-                      <label>Satuan Dasar :</label>
-                      <div class="input-group ">
-                        <select class="form-control" name="satuan_dasar" id="item-satuan_dasar">
-                              <option value=""></option>
-                          <?php
+                    <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Satuan Dasar :</label>
+                        <div class="input-group ">
+                          <select class="form-control" name="satuan_dasar" id="item-satuan_dasar">
+                                <option value=""></option>
+                            <?php
 
-                            foreach ($item_units as $key) {
-                              ?>
-                              <option value="<?php echo $key->kode; ?>" <?php if($item['satuan_dasar'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
-                              <?php
-                            }
-                          ?>
-                        </select>
-                      </div>
-                  </div>
-                  <div class="form-group col-md-6">
-                      <label>Poin Dasar :</label>
-                      <div class="input-group ">
-                        <input type="text" name="poin_dasar" class="form-control" id="item-poin-dasar" oninput="set_currency_value('item-poin-dasar', this.value)" style="text-align: right;" value="<?php echo number_format($item['poin_dasar'], 2); ?>">
-                        <div class="input-group-append">
-                          <div class="btn btn-danger" onclick="input_clear_currency('item-poin-dasar')"><i class="fa fa-trash"></i></div>
+                              foreach ($item_units as $key) {
+                                ?>
+                                <option value="<?php echo $key->kode; ?>" <?php if($item['satuan_dasar'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
+                                <?php
+                              }
+                            ?>
+                          </select>
                         </div>
-                      </div>
-                  </div>
-                  </div>
-                  </div>
-                </div>
-                <!-- gambar -->
-                <div class="tab-pane" id="gambar">
-                  <h3>Gambar</h3>
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-md-6">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Poin Dasar :</label>
+                        <div class="input-group ">
+                          <input type="text" name="poin_dasar" class="form-control" id="item-poin-dasar" oninput="set_currency_value('item-poin-dasar', this.value)" style="text-align: right;" value="<?php echo number_format($item['poin_dasar'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger" onclick="input_clear_currency('item-poin-dasar')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                    
                 <div class="form-row">
                  <div class="form-group col-md-6">
                     <label>Barcode :</label>
@@ -268,6 +261,17 @@
                   <label>Keterangan :</label>
                   <textarea class="form-control" name="desc"><?php echo $item['description']; ?></textarea>
                 </div>
+                
+                  </div>
+                  </div>
+                </div>
+                <!-- gambar -->
+                <div class="tab-pane" id="gambar">
+                  <h3>Gambar</h3>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6">
                 <?php 
                   if ($action == 'Edit') {
                     ?>

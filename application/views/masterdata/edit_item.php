@@ -30,248 +30,248 @@
                     </li>
                   </ul>
                 </div>
-              <br>
-              </div>
-              <div class="tab-content">
-                <div class="tab-pane active" id="data-umum">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Type :</label><br>
-                        <input type="radio" name="type" id="item-inv" value="INV" <?php if($item['type'] == 'INV'){ echo "checked"; } ?> > <label for="item-inv">Barang (INV)</label>&nbsp;&nbsp;
-                        <input type="radio" name="type" id="item-srv" value="SRV" <?php if($item['type'] == 'SRV'){ echo "checked"; } ?> > <label for="item-srv">Jasa (SRV)</label>
-                      </div>
-
-                      <div class="form-group" id="item-frm-kode">
-                        <label>Kode Item :</label>
-                        <div class="input-group ">
-                          <input type="text" name="kode" id="item-kode" class="form-control" required="" value="<?php echo $kode; ?>">
-                        </div>
-                        <small class="form-text" style="color: red;" id="err_kode"></small>
-                      </div>
-                            
-                      <div class="form-group" id="item-frm-name">
-                        <label>Nama Item :</label>
-                        <div class="input-group ">
-                          <input type="text" name="name" id="item-name" class="form-control" required="" value="<?php echo $item['name']; ?>">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6" id="item-frm-jenis">
-                          <label>Jenis :</label>
-                          <div class="input-group ">
-                            <select class="form-control" name="jenis" id="item-jenis">
-                                  <option value=""></option>
-                              <?php
-
-                                foreach ($item_types as $key) {
-                                  ?>
-                                  <option value="<?php echo $key->kode; ?>" <?php if($item['jenis'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
-                                  <?php
-                                }
-                              ?>
-                            </select>
-                            <div class="input-group-append">
-                              <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-jenis" onclick="frm_jenis_item()"><i class="fa fa-plus"></i></a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group col-md-6" id="item-frm-merek">
-                          <label>Merek :</label>
-                          <div class="input-group ">
-                            <select class="form-control" name="merek" id="item-brand">
-                              
-                                  <option value=""></option>
-                              <?php
-
-                                foreach ($item_brands as $key) {
-                                  ?>
-                                  <option value="<?php echo $key->kode; ?>" <?php if($item['merek'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
-                                  <?php
-                                }
-                              ?>
-                            </select>
-                            <div class="input-group-append">
-                              <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-brand" onclick="frm_brands_item()"><i class="fa fa-plus"></i></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6" id="item-frm-rak">
-                          <label>Rak :</label>
-                          <div class="input-group ">
-                            <input type="text" name="rak" id="item-rak" class="form-control" value="<?php echo $item['rak']; ?>">
-                          </div>
-                        </div>
-                        <div class="form-group col-md-6" id="item-frm-name">
-                          <label>HPP System :</label>
-                          <div class="input-group ">
-                            <select class="form-control" name="hpp" id="item-hpp">
-                              <option value="FIFO" <?php if($item['hpp'] == 'FIFO'){ echo "selected='true'"; } ?> >FIFO</option>
-                              <option value="LIFO" <?php if($item['hpp'] == 'LIFO'){ echo "selected='true'"; } ?>>LIFO</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>      
-                      <div class="form-row">
-                        <div class="form-group col-md-6" id="item-frm-pajak">
-                          <label>Pajak Include (%):</label>
-                          <div class="input-group ">
-                            <input type="text" name="pajak" class="form-control" id="item-pajak" oninput="set_currency_value('item-pajak', this.value)" style="text-align: right;" value="<?php echo number_format($item['pajak'], 2); ?>">
-                            <div class="input-group-append">
-                              <div class="btn btn-danger" onclick="input_clear_currency('item-pajak')"><i class="fa fa-trash"></i></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6" id="item-frm-rak">
-                          <label>Status Jual :</label>
-                          <div>
-                            <input type="radio" name="status_jual" id="item-dijual" value="Masih dijual" <?php if($item['status_jual'] == 'Masih dijual'){ echo "checked"; } ?>>
-                            <label for="item-dijual">Masih dijual</label>
-                          </div>
-                        </div>
-                        <div class="form-group col-md-6" id="item-frm-name">
-                          <label>&nbsp;</label>
-                          <div>
-                            <input type="radio" name="status_jual" id="item-discontinue" value="Tidak dijual / discontinue" <?php if($item['status_jual'] == 'Tidak dijual / discontinue'){ echo "checked"; } ?> >
-                            <label for="item-discontinue">Tidak dijual / discontinue</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6" id="item-frm-serial">
-                          <label>Pilihan :</label>
-                          <div>
-                            <input type="checkbox" name="serial" id="item-serial" value="Yes" <?php if($item['serial'] == 'Yes'){ echo "checked"; } ?> >
-                            <label for="item-serial">Serial</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                      <div class="form-group col-md-6">
-                          <label>Stok Minimum :</label>
-                          <div class="input-group ">
-                            <input type="text" name="stok_minimum" class="form-control" id="item-stok-minimum" oninput="set_currency_value('item-stok-minimum', this.value)" style="text-align: right;" value="<?php echo number_format($item['stok_minimum'], 2); ?>">
-                            <div class="input-group-append">
-                              <div class="btn btn-danger" onclick="input_clear_currency('item-stok-minimum')"><i class="fa fa-trash"></i></div>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="form-group col-md-6">
-                          <label>Supplier :</label>
-                          <div class="input-group ">
-                            <select class="form-control" name="supplier" id="item-supplier">
-                                  <option value=""></option>
-                              <?php
-
-                                foreach ($supplier as $key) {
-                                  ?>
-                                  <option value="<?php echo $key->kode; ?>" <?php if($item['supplier'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
-                                  <?php
-                                }
-                              ?>
-                            </select>
-                          </div>
-                      </div>
-                      </div>
-                      <div class="form-group">
-                        <label>Keterangan :</label>
-                        <textarea class="form-control" name="desc"><?php echo $item['description']; ?></textarea>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <!-- satuan harga -->
-                <div class="tab-pane" id="satuan-harga">  
-                  <div class="row">
+                <br>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="data-umum">
+                <div class="row">
                   <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Type :</label><br>
+                      <input type="radio" name="type" id="item-inv" value="INV" <?php if($item['type'] == 'INV'){ echo "checked"; } ?> > <label for="item-inv">Barang (INV)</label>&nbsp;&nbsp;
+                      <input type="radio" name="type" id="item-srv" value="SRV" <?php if($item['type'] == 'SRV'){ echo "checked"; } ?> > <label for="item-srv">Jasa (SRV)</label>
+                    </div>
+
+                    <div class="form-group" id="item-frm-kode">
+                      <label>Kode Item :</label>
+                      <div class="input-group ">
+                        <input type="text" name="kode" id="item-kode" class="form-control" required="" value="<?php echo $kode; ?>">
+                      </div>
+                      <small class="form-text" style="color: red;" id="err_kode"></small>
+                    </div>
+                          
+                    <div class="form-group" id="item-frm-name">
+                      <label>Nama Item :</label>
+                      <div class="input-group ">
+                        <input type="text" name="name" id="item-name" class="form-control" required="" value="<?php echo $item['name']; ?>">
+                      </div>
+                    </div>
                     <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label>Satuan Dasar :</label>
+                      <div class="form-group col-md-6" id="item-frm-jenis">
+                        <label>Jenis :</label>
                         <div class="input-group ">
-                          <select class="form-control" name="satuan_dasar" id="item-satuan_dasar">
+                          <select class="form-control" name="jenis" id="item-jenis">
                                 <option value=""></option>
                             <?php
 
-                              foreach ($item_units as $key) {
+                              foreach ($item_types as $key) {
                                 ?>
-                                <option value="<?php echo $key->kode; ?>" <?php if($item['satuan_dasar'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
+                                <option value="<?php echo $key->kode; ?>" <?php if($item['jenis'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
+                                <?php
+                              }
+                            ?>
+                          </select>
+                          <div class="input-group-append">
+                            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-jenis" onclick="frm_jenis_item()"><i class="fa fa-plus"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6" id="item-frm-merek">
+                        <label>Merek :</label>
+                        <div class="input-group ">
+                          <select class="form-control" name="merek" id="item-brand">
+                            
+                                <option value=""></option>
+                            <?php
+
+                              foreach ($item_brands as $key) {
+                                ?>
+                                <option value="<?php echo $key->kode; ?>" <?php if($item['merek'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
+                                <?php
+                              }
+                            ?>
+                          </select>
+                          <div class="input-group-append">
+                            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-brand" onclick="frm_brands_item()"><i class="fa fa-plus"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6" id="item-frm-rak">
+                        <label>Rak :</label>
+                        <div class="input-group ">
+                          <input type="text" name="rak" id="item-rak" class="form-control" value="<?php echo $item['rak']; ?>">
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6" id="item-frm-name">
+                        <label>HPP System :</label>
+                        <div class="input-group ">
+                          <select class="form-control" name="hpp" id="item-hpp">
+                            <option value="FIFO" <?php if($item['hpp'] == 'FIFO'){ echo "selected='true'"; } ?> >FIFO</option>
+                            <option value="LIFO" <?php if($item['hpp'] == 'LIFO'){ echo "selected='true'"; } ?>>LIFO</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>      
+                    <div class="form-row">
+                      <div class="form-group col-md-6" id="item-frm-pajak">
+                        <label>Pajak Include (%):</label>
+                        <div class="input-group ">
+                          <input type="text" name="pajak" class="form-control" id="item-pajak" oninput="set_currency_value('item-pajak', this.value)" style="text-align: right;" value="<?php echo number_format($item['pajak'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger" onclick="input_clear_currency('item-pajak')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6" id="item-frm-rak">
+                        <label>Status Jual :</label>
+                        <div>
+                          <input type="radio" name="status_jual" id="item-dijual" value="Masih dijual" <?php if($item['status_jual'] == 'Masih dijual'){ echo "checked"; } ?>>
+                          <label for="item-dijual">Masih dijual</label>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6" id="item-frm-name">
+                        <label>&nbsp;</label>
+                        <div>
+                          <input type="radio" name="status_jual" id="item-discontinue" value="Tidak dijual / discontinue" <?php if($item['status_jual'] == 'Tidak dijual / discontinue'){ echo "checked"; } ?> >
+                          <label for="item-discontinue">Tidak dijual / discontinue</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6" id="item-frm-serial">
+                        <label>Pilihan :</label>
+                        <div>
+                          <input type="checkbox" name="serial" id="item-serial" value="Yes" <?php if($item['serial'] == 'Yes'){ echo "checked"; } ?> >
+                          <label for="item-serial">Serial</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Stok Minimum :</label>
+                        <div class="input-group ">
+                          <input type="text" name="stok_minimum" class="form-control" id="item-stok-minimum" oninput="set_currency_value('item-stok-minimum', this.value)" style="text-align: right;" value="<?php echo number_format($item['stok_minimum'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger" onclick="input_clear_currency('item-stok-minimum')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Supplier :</label>
+                        <div class="input-group ">
+                          <select class="form-control" name="supplier" id="item-supplier">
+                                <option value=""></option>
+                            <?php
+
+                              foreach ($supplier as $key) {
+                                ?>
+                                <option value="<?php echo $key->kode; ?>" <?php if($item['supplier'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
                                 <?php
                               }
                             ?>
                           </select>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label>Poin Dasar :</label>
-                        <div class="input-group ">
-                          <input type="text" name="poin_dasar" class="form-control" id="item-poin-dasar" oninput="set_currency_value('item-poin-dasar', this.value)" style="text-align: right;" value="<?php echo number_format($item['poin_dasar'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger" onclick="input_clear_currency('item-poin-dasar')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
                     </div>
-                    </div>
-                        
-                    <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label>Barcode :</label>
-                        <div class="input-group ">
-                          <input type="text" name="barcode" class="form-control" value="<?php echo $item['barcode']; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Komisi Sales :</label>
-                        <div class="input-group ">
-                          <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label>Harga pokok :</label>
-                        <div class="input-group ">
-                          <input type="text" name="harga_pokok" class="form-control" id="item-harga-pokok" oninput="set_currency_value('item-harga-pokok', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_pokok'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger" onclick="input_clear_currency('item-harga-pokok')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Persentase Harga jual (%):</label>
-                        <div class="input-group ">
-                          <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger" onclick="input_clear_currency('item-persentase')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Harga jual :</label>
-                        <div class="input-group ">
-                          <input type="text" name="harga_jual" class="form-control" id="item-harga-jual" oninput="set_currency_value('item-harga-jual', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_jual'], 2); ?>" >
-                          <div class="input-group-append">
-                            <div class="btn btn-danger" onclick="input_clear_currency('item-harga-jual')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                    </div>
+                    <div class="form-group">
+                      <label>Keterangan :</label>
+                      <textarea class="form-control" name="desc"><?php echo $item['description']; ?></textarea>
                     </div>
 
                   </div>
-                  </div>
-                </div>
-                <!-- gambar -->
-                <div class="tab-pane" id="gambar">
-                  <h3>Gambar</h3>
                 </div>
               </div>
+              <!-- satuan harga -->
+              <div class="tab-pane" id="satuan-harga">  
+                <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label>Satuan Dasar :</label>
+                      <div class="input-group ">
+                        <select class="form-control" name="satuan_dasar" id="item-satuan_dasar">
+                              <option value=""></option>
+                          <?php
+
+                            foreach ($item_units as $key) {
+                              ?>
+                              <option value="<?php echo $key->kode; ?>" <?php if($item['satuan_dasar'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
+                              <?php
+                            }
+                          ?>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label>Poin Dasar :</label>
+                      <div class="input-group ">
+                        <input type="text" name="poin_dasar" class="form-control" id="item-poin-dasar" oninput="set_currency_value('item-poin-dasar', this.value)" style="text-align: right;" value="<?php echo number_format($item['poin_dasar'], 2); ?>">
+                        <div class="input-group-append">
+                          <div class="btn btn-danger" onclick="input_clear_currency('item-poin-dasar')"><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                      
+                  <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label>Barcode :</label>
+                      <div class="input-group ">
+                        <input type="text" name="barcode" class="form-control" value="<?php echo $item['barcode']; ?>">
+                      </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label>Komisi Sales :</label>
+                      <div class="input-group ">
+                        <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                        <div class="input-group-append">
+                          <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col-md-4">
+                      <label>Harga pokok :</label>
+                      <div class="input-group ">
+                        <input type="text" name="harga_pokok" class="form-control" id="item-harga-pokok" oninput="set_currency_value('item-harga-pokok', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_pokok'], 2); ?>">
+                        <div class="input-group-append">
+                          <div class="btn btn-danger" onclick="input_clear_currency('item-harga-pokok')"><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label>Persentase Harga jual (%):</label>
+                      <div class="input-group ">
+                        <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>">
+                        <div class="input-group-append">
+                          <div class="btn btn-danger" onclick="input_clear_currency('item-persentase')"><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label>Harga jual :</label>
+                      <div class="input-group ">
+                        <input type="text" name="harga_jual" class="form-control" id="item-harga-jual" oninput="set_currency_value('item-harga-jual', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_jual'], 2); ?>" >
+                        <div class="input-group-append">
+                          <div class="btn btn-danger" onclick="input_clear_currency('item-harga-jual')"><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+
+                </div>
+                </div>
+              </div>
+              <!-- gambar -->
+              <div class="tab-pane" id="gambar">
+                <h3>Gambar</h3>
+              </div>
+            </div>
               <div class="row">
               <div class="col-md-6">
                 <?php 

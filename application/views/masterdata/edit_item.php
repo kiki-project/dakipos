@@ -33,7 +33,7 @@
                   <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
                 </div>
                 <div class="tab-pane" id="satuan-harga">
-                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+                  <h3>Standard tab panel</h3>
                 </div>
               </div>
               <div class="col-md-6">

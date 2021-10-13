@@ -195,7 +195,7 @@
                  <div class="form-group col-md-4">
                     <label>Persentase Harga jual (%):</label>
                     <div class="input-group ">
-                      <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>"
+                      <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>">
                       <div class="input-group-append">
                         <div class="btn btn-danger" onclick="input_clear_currency('item-persentase')"><i class="fa fa-trash"></i></div>
                       </div>

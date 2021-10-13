@@ -30,21 +30,29 @@
               </div>
               <div class="tab-content">
                 <div class="tab-pane active" id="data-umum">
-                  
-              <div class="col-md-6">
-                 <div class="form-group">
-                  <label>Type :</label><br>
-                  <input type="radio" name="type" id="item-inv" value="INV" <?php if($item['type'] == 'INV'){ echo "checked"; } ?> > <label for="item-inv">Barang (INV)</label>&nbsp;&nbsp;
-                  <input type="radio" name="type" id="item-srv" value="SRV" <?php if($item['type'] == 'SRV'){ echo "checked"; } ?> > <label for="item-srv">Jasa (SRV)</label>
-                 </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Type :</label><br>
+                        <input type="radio" name="type" id="item-inv" value="INV" <?php if($item['type'] == 'INV'){ echo "checked"; } ?> > <label for="item-inv">Barang (INV)</label>&nbsp;&nbsp;
+                        <input type="radio" name="type" id="item-srv" value="SRV" <?php if($item['type'] == 'SRV'){ echo "checked"; } ?> > <label for="item-srv">Jasa (SRV)</label>
+                      </div>
 
-                <div class="form-group" id="item-frm-kode">
-                  <label>Kode Item :</label>
-                  <div class="input-group ">
-                    <input type="text" name="kode" id="item-kode" class="form-control" required="" value="<?php echo $kode; ?>">
+                      <div class="form-group" id="item-frm-kode">
+                        <label>Kode Item :</label>
+                        <div class="input-group ">
+                          <input type="text" name="kode" id="item-kode" class="form-control" required="" value="<?php echo $kode; ?>">
+                        </div>
+                        <small class="form-text" style="color: red;" id="err_kode"></small>
+                      </div>
+                    </div>
                   </div>
-                  <small class="form-text" style="color: red;" id="err_kode"></small>
                 </div>
+                <div class="tab-pane" id="satuan-harga">
+                  <h3>Standard tab panel</h3>
+                </div>
+              </div>
+              <div class="col-md-6">
                 <div class="form-group" id="item-frm-name">
                   <label>Nama Item :</label>
                   <div class="input-group ">
@@ -277,11 +285,6 @@
                     <?php
                   }
                  ?>
-              </div>
-                </div>
-                <div class="tab-pane" id="satuan-harga">
-                  <h3>Standard tab panel</h3>
-                </div>
               </div>
             </div>
           </div>

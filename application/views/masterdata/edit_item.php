@@ -29,10 +29,10 @@
               <br>
               </div>
               <div class="tab-content">
-                <div class="tab-pane active" id="data-umum">
+                <div class="tab-panel active" id="data-umum">
                   <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
                 </div>
-                <div class="tab-pane" id="satuan-harga">
+                <div class="tab-panel" id="satuan-harga">
                   <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
                 </div>
               </div>

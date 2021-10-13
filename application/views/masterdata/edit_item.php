@@ -16,18 +16,20 @@
         <div class="card">
           <form method="post" action="<?php echo base_url(); ?>insert-item" id="frm-item">
           <div class="card-body" style="overflow:auto;white-space: nowrap;">
-              <div class="col-md-12 f-color1">
-              <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active"  data-toggle="tab" href="#data-umum">Data Umum</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#satuan-harga">Satuan & Harga</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#gambar">Gambar</a>
-                </li>
-              </ul>
+              <div class="col-md-12">
+                <div class="row">    
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active"  data-toggle="tab" href="#data-umum">Data Umum</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#satuan-harga">Satuan & Harga</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#gambar">Gambar</a>
+                    </li>
+                  </ul>
+                </div>
               <br>
               </div>
               <div class="tab-content">

@@ -44,15 +44,7 @@
                         </div>
                         <small class="form-text" style="color: red;" id="err_kode"></small>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="satuan-harga">
-                  <h3>Standard tab panel</h3>
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-md-6">
+                      
                 <div class="form-group" id="item-frm-name">
                   <label>Nama Item :</label>
                   <div class="input-group ">
@@ -100,6 +92,15 @@
                     </div>
                   </div>
                 </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="satuan-harga">
+                  <h3>Standard tab panel</h3>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6">
                 <div class="form-row">
                   <div class="form-group col-md-6" id="item-frm-rak">
                     <label>Rak :</label>

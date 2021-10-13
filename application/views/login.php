@@ -24,7 +24,7 @@
   <!-- /.login-logo -->
   <div class="card" style="margin-top: 50%;">
     <div class="card-body login-card-body">
-      <p class="login-box-msg"><h2>Login a</h2></p>
+      <p class="login-box-msg"><h2>Login</h2></p>
       <small style="color:red;"><?php echo $this->session->flashdata('msg'); ?></small>
       <form action="<?php echo base_url() ?>cek-login" method="post">
         <div class="form-group has-feedback">

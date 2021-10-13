@@ -20,18 +20,13 @@
               <div class="col-md-12 f-color1">
               <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Active</a>
+                  <a class="nav-link active" aria-current="page" href="#">Data Umum</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  <a class="nav-link" href="#">Satuan & Harga</a>
                 </li>
               </ul>
+              <br>
               </div>
               <div class="col-md-6">
                  <div class="form-group">

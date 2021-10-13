@@ -29,7 +29,7 @@
                       <a class="nav-link" data-toggle="tab" href="#gambar">Gambar</a>
                     </li>
                   </ul>
-                <br><br>
+                <br>
                 </div>
             </div>
             <div class="tab-content">

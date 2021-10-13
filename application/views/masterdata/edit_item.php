@@ -148,6 +148,37 @@
                           </div>
                         </div>
                       </div>
+                      <div class="form-row">
+                      <div class="form-group col-md-6">
+                          <label>Stok Minimum :</label>
+                          <div class="input-group ">
+                            <input type="text" name="stok_minimum" class="form-control" id="item-stok-minimum" oninput="set_currency_value('item-stok-minimum', this.value)" style="text-align: right;" value="<?php echo number_format($item['stok_minimum'], 2); ?>">
+                            <div class="input-group-append">
+                              <div class="btn btn-danger" onclick="input_clear_currency('item-stok-minimum')"><i class="fa fa-trash"></i></div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label>Supplier :</label>
+                          <div class="input-group ">
+                            <select class="form-control" name="supplier" id="item-supplier">
+                                  <option value=""></option>
+                              <?php
+
+                                foreach ($supplier as $key) {
+                                  ?>
+                                  <option value="<?php echo $key->kode; ?>" <?php if($item['supplier'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
+                                  <?php
+                                }
+                              ?>
+                            </select>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Keterangan :</label>
+                        <textarea class="form-control" name="desc"><?php echo $item['description']; ?></textarea>
+                      </div>
 
                     </div>
                   </div>
@@ -183,85 +214,54 @@
                         </div>
                     </div>
                     </div>
-                    
-                <div class="form-row">
-                 <div class="form-group col-md-6">
-                    <label>Barcode :</label>
-                    <div class="input-group ">
-                      <input type="text" name="barcode" class="form-control" value="<?php echo $item['barcode']; ?>">
+                        
+                    <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Barcode :</label>
+                        <div class="input-group ">
+                          <input type="text" name="barcode" class="form-control" value="<?php echo $item['barcode']; ?>">
+                        </div>
                     </div>
-                 </div>
-                 <div class="form-group col-md-6">
-                    <label>Komisi Sales :</label>
-                    <div class="input-group ">
-                      <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
-                      </div>
+                    <div class="form-group col-md-6">
+                        <label>Komisi Sales :</label>
+                        <div class="input-group ">
+                          <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
                     </div>
-                 </div>
-                </div>
-                <div class="form-row">
-                 <div class="form-group col-md-4">
-                    <label>Harga pokok :</label>
-                    <div class="input-group ">
-                      <input type="text" name="harga_pokok" class="form-control" id="item-harga-pokok" oninput="set_currency_value('item-harga-pokok', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_pokok'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency('item-harga-pokok')"><i class="fa fa-trash"></i></div>
-                      </div>
                     </div>
-                 </div>
-                 <div class="form-group col-md-4">
-                    <label>Persentase Harga jual (%):</label>
-                    <div class="input-group ">
-                      <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency('item-persentase')"><i class="fa fa-trash"></i></div>
-                      </div>
+                    <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Harga pokok :</label>
+                        <div class="input-group ">
+                          <input type="text" name="harga_pokok" class="form-control" id="item-harga-pokok" oninput="set_currency_value('item-harga-pokok', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_pokok'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger" onclick="input_clear_currency('item-harga-pokok')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
                     </div>
-                 </div>
-                 <div class="form-group col-md-4">
-                    <label>Harga jual :</label>
-                    <div class="input-group ">
-                      <input type="text" name="harga_jual" class="form-control" id="item-harga-jual" oninput="set_currency_value('item-harga-jual', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_jual'], 2); ?>" >
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency('item-harga-jual')"><i class="fa fa-trash"></i></div>
-                      </div>
+                    <div class="form-group col-md-4">
+                        <label>Persentase Harga jual (%):</label>
+                        <div class="input-group ">
+                          <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger" onclick="input_clear_currency('item-persentase')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
                     </div>
-                 </div>
-                </div>
-                <div class="form-row">
-                 <div class="form-group col-md-6">
-                    <label>Stok Minimum :</label>
-                    <div class="input-group ">
-                      <input type="text" name="stok_minimum" class="form-control" id="item-stok-minimum" oninput="set_currency_value('item-stok-minimum', this.value)" style="text-align: right;" value="<?php echo number_format($item['stok_minimum'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency('item-stok-minimum')"><i class="fa fa-trash"></i></div>
-                      </div>
+                    <div class="form-group col-md-4">
+                        <label>Harga jual :</label>
+                        <div class="input-group ">
+                          <input type="text" name="harga_jual" class="form-control" id="item-harga-jual" oninput="set_currency_value('item-harga-jual', this.value)" style="text-align: right;" value="<?php echo number_format($item['harga_jual'], 2); ?>" >
+                          <div class="input-group-append">
+                            <div class="btn btn-danger" onclick="input_clear_currency('item-harga-jual')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
                     </div>
-                 </div>
-                 <div class="form-group col-md-6">
-                    <label>Supplier :</label>
-                    <div class="input-group ">
-                      <select class="form-control" name="supplier" id="item-supplier">
-                            <option value=""></option>
-                        <?php
+                    </div>
 
-                          foreach ($supplier as $key) {
-                            ?>
-                            <option value="<?php echo $key->kode; ?>" <?php if($item['supplier'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
-                            <?php
-                          }
-                         ?>
-                      </select>
-                    </div>
-                 </div>
-                </div>
-                <div class="form-group">
-                  <label>Keterangan :</label>
-                  <textarea class="form-control" name="desc"><?php echo $item['description']; ?></textarea>
-                </div>
-                
                   </div>
                   </div>
                 </div>

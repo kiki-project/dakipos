@@ -101,12 +101,9 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6" id="item-frm-pajak">
-                    <label>Pajak Include :</label>
+                    <label>Pajak Include (%):</label>
                     <div class="input-group ">
                       <input type="text" name="pajak" class="form-control" id="item-pajak" oninput="set_currency_value('item-pajak', this.value)" style="text-align: right;" value="<?php echo number_format($item['pajak'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="input-group-text"><i class="fa fa-percent"></i></div>
-                      </div>
                       <div class="input-group-append">
                         <div class="btn btn-danger" onclick="input_clear_currency('item-pajak')"><i class="fa fa-trash"></i></div>
                       </div>
@@ -196,12 +193,9 @@
                     </div>
                  </div>
                  <div class="form-group col-md-4">
-                    <label>Persentase Harga jual :</label>
+                    <label>Persentase Harga jual (%):</label>
                     <div class="input-group ">
-                      <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="input-group-text"><i class="fa fa-percent"></i></div>
-                      </div>
+                      <input type="text" name="persentase" class="form-control" id="item-persentase" oninput="set_currency_value('item-persentase', this.value)" style="text-align: right;" value="<?php echo number_format($item['persentase'], 2); ?>"
                       <div class="input-group-append">
                         <div class="btn btn-danger" onclick="input_clear_currency('item-persentase')"><i class="fa fa-trash"></i></div>
                       </div>

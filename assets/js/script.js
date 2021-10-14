@@ -183,6 +183,7 @@ function add_item() {
   $("#item-title-form").html("Tambah data (Data Umum)");
   get_types_select();
   get_brands_select();
+  get_units_select();
 }
 function get_types_select() {
   $.ajax({
@@ -235,6 +236,22 @@ function get_brands_select() {
           '<option value="' + row["kode"] + '">' + row["kode"] + "</option>";
       });
       $("#item-brand").html(data);
+    },
+  });
+}
+function get_units_select() {
+  $.ajax({
+    type: "GET",
+    url: base_url("json/get-item_units"),
+    success: function (response) {
+      result = JSON.parse(response);
+      var data = "";
+      data += '<option value=""></option>';
+      $.each(result, function (i, row) {
+        data +=
+          '<option value="' + row["kode"] + '">' + row["kode"] + "</option>";
+      });
+      $("#item-unit").html(data);
     },
   });
 }

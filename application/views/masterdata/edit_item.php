@@ -176,6 +176,9 @@
                             }
                           ?>
                         </select>
+                          <div class="input-group-append">
+                            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-brand" onclick="frm_brands_item()"><i class="fa fa-plus"></i></a>
+                          </div>
                       </div>
                   </div>
                   <div class="form-group col-md-6">

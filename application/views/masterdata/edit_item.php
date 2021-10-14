@@ -18,7 +18,7 @@
           <div class="card-body" style="overflow:auto;white-space: nowrap;">  
             <div class="row">   
               <div class="col-md-12"> 
-                  <ul class="nav nav-tabs"  style="overflow:auto;white-space: nowrap;">
+                  <ul class="nav nav-tabs">
                     <li class="nav-item">
                       <a class="nav-link active"  data-toggle="tab" href="#data-umum">Data Umum</a>
                     </li>

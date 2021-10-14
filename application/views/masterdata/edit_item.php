@@ -150,47 +150,17 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div class="col-md-6">
-                    <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label>Stok Minimum :</label>
-                        <div class="input-group ">
-                          <input type="text" name="stok_minimum" class="form-control" id="item-stok-minimum" oninput="set_currency_value('item-stok-minimum', this.value)" style="text-align: right;" value="<?php echo number_format($item['stok_minimum'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger" onclick="input_clear_currency('item-stok-minimum')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Supplier :</label>
-                        <div class="input-group ">
-                          <select class="form-control" name="supplier" id="item-supplier">
-                                <option value=""></option>
-                            <?php
 
-                              foreach ($supplier as $key) {
-                                ?>
-                                <option value="<?php echo $key->kode; ?>" <?php if($item['supplier'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
-                                <?php
-                              }
-                            ?>
-                          </select>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="form-group">
-                      <label>Keterangan :</label>
-                      <textarea class="form-control" name="desc"><?php echo $item['description']; ?></textarea>
-                    </div>
-                    </div>
+                  </div>
                 </div>
               </div>
               <!-- satuan harga -->
               <div class="tab-pane" id="satuan-harga">  
                 <div class="row">
                 <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Tipe Harga Jual :</label>
+                  </div>
                   <div class="form-row">
                   <div class="form-group col-md-6">
                       <label>Satuan Dasar :</label>
@@ -271,10 +241,6 @@
               </div>
               <!-- gambar -->
               <div class="tab-pane" id="gambar">
-                <h3>Gambar</h3>
-              </div>
-            </div>
-              <div class="row">
               <div class="col-md-6">
                 <?php 
                   if ($action == 'Edit') {
@@ -302,7 +268,13 @@
                   }
                  ?>
               </div>
+              </div>
+              <!-- other -->
+              <div class="tab-pane" id="other">
+                <h3>other</h3>
+              </div>
             </div>
+            
           </div>
             <div class="card-footer">
               <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>

@@ -5,7 +5,7 @@
         <h1 class="m-0 text-dark"><i class="fa <?php echo $module['icon']; ?> mr-1 f-color1"></i> <?php echo $module['name']; ?> / <?php echo $action; ?></h1>
       </div>
     </div>
-  </div>
+    </div>
 </div>
 <!-- Main content -->
 <section class="content">

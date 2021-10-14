@@ -165,7 +165,7 @@
                   <div class="form-group col-md-6">
                       <label>Satuan Dasar :</label>
                       <div class="input-group ">
-                        <select class="form-control" name="satuan_dasar" id="item-unitß">
+                        <select class="form-control" name="satuan_dasar" id="item-unit">
                               <option value=""></option>
                           <?php
 

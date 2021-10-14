@@ -150,8 +150,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
-
+                  </div>
+                  
+                  <div class="col-md-6">
                     <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Stok Minimum :</label>
@@ -184,8 +185,6 @@
                       <textarea class="form-control" name="desc"><?php echo $item['description']; ?></textarea>
                     </div>
                     </div>
-
-                  </div>
                 </div>
               </div>
               <!-- satuan harga -->

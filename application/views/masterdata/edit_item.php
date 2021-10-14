@@ -177,7 +177,7 @@
                           ?>
                         </select>
                           <div class="input-group-append">
-                            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-brand" onclick="frm_brands_item()"><i class="fa fa-plus"></i></a>
+                            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-unit" onclick="frm_units_item()"><i class="fa fa-plus"></i></a>
                           </div>
                       </div>
                   </div>
@@ -368,6 +368,44 @@
     </div>
   </div>
 </div>
+  <!-- Modal -->
+<div class="modal fade" id="modal-unit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" ><i class="fa <?php echo $module['icon']; ?> f-color1"></i> <span>Satuan</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="<?php echo base_url(); ?>insert-item-units" id="frm-item-units">
+        <div class="modal-body">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th><input type="checkbox" name="cb_item_units_all" id="cb_item_units_all" onclick="toggle_item_units(this)" title="pilih semua"></th>
+                <th>Kode</th>
+                <th>Keterangan</th>
+              </tr>
+            </thead>
+            <tbody id="item-tbl-units"></tbody>
+            <thead>
+              <tr>
+                <td></td>
+                <td><input type="text" name="kode" class="form-control" id="item-units-kode" placeholder="tambah kode disini.."></td>
+                <td><input type="text" name="desc" class="form-control" id="item-units-desc" placeholder="tambah ket disini.."></td>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" id="item-brand-hapus" name="submit" value="hapus" onclick="btn_submit_item_units('hapus')"><i class="fa fa-trash"></i> Hapus</button>
+          <button type="submit" class="btn btn-info" id="item-brand-submit" name="submit" value="simpan" onclick="btn_submit_item_units('simpan')"><i class="fa fa-plus"></i> Tambah</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
   <!-- Modal -->
 <div class="modal fade" id="modal-item-img" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" aria-hidden="true">
@@ -493,6 +531,27 @@
             get_brands_select()
             $('#item-brands-kode').val('');
             $('#item-brands-desc').val('');
+          }
+        })
+      });
+   }
+   function btn_submit_item_units(submit){
+    $("#frm-item-units").submit(function(event){
+        event.preventDefault(); //prevent default action 
+        var post_url = $(this).attr("action")+'/'+submit; //get form action url
+        var request_method = $(this).attr("method"); //get form GET/POST method
+        var form_data = $(this).serialize(); //Encode form elements for submission
+
+        $.ajax({
+          url : post_url,
+          type : request_method,
+          data : form_data,
+          success: function(response){
+
+            frm_units_item()
+            get_units_select()
+            $('#item-units-kode').val('');
+            $('#item-units-desc').val('');
           }
         })
       });

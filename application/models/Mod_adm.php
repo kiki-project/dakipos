@@ -78,6 +78,9 @@ class Mod_adm extends CI_model {
 	function cek_item_brands($kode){
 		return $this->db->query("SELECT * FROM item_brands WHERE kode = '$kode'");
 	}
+	function cek_item_units($kode){
+		return $this->db->query("SELECT * FROM item_units WHERE kode = '$kode'");
+	}
 	function cek_items($kode){
 		return $this->db->query("SELECT * FROM items WHERE kode = '$kode'");
 	}
@@ -95,6 +98,9 @@ class Mod_adm extends CI_model {
 	}
 	function insert_item_brands($data){
 		$this->db->insert('item_brands',$data);
+	}
+	function insert_item_units($data){
+		$this->db->insert('item_units',$data);
 	}
 	function insert_items($data){
 		$this->db->insert('items', $data);
@@ -118,6 +124,10 @@ class Mod_adm extends CI_model {
 	function deleted_item_brands($id){
 		$this->db->where('id',$id);
 		$this->db->delete('item_brands');
+	}
+	function deleted_item_units($id){
+		$this->db->where('id',$id);
+		$this->db->delete('item_units');
 	}
 	function deleted_item($id){
 		$this->db->where('id',$id);

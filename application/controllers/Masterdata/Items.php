@@ -82,6 +82,28 @@ class Items extends CI_Controller {
 		}
 		echo json_encode($submit);
 	}
+	function insert_item_units(){
+		$cek 	= $this->input->post('cb_item_units');
+		$submit = $this->uri->segment(2);
+		if ($submit == 'hapus') {
+			if (!empty($cek)) {
+				foreach ($cek as $id) {
+			 		$this->Mod_adm->deleted_item_units($id);
+					}
+			}
+		}elseif ($submit == 'simpan') {
+			$kode 	= $this->input->post('kode');
+			$cek_kode = $this->Mod_adm->cek_item_units($kode)->result();
+			$data = array(
+					'kode' => $kode, 
+					'description' => $this->input->post('desc'), 
+				);
+			if (!empty($kode) AND empty($cek_kode)) {
+				$this->Mod_adm->insert_item_units($data);
+			}
+		}
+		echo json_encode($submit);
+	}
 	function insert(){
 		$created = $this->session->userdata('user_id');
 		$submit = $this->uri->segment(2);
@@ -251,6 +273,10 @@ class Items extends CI_Controller {
 	}
 	function json_get_item_brands(){
 		$data = $this->Mod_adm->get_item_brands()->result();
+		echo json_encode($data);
+	}
+	function json_get_item_units(){
+		$data = $this->Mod_adm->get_item_units()->result();
 		echo json_encode($data);
 	}
 	function json_get_item(){

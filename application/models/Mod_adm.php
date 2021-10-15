@@ -84,6 +84,9 @@ class Mod_adm extends CI_model {
 	function cek_items($kode){
 		return $this->db->query("SELECT * FROM items WHERE kode = '$kode'");
 	}
+	function get_item_status($status){
+		return $this->db->query("SELECT * FROM items WHERE status = '$status'");
+	}
 	function insert_user($data){
 		$this->db->insert('users',$data);
 	}

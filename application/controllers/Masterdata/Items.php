@@ -167,30 +167,44 @@ class Items extends CI_Controller {
 	function edit(){
 		$seg = $this->uri->segment(2);
 		$data = $this->main_data();
+		$created = $this->session->userdata('user_id');
 		if($seg == 'new'){
+		$data['item'] 			= $this->Mod_adm->get_item_status($seg)->row_array();
+			if (empty($data['item'])) {
+				$new_code = $this->Main->generate_code($data['module']['code'],$data['module']['code_length'],$data['cek']['kode']);
+				$add = array(
+					'kode' 			=> $new_code,
+					'status' 		=> 'new',
+					'created_at' 	=> date('Y-m-d H:i:s'),
+					'updated_at' 	=> date('Y-m-d H:i:s'),
+					'created_by' 	=> $created,
+					'updated_by' 	=> $created,
+				);
+			
+				$this->Mod_adm->insert_items($add);
+			$data['item'] = $this->Mod_adm->get_item_status($seg)->row_array();
 
+			}
+		$data['action'] = 'Create';
+		$data['submit'] = 'Simpan';
 		}else{
 		$data['item'] 			= $this->Mod_adm->cek_items($seg)->row_array();
+		$data['action'] = 'Edit';
+		$data['submit'] = 'Update';
 		}
-		
+
 		$data['cek'] 			= $this->Mod_adm->get_items_lskode($data['module']['code'])->row_array();
 		$data['item_types'] 	= $this->Mod_adm->get_item_types()->result();
 		$data['item_brands'] 	= $this->Mod_adm->get_item_brands()->result();
 		$data['item_units'] 	= $this->Mod_adm->get_item_units()->result();
 		$data['supplier'] 		= $this->Mod_adm->get_suppliers()->result();
 		
-		if (empty($data['item'])) {
-			$data['kode'] = $this->Main->generate_code($data['module']['code'],$data['module']['code_length'],$data['cek']['kode']);
-			$data['action'] = 'Create';
-			$data['submit'] = 'Simpan';
-		}else{
-			$data['kode'] = $kode;
-			$data['action'] = 'Edit';
-			$data['submit'] = 'Update';
-		}
-		
-		if ($data['rm']['edit'] != 'None') {
+		if ($data['rm']['edit'] != 'None') {		
+			if (!empty($data['item'])) {
 			$this->Main->content($data['module']['name'],'masterdata/edit_item', $data);
+			}else{
+			$this->Main->content_error($data['module']['name'],'masterdata/edit_item', $data);
+			}
 		}else{
 			$this->Main->content_error($data['module']['name'],'masterdata/edit_item', $data);
 		}

@@ -518,6 +518,7 @@
   });
   function custom_code(a){
     defcode = document.getElementById('item-kode_default').value;
+    console.log(a)
     if (defcode == a) {
         $('#item-custom_code').val(0);
     }else{

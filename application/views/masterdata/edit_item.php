@@ -193,7 +193,7 @@
               <!-- satuan harga -->
               <div class="tab-pane" id="satuan-harga">  
                 <div class="row">
-                  <div class="alert alert-danger" role="alert">
+                  <div class="alert alert-warning" role="alert">
                   PENTING : Mengubah satuan dan konversi setelah ada transaksi akan mengakibatkan kesalahan pada perhitungan. <br>
                   WAJIB : Persiapkan master data item yang benar sebelum pemakaian awal program. Data item yang berantakan mengakibatkan kesalahan perhitungan.
                 </div>

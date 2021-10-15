@@ -99,7 +99,7 @@
                     <td style="text-align: center;"><?php echo $no++; ?></td>
                     <td>
                       <?php 
-                        if ($key->finish == 0) {
+                        if ($key->status == 'new') {
                           echo "<i class='fa fa-warning' style='color:red;'></i>";
                         }
                        ?>

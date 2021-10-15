@@ -196,7 +196,8 @@
                   <div class="col-md-12" style="color:red;">
                   PENTING : Mengubah satuan dan konversi setelah ada transaksi akan mengakibatkan kesalahan pada perhitungan. <br>
                   WAJIB : Persiapkan master data item yang benar sebelum pemakaian awal program. Data item yang berantakan mengakibatkan kesalahan perhitungan.
-                  </div>
+                  <br>
+                </div>
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Tipe Harga Jual :</label><br>

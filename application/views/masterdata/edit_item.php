@@ -35,13 +35,14 @@
             <div class="tab-content">
               <div class="tab-pane active" id="data-umum">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label>Type :</label><br>
                       <input type="radio" name="type" id="item-inv" value="INV" <?php if($item['type'] == 'INV'){ echo "checked"; } ?> > <label for="item-inv">Barang (INV)</label>&nbsp;&nbsp;
                       <input type="radio" name="type" id="item-srv" value="SRV" <?php if($item['type'] == 'SRV'){ echo "checked"; } ?> > <label for="item-srv">Jasa (SRV)</label>
                     </div>
-
+                  </div>
+                  <div class="col-md-6">
                     <div class="form-group" id="item-frm-kode">
                       <label>Kode Item :</label>
                       <div class="input-group ">

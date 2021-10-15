@@ -290,7 +290,7 @@
               <div class="tab-pane" id="gambar">
               <div class="col-md-6">
                 <?php 
-                  if ($action == 'Edit') {
+                  // if ($action == 'Edit') {
                     ?>
                 <div class="form-group">
                   <?php 
@@ -312,7 +312,7 @@
                    ?>
                 </div>
                     <?php
-                  }
+                  // }
                  ?>
               </div>
               </div>

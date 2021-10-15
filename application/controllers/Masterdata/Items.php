@@ -134,7 +134,7 @@ class Items extends CI_Controller {
 			'finish' 		=> 1, 
 		);
 			
-		if ($submit == 'Update') {
+		if (!empty($cek)) {
 				$data_b = array(
 					'created_at' 	=> date('Y-m-d H:i:s'),
 					'updated_at' 	=> date('Y-m-d H:i:s'),
@@ -171,6 +171,7 @@ class Items extends CI_Controller {
 		if($seg == 'new'){
 		$data['item'] 			= $this->Mod_adm->get_item_status($seg)->row_array();
 			if (empty($data['item'])) {
+				$data['cek'] = $this->Mod_adm->get_items_lskode($data['module']['code'])->row_array();
 				$new_code = $this->Main->generate_code($data['module']['code'],$data['module']['code_length'],$data['cek']['kode']);
 				$add = array(
 					'kode' 			=> $new_code,
@@ -193,7 +194,6 @@ class Items extends CI_Controller {
 		$data['submit'] = 'Update';
 		}
 
-		$data['cek'] 			= $this->Mod_adm->get_items_lskode($data['module']['code'])->row_array();
 		$data['item_types'] 	= $this->Mod_adm->get_item_types()->result();
 		$data['item_brands'] 	= $this->Mod_adm->get_item_brands()->result();
 		$data['item_units'] 	= $this->Mod_adm->get_item_units()->result();

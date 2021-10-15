@@ -46,6 +46,7 @@
                     <div class="form-group" id="item-frm-kode">
                       <label>Kode Item :</label>
                       <div class="input-group ">
+                        <input type="text" name="id" id="item-id" class="form-control none" required="" value="<?php echo $item['id']; ?>">
                         <input type="text" name="kode" id="item-kode" class="form-control" required="" value="<?php echo $item['kode']; ?>">
                       </div>
                       <small class="form-text" style="color: red;" id="err_kode"></small>

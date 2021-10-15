@@ -58,7 +58,7 @@ class Mod_adm extends CI_model {
 		return $this->db->query("SELECT * FROM items ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}
 	function get_items_limit_src($limit,$offset,$src){
-		return $this->db->query("SELECT * FROM items WHERE kode LIKE '%$src%' OR name LIKE '%$src%' LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT * FROM items WHERE kode LIKE '%$src%' OR name LIKE '%$src%' ORDER BY created_at DESC  LIMIT $limit OFFSET $offset ");
 	}
 	function get_items_total(){
 		return $this->db->query("SELECT count(id) AS row FROM items");

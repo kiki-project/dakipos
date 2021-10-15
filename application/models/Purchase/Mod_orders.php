@@ -19,10 +19,10 @@ class Mod_orders extends CI_model {
 		return $this->db->query("SELECT no FROM purchases ORDER BY no DESC");
 	}
 	function get_orders_limit($limit,$offset){
-		return $this->db->query("SELECT * FROM purchases WHERE status = 'Pesanan' LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT * FROM purchases WHERE status = 'Pesanan' ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}
 	function get_orders_limit_src($limit,$offset,$src){
-		return $this->db->query("SELECT * FROM purchases WHERE status = 'Pesanan' AND (kode LIKE '%$src%' OR item LIKE '%$src%' OR kode_item LIKE '%$src%') LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT * FROM purchases WHERE status = 'Pesanan' AND (kode LIKE '%$src%' OR item LIKE '%$src%' OR kode_item LIKE '%$src%') ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}
 	function get_orders_total(){
 		return $this->db->query("SELECT count(id) AS row FROM purchases");

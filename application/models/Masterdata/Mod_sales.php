@@ -13,10 +13,10 @@ class Mod_sales extends CI_model {
 		return $this->db->query("SELECT kode FROM sales WHERE kode LIKE '%$kode%' ORDER BY id DESC");
 	}
 	function get_sales_limit($limit,$offset){
-		return $this->db->query("SELECT * FROM sales LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT * FROM sales ORDER BY created_at DESC  LIMIT $limit OFFSET $offset ");
 	}
 	function get_sales_limit_src($limit,$offset,$src){
-		return $this->db->query("SELECT * FROM sales WHERE kode LIKE '%$src%' OR name LIKE '%$src%' LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT * FROM sales WHERE kode LIKE '%$src%' OR name LIKE '%$src%' ORDER BY created_at DESC  LIMIT $limit OFFSET $offset ");
 	}
 	function get_sales_total(){
 		return $this->db->query("SELECT count(id) AS row FROM sales");

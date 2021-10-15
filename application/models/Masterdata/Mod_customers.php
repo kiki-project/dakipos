@@ -13,10 +13,10 @@ class Mod_customers extends CI_model {
 		return $this->db->query("SELECT kode FROM customers WHERE kode LIKE '%$kode%' ORDER BY id DESC");
 	}
 	function get_customers_limit($limit,$offset){
-		return $this->db->query("SELECT * FROM customers LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT * FROM customers ORDER BY created_at DESC  LIMIT $limit OFFSET $offset ");
 	}
 	function get_customers_limit_src($limit,$offset,$src){
-		return $this->db->query("SELECT * FROM customers WHERE kode LIKE '%$src%' OR name LIKE '%$src%' LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT * FROM customers WHERE kode LIKE '%$src%' OR name LIKE '%$src%' ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}
 	function get_customers_total(){
 		return $this->db->query("SELECT count(id) AS row FROM customers");

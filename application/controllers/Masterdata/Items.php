@@ -107,8 +107,10 @@ class Items extends CI_Controller {
 	function insert(){
 		$created = $this->session->userdata('user_id');
 		$submit = $this->uri->segment(2);
+		$id 	= $this->input->post('id');
 		$kode 	= $this->input->post('kode');
-		$cek 	= $this->Mod_adm->cek_items($kode)->row_array();
+		$cek 	= $this->Mod_adm->cek_item_id($id)->row_array();
+		$cek_kode 	= $this->Mod_adm->cek_items($kode)->row_array();
 
 		$data_main = array(
 			'kode' 	=> $this->input->post('kode'), 
@@ -133,21 +135,8 @@ class Items extends CI_Controller {
 			'description' 	=> $this->input->post('desc'), 
 			'finish' 		=> 1, 
 		);
-			
-		if (!empty($cek)) {
-				$data_b = array(
-					'created_at' 	=> date('Y-m-d H:i:s'),
-					'updated_at' 	=> date('Y-m-d H:i:s'),
-					'created_by' 	=> $created,
-					'updated_by' 	=> $created,
-				);
-				$data = array_merge($data_main, $data_b);
-			$this->Mod_adm->update_item($data,$cek['id']);
-				$err = 0;
 
-		}else{
-
-			if (empty($cek)) {
+			if (empty($cek_kode)) {
 				$data_b = array(
 					'created_at' 	=> date('Y-m-d H:i:s'),
 					'updated_at' 	=> date('Y-m-d H:i:s'),
@@ -156,12 +145,12 @@ class Items extends CI_Controller {
 				);
 				$data = array_merge($data_b, $data_main);
 
-			$this->Mod_adm->insert_items($data);
+				$this->Mod_adm->update_item($data,$id);
 				$err = 0;
 			}else{
 				$err = 1;
 			}
-		}
+		
 		echo json_encode($err);
 	}
 	function edit(){

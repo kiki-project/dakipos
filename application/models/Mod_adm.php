@@ -82,7 +82,10 @@ class Mod_adm extends CI_model {
 		return $this->db->query("SELECT * FROM item_units WHERE kode = '$kode'");
 	}
 	function cek_items($kode){
-		return $this->db->query("SELECT * FROM items WHERE kode = '$kode'");
+		return $this->db->query("SELECT * FROM items WHERE kode = '$kode' AND statsu != 'new'");
+	}
+	function cek_item_id($id){
+		return $this->db->query("SELECT * FROM items WHERE id = '$id'");
 	}
 	function get_item_status($status){
 		return $this->db->query("SELECT * FROM items WHERE status = '$status'");

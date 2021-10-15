@@ -11,6 +11,7 @@ class Items extends CI_Controller {
 	public function index()
 	{
 
+		$this->Mod_adm->deleted_new();
 		$src = $this->input->post('src');
 		$data = $this->main_data();
 		$data['src'] = $src;
@@ -20,7 +21,6 @@ class Items extends CI_Controller {
 			$data['data'] 	= $this->Mod_adm->get_items_limit($data['pg']['limit'],$data['pg']['offset'])->result();
 		}
 		
-		$this->Mod_adm->deleted_new();
 		$this->Main->content($data['module']['name'],'masterdata/item', $data);
 	}
 	function main_data(){

@@ -114,7 +114,8 @@ class Items extends CI_Controller {
 		$cek_kode 	= $this->Mod_adm->cek_items($kode)->row_array();
 
 		$data_main = array(
-			'kode' 	=> $this->input->post('kode'), 
+			'kode' 	=> $this->input->post('kode'),
+			'custom_code' 	=> $this->input->post('custom_code'),
 			'type' 	=> $this->input->post('type'), 
 			'name'	=> $this->input->post('name'), 
 			'jenis' => $this->input->post('jenis'), 
@@ -159,7 +160,7 @@ class Items extends CI_Controller {
 		$data = $this->main_data();
 		$created = $this->session->userdata('user_id');
 		
-		$cek_kode = $this->Mod_adm->get_items_lskode($data['module']['code'])->row_array();
+		$cek_kode = $this->Mod_adm->get_items_lskode()->row_array();
 		$new_code = $this->Main->generate_code($data['module']['code'],$data['module']['code_length'],$cek_kode['kode']);
 		
 		if($seg == 'new'){

@@ -45,8 +45,8 @@ class Mod_adm extends CI_model {
 	function cek_item_types($kode){
 		return $this->db->query("SELECT * FROM item_types WHERE kode = '$kode'");
 	}
-	function get_items_lskode($kode){
-		return $this->db->query("SELECT kode FROM items WHERE kode LIKE '%$kode%' ORDER BY id DESC");
+	function get_items_lskode(){
+		return $this->db->query("SELECT kode FROM items WHERE custom_code = 0 ORDER BY created_at DESC");
 	}
 	function get_item_brands(){
 		return $this->db->query("SELECT * FROM item_brands");

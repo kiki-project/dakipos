@@ -47,9 +47,9 @@
                       <label>Kode Item :</label>
                       <div class="input-group ">
                         <input type="text" name="id" id="item-id" class="form-control none" required="" value="<?php echo $item['id']; ?>">
-                        <input type="text" name="kode_default" id="item-kode_default" class="form-control" required="" value="<?php echo $item['kode']; ?>">
+                        <input type="text" name="kode_default" id="item-kode_default" class="form-control none" required="" value="<?php echo $item['kode']; ?>">
                         <input type="text" name="kode" id="item-kode" class="form-control" required="" oninput="set_custom_code(this.value)" value="<?php echo $item['kode']; ?>">
-                        <input type="text" name="custom_code" id="item-custom_code" class="form-control" required="" value="<?php echo $item['custom_code']; ?>">
+                        <input type="text" name="custom_code" id="item-custom_code" class="form-control none" required="" value="<?php echo $item['custom_code']; ?>">
                       </div>
                       <small class="form-text" style="color: red;" id="err_kode"></small>
                     </div>
@@ -518,7 +518,7 @@
   });
   function set_custom_code(a){
     defcode = document.getElementById('item-kode_default').value;
-    console.log(a)
+
     if (defcode == a) {
         $('#item-custom_code').val(0);
     }else{

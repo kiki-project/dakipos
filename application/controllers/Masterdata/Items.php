@@ -109,7 +109,6 @@ class Items extends CI_Controller {
 		$submit = $this->uri->segment(2);
 		$kode 	= $this->input->post('kode');
 		$cek 	= $this->Mod_adm->cek_items($kode)->row_array();
-		$kode = $this->input->post('kode');
 
 		$data_main = array(
 			'kode' 	=> $this->input->post('kode'), 
@@ -166,9 +165,14 @@ class Items extends CI_Controller {
 		echo json_encode($err);
 	}
 	function edit(){
-		$kode = $this->uri->segment(2);
+		$seg = $this->uri->segment(2);
 		$data = $this->main_data();
-		$data['item'] 			= $this->Mod_adm->cek_items($kode)->row_array();
+		if($seg == 'new'){
+
+		}else{
+		$data['item'] 			= $this->Mod_adm->cek_items($seg)->row_array();
+		}
+		
 		$data['cek'] 			= $this->Mod_adm->get_items_lskode($data['module']['code'])->row_array();
 		$data['item_types'] 	= $this->Mod_adm->get_item_types()->result();
 		$data['item_brands'] 	= $this->Mod_adm->get_item_brands()->result();

@@ -19,7 +19,7 @@ class Mod_adm extends CI_model {
 		return $this->db->query("SELECT *,(SELECT name FROM roles WHERE id = a.role_id) AS role_name FROM users AS a");
 	}
 	function get_items(){
-		return $this->db->query("SELECT * FROM items");
+		return $this->db->query("SELECT * FROM items ORDER BY date_entered ASC");
 	}
 	function get_items_kode($kode){
 		return $this->db->query("SELECT * FROM items WHERE kode = '$kode'");

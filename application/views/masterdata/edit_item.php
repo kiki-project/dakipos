@@ -519,9 +519,9 @@
   function custom_code(a){
     defcode = document.getElementById('item-kode_default').value;
     if (defcode == a) {
-        $('#item-custom_code').value(0);
+        $('#item-custom_code').val(0);
     }else{
-        $('#item-custom_code').value(1);
+        $('#item-custom_code').val(1);
     }
 
   }

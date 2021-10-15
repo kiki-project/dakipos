@@ -139,6 +139,7 @@ class Items extends CI_Controller {
 
 			if (empty($cek_kode)) {
 				$data_b = array(
+					'status'	 	=> 'ok',
 					'updated_at' 	=> date('Y-m-d H:i:s'),
 					'created_by' 	=> $created,
 					'updated_by' 	=> $created,

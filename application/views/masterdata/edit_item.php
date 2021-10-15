@@ -517,13 +517,13 @@
       });
   });
   function custom_code(a){
-    defcode = document.getElementById('item-kode_default').value;
+    // defcode = document.getElementById('item-kode_default').value;
     console.log(a)
-    if (defcode == a) {
-        $('#item-custom_code').val(0);
-    }else{
-        $('#item-custom_code').val(1);
-    }
+    // if (defcode == a) {
+    //     $('#item-custom_code').val(0);
+    // }else{
+    //     $('#item-custom_code').val(1);
+    // }
 
   }
    function btn_submit(submit){

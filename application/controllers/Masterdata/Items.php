@@ -138,7 +138,6 @@ class Items extends CI_Controller {
 
 			if (empty($cek_kode)) {
 				$data_b = array(
-					'created_at' 	=> date('Y-m-d H:i:s'),
 					'updated_at' 	=> date('Y-m-d H:i:s'),
 					'created_by' 	=> $created,
 					'updated_by' 	=> $created,
@@ -157,11 +156,15 @@ class Items extends CI_Controller {
 		$seg = $this->uri->segment(2);
 		$data = $this->main_data();
 		$created = $this->session->userdata('user_id');
+		
+		$cek_kode = $this->Mod_adm->get_items_lskode($data['module']['code'])->row_array();
+		$new_code = $this->Main->generate_code($data['module']['code'],$data['module']['code_length'],$cek_kode['kode']);
+		print_r($cek_kode);
+		print_r($new_code);
+		exit();
 		if($seg == 'new'){
 		$data['item'] 			= $this->Mod_adm->get_item_status($seg)->row_array();
 			if (empty($data['item'])) {
-				$data['cek'] = $this->Mod_adm->get_items_lskode($data['module']['code'])->row_array();
-				$new_code = $this->Main->generate_code($data['module']['code'],$data['module']['code_length'],$data['cek']['kode']);
 				$add = array(
 					'kode' 			=> $new_code,
 					'status' 		=> 'new',

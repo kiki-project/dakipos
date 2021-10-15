@@ -193,12 +193,18 @@
               <!-- satuan harga -->
               <div class="tab-pane" id="satuan-harga">  
                 <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Tipe Harga Jual :</label><br>
-                      <input type="radio" name="type_harga" id="item-satu_harga" value="Satu Harga" <?php if($item['type_harga'] == 'Satu Harga'){ echo "checked"; } ?> > <label for="item-satu_harga">Satu Harga</label>&nbsp;&nbsp;
-                      <input type="radio" name="type_harga" id="item-satuan" value="Satuan" <?php if($item['type_harga'] == 'Satuan'){ echo "checked"; } ?> > <label for="item-satuan">Satuan</label>
+                  <div class="col-md-12" style="color:red;">
+                  PENTING : Mengubah satuan dan konversi setelah ada transaksi akan mengakibatkan kesalahan pada perhitungan. <br>
+                  WAJIB : Persiapkan master data item yang benar sebelum pemakaian awal program. Data item yang berantakan mengakibatkan kesalahan perhitungan.
                   </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Tipe Harga Jual :</label><br>
+                        <input type="radio" name="type_harga" id="item-satu_harga" value="Satu Harga" <?php if($item['type_harga'] == 'Satu Harga'){ echo "checked"; } ?> > <label for="item-satu_harga">Satu Harga</label>&nbsp;&nbsp;
+                        <input type="radio" name="type_harga" id="item-satuan" value="Satuan" <?php if($item['type_harga'] == 'Satuan'){ echo "checked"; } ?> > <label for="item-satuan">Satuan</label>
+                    </div>
+                  </div>
+                <div class="col-md-6">
                   <div class="form-row">
                   <div class="form-group col-md-6">
                       <label>Satuan Dasar :</label>

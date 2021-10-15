@@ -139,6 +139,10 @@ class Mod_adm extends CI_model {
 		$this->db->where('id',$id);
 		$this->db->delete('items');
 	}
+	function deleted_new(){
+		$this->db->where('status', 'new');
+		$this->db->delete('items');
+	}
 	function update_user($data,$id){
 		$this->db->where('id',$id);
 		$this->db->update('users',$data);

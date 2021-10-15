@@ -19,7 +19,8 @@ class Items extends CI_Controller {
 		}else{
 			$data['data'] 	= $this->Mod_adm->get_items_limit($data['pg']['limit'],$data['pg']['offset'])->result();
 		}
-
+		
+		$this->Mod_adm->deleted_new();
 		$this->Main->content($data['module']['name'],'masterdata/item', $data);
 	}
 	function main_data(){

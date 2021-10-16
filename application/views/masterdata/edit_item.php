@@ -203,12 +203,10 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Tipe Harga Jual :</label><br>
-                        <input type="radio" name="type_harga" data-toggle="tab" data-target="#satu-harga" id="item-satu_harga" value="Satu Harga" <?php if($item['type_harga'] == 'Satu Harga'){ echo "checked"; } ?> > <label for="item-satu_harga">Satu Harga</label>&nbsp;&nbsp;
-                        <input type="radio" name="type_harga" data-toggle="tab" data-target="#satuan" id="item-satuan" value="Satuan" <?php if($item['type_harga'] == 'Satuan'){ echo "checked"; } ?> > <label for="item-satuan">Satuan</label>
+                        <input type="radio" name="type_harga" id="item-satu_harga" value="Satu Harga" <?php if($item['type_harga'] == 'Satu Harga'){ echo "checked"; } ?> > <label for="item-satu_harga">Satu Harga</label>&nbsp;&nbsp;
+                        <input type="radio" name="type_harga" id="item-satuan" value="Satuan" <?php if($item['type_harga'] == 'Satuan'){ echo "checked"; } ?> > <label for="item-satuan">Satuan</label>
                     </div>
                   </div>
-                  <div class="row" id="satu-harga">
-
                 <div class="col-md-6">
                   <div class="form-row">
                   <div class="form-group col-md-6">
@@ -289,11 +287,6 @@
                   </div>
 
                 </div>
-                  </div>
-                  
-                  <div class="row" id="satuan">
-                    satuan
-                  </div>
                 </div>
               </div>
               <!-- gambar -->

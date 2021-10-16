@@ -164,7 +164,7 @@ class Items extends CI_Controller {
 		$new_code = $this->Main->generate_code($data['module']['code'],$data['module']['code_length'],$cek_kode['kode']);
 		
 		if($seg == 'new'){
-		$data['item'] 			= $this->Mod_adm->get_item_status($seg)->row_array();
+			$data['item'] 			= $this->Mod_adm->get_item_status($seg)->row_array();
 			if (empty($data['item'])) {
 				$add = array(
 					'kode' 			=> $new_code,

@@ -41,9 +41,9 @@
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>'+row["satuan"]+'</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';
-                    data += '<td>'
+                    data += '<td class="right">'
                     if(row["jenis_satuan"] == "Konversi"){
-                    data += '<input type="text" class="form-control right" value="'+row["konversi"]+'">'
+                    data += '<input type="text" class="form-control" value="'+row["konversi"]+'" style="text-align:right;">'
                     }else{
                     data += row["konversi"]
                     }

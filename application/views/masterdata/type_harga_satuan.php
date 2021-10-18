@@ -1,4 +1,4 @@
-<table class="table-bordered table-stripped">
+<table class="table table-bordered table-stripped">
     <tr>
         <th>No</th>
         <th>Satuan</th>

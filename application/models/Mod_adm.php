@@ -75,6 +75,9 @@ class Mod_adm extends CI_model {
 	function get_region_sub(){
 		return $this->db->query("SELECT * FROM region_sub");
 	}
+	function get_price_units($item_id){
+		return $this->db->query("SELECT * FROM price_units WHERE item_id = '$item_id' ");
+	}
 	function cek_item_brands($kode){
 		return $this->db->query("SELECT * FROM item_brands WHERE kode = '$kode'");
 	}
@@ -110,6 +113,9 @@ class Mod_adm extends CI_model {
 	}
 	function insert_items($data){
 		$this->db->insert('items', $data);
+	}
+	function insert_price_units($data){
+		$this->db->insert('price_units', $data);
 	}
 	function delete_user($id){
 		$this->db->where('id',$id);

@@ -307,5 +307,27 @@ class Items extends CI_Controller {
 		$data = $this->Mod_adm->get_items_kode($kode)->row_array();
 		echo json_encode($data);
 	}
+	function json_add_price_unit(){
+		$item_id = $this->input->post('item_id');
+		$cek = $this->Mod_adm->get_price_units($item_id)->result();
+
+		if(empty($cek)){
+			$jenis = 'Satuan Dasar';
+			$konversi = '1.00';
+		}else{
+			$jenis = 'Konversi';
+			$konversi = '0.00';
+		}
+		$data = array(
+		  		'jenis_satuan'	=> $jenis,
+		  		'konversi'		=> $konversi,
+		  		'poin'			=> '0.00',
+		  		'komisi'		=> '0.00',
+		  		'proc'			=> '0.00',
+			);
+		$this->Mod_adm->insert_price_units($data);
+
+
+	}
 
 }

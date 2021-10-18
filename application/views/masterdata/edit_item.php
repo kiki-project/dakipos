@@ -199,7 +199,7 @@
                   <div class="alert alert-warning" role="alert">
                   PENTING : Mengubah satuan dan konversi setelah ada transaksi akan mengakibatkan kesalahan pada perhitungan. <br>
                   WAJIB : Persiapkan master data item yang benar sebelum pemakaian awal program. Data item yang berantakan mengakibatkan kesalahan perhitungan.
-                </div>
+                  </div>
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Tipe Harga Jual :</label><br>
@@ -207,7 +207,9 @@
                         <input type="radio" name="type_harga" id="item-satuan" value="Satuan" <?php if($item['type_harga'] == 'Satuan'){ echo "checked"; } ?> > <label for="item-satuan">Satuan</label>
                     </div>
                   </div>
-                <div class="col-md-6">
+                </div>
+                <div class="row">
+                <div class="col-md-6" id="content-satuharga">
                   <div class="form-row">
                   <div class="form-group col-md-6">
                       <label>Satuan Dasar :</label>
@@ -515,7 +517,24 @@
               $('#item-persentase').prop('readonly', true);
           }
       });
+      change_type_harga()
   });
+  function change_type_harga(){
+      $('#item-satu_harga').change(
+      function(){
+          if ($(this).is(':checked')) {
+              $('#content-satuharga').css('display', 'block');
+          }
+      });
+
+      $('#item-satuan').change(
+      function(){
+          if ($(this).is(':checked')) {
+              $('#content-satuharga').css('display', 'none');
+          }
+      });
+
+  }
   function set_custom_code(a){
     defcode = document.getElementById('item-kode_default').value;
 

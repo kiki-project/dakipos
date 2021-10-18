@@ -117,6 +117,7 @@ class Items extends CI_Controller {
 			'kode' 	=> $this->input->post('kode'),
 			'custom_code' 	=> $this->input->post('custom_code'),
 			'type' 	=> $this->input->post('type'), 
+			'type_harga' 	=> $this->input->post('type_harga'), 
 			'name'	=> $this->input->post('name'), 
 			'jenis' => $this->input->post('jenis'), 
 			'merek' => $this->input->post('merek'), 

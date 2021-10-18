@@ -41,19 +41,19 @@
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>'+row["satuan"]+'</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';
-                    data += '<td class="right">'
+                    data += '<td style="text-align:right;">'
                     if(row["jenis_satuan"] == "Konversi"){
                     data += '<input type="text" class="form-control" value="'+row["konversi"]+'" style="text-align:right;">'
                     }else{
                     data += row["konversi"]
                     }
                     data += '</td>';
-                    data += '<td>'+row["barcode"]+'</td>';
-                    data += '<td>'+row["poin"]+'</td>';
-                    data += '<td>'+row["komisi"]+'</td>';
-                    data += '<td>'+row["harga_pokok"]+'</td>';
-                    data += '<td>'+row["proc"]+'</td>';
-                    data += '<td>'+row["harga_jual"]+'</td>';
+                    data += '<td><input type="text" class="form-control" value="'+row["barcode"]+'"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+row["poin"]+'" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+row["komisi"]+'" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+row["harga_pokok"]+'" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+row["proc"]+'" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+row["harga_jual"]+'" style="text-align:right;"></td>';
                     data += '</tr>';
                 });
                 $("#tbl-satuan_harga").html(data);

@@ -293,9 +293,15 @@
                 
                   <!-- satu harga -->
                 <div class="col-md-12 none" id="content-satuan" >
-                            satuan
+                            <?php $this->load->view('type_harga_satuan'); ?>
                 </div>
-                <!-- satu harga end -->
+                
+                  <!-- level -->
+                <div class="col-md-12 none" id="content-level" >
+                            Level
+                </div>
+                <!-- end -->
+
                 </div>
               </div>
               <!-- gambar -->

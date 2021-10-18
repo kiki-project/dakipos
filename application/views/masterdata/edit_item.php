@@ -289,12 +289,13 @@
                       </div>
                   </div>
                   </div>
+                </div>
+                
                   <!-- satu harga -->
-                <div class="col-md-12" id="content-satuan">
+                <div class="col-md-12 none" id="content-satuan" >
                             satuan
                 </div>
                 <!-- satu harga end -->
-                </div>
                 </div>
               </div>
               <!-- gambar -->

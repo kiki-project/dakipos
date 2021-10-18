@@ -12,6 +12,8 @@ class Items extends CI_Controller {
 	{
 
 		$this->Mod_adm->deleted_new();
+		$this->Mod_adm->deleted_price_units_rel();
+		
 		$src = $this->input->post('src');
 		$data = $this->main_data();
 		$data['src'] = $src;

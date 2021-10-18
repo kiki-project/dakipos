@@ -45,7 +45,7 @@
                     if(row["jenis_satuan"] == "Konversi"){
                     data += '<input type="text" class="form-control" value="'+row["konversi"]+'" style="text-align:right;">'
                     }else{
-                    data += row["konversi"]
+                    data += '<input type="text" class="form-control" value="'+row["konversi"]+'" readonly style="text-align:right;">'
                     }
                     data += '</td>';
                     data += '<td><input type="text" class="form-control" value="'+row["barcode"]+'"></td>';

@@ -15,5 +15,16 @@
     </thead>
     <tbody id="tbl-satuan_harga"></tbody>
 </table>
-<button class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?> ')">Tambah satuan</button>
+<button class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</button>
 <button class="btn btn-sm btn-danger">Hapus satuan</button>
+<script>
+    function add_satuan(){
+        $.ajax({
+            type: "GET",
+            url: base_url("json/add-unit-price"),
+            success: function (result) {
+                
+            },
+        });
+    }
+</script>

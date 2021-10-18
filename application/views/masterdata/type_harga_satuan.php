@@ -12,3 +12,4 @@
         <th>Harga Jual</th>
     </tr>
 </table>
+<button class="btn btn-small btn-primary">Tambah satuan</button>

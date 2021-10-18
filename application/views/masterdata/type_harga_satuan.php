@@ -13,3 +13,4 @@
     </tr>
 </table>
 <button class="btn btn-sm btn-primary">Tambah satuan</button>
+<button class="btn btn-sm btn-danger">Hapus satuan</button>

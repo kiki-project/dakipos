@@ -293,7 +293,7 @@
                 
                   <!-- satu harga -->
                 <div class="col-md-12 none" id="content-satuan" >
-                            <?php $this->load->view('type_harga_satuan'); ?>
+                    <?php $this->load->view('masterdata/type_harga_satuan'); ?>
                 </div>
                 
                   <!-- level -->

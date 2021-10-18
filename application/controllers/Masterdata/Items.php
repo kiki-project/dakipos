@@ -327,8 +327,11 @@ class Items extends CI_Controller {
 		  		'proc'			=> '0.00',
 			);
 		$this->Mod_adm->insert_price_units($data);
-
-
+	}
+	function json_get_price_units(){
+		$item_id = $this->input->post('item_id');
+		$data = $this->Mod_adm->get_price_units($item_id)->result();
+		echo json_encode($data);
 	}
 
 }

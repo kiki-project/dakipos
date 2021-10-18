@@ -126,3 +126,4 @@ $route['json/get-item_units'] 		= 'Masterdata/Items/json_get_item_units';
 $route['json/get-item-list'] 		= 'Masterdata/Items/json_get_item';
 $route['json/get-item-kode'] 		= 'Masterdata/Items/json_get_item_kode';
 $route['json/add-unit-price']       = 'Masterdata/Items/json_add_price_unit';
+$route['json/get-unit-price']       = 'Masterdata/Items/json_get_price_units';

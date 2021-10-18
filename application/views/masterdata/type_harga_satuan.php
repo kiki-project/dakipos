@@ -24,7 +24,33 @@
             data: { item_id: a },
             url: base_url("json/add-unit-price"),
             success: function (result) {
-                
+                get_price_units(a)
+            },
+        });
+    }
+    function get_price_units(a){
+        $.ajax({
+            type: "POST",    
+            data: { item_id: a },
+            url: base_url("json/get-unit-price"),
+            success: function (response) {            
+                result = JSON.parse(response);
+                var data = "";
+                $.each(result, function (i, row) {
+                    data += '<tr>';
+                    data += '<td>'+i+'</td>';
+                    data += '<td>'+row["satuan"]+'</td>';
+                    data += '<td>'+row["jenis_satuan"]+'</td>';
+                    data += '<td>'+row["konversi"]+'</td>';
+                    data += '<td>'+row["barcode"]+'</td>';
+                    data += '<td>'+row["poin"]+'</td>';
+                    data += '<td>'+row["komisi"]+'</td>';
+                    data += '<td>'+row["harga_pokok"]+'</td>';
+                    data += '<td>'+row["proc"]+'</td>';
+                    data += '<td>'+row["harga_jual"]+'</td>';
+                    data += '</tr>';
+                });
+                $("#item-jenis").html(data);
             },
         });
     }

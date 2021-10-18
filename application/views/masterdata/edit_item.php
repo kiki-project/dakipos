@@ -531,6 +531,7 @@
           }
       });
       change_type_harga()
+      get_price_units('<?php echo $item['id'] ?>')
   });
   function change_type_harga(){
       $('#item-satu_harga').change(

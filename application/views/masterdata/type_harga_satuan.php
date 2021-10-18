@@ -15,8 +15,8 @@
     </thead>
     <tbody id="tbl-satuan_harga"></tbody>
 </table>
-<button class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</button>
-<button class="btn btn-sm btn-danger">Hapus satuan</button>
+<a href="#" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
+<a href="#" class="btn btn-sm btn-danger">Hapus satuan</a>
 <script>
     function add_satuan(a){
         $.ajax({

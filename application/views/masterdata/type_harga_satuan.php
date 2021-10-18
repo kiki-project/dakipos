@@ -42,8 +42,8 @@
                     data += '<td>'+row["satuan"]+'</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';
                     data += '<td>'
-                    if(row["jenis_satuan"] == "Satuan Dasar"){
-                    data += '<input type="text" class="form-control" value="'+row["konversi"]+'">'
+                    if(row["jenis_satuan"] == "Konversi"){
+                    data += '<input type="text" class="form-control right" value="'+row["konversi"]+'">'
                     }else{
                     data += row["konversi"]
                     }

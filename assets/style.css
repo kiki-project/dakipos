@@ -6,39 +6,41 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
-
-.bg-color1{
-	background-color: #2596BE;
+.right {
+  text-align: right;
 }
-.f-color1{
-	color: #2596BE;
+.bg-color1 {
+  background-color: #2596be;
 }
-.f-color2{
-	color: #ff7e00;
+.f-color1 {
+  color: #2596be;
 }
-.b-color1{
-	border-color: #2596BE;
+.f-color2 {
+  color: #ff7e00;
 }
-.red{
-	color: red !important;
+.b-color1 {
+  border-color: #2596be;
 }
-.none{
-	display: none;
+.red {
+  color: red !important;
 }
-#item-img{
-	height: 250px;
-	width: 250px;
-	background-size: cover;
-	background-size: 130%;
-	background-position: center;
-	background-repeat: no-repeat;
-	border:1px solid #ccc;
-	cursor: pointer;
-	text-align: center;
-	opacity: 0.8;
-	background-color: #ccc;
-	color: #fff;
+.none {
+  display: none;
+}
+#item-img {
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+  background-size: 130%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+  opacity: 0.8;
+  background-color: #ccc;
+  color: #fff;
 }

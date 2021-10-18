@@ -10,9 +10,8 @@ class Items extends CI_Controller {
 	}
 	public function index()
 	{
-
-		$this->Mod_adm->deleted_new();
 		$this->Mod_adm->deleted_price_units_rel();
+		$this->Mod_adm->deleted_new();
 		
 		$src = $this->input->post('src');
 		$data = $this->main_data();

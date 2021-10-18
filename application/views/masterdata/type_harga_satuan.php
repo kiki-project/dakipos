@@ -38,7 +38,7 @@
                 var data = "";
                 $.each(result, function (i, row) {
                     data += '<tr>';
-                    data += '<td>'+i+'</td>';
+                    data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>'+row["satuan"]+'</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';
                     data += '<td>'+row["konversi"]+'</td>';

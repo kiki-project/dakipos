@@ -321,6 +321,7 @@ class Items extends CI_Controller {
 		$data = array(
 		  		'jenis_satuan'	=> $jenis,
 		  		'konversi'		=> $konversi,
+		  		'item_id'		=> $item_id,
 		  		'poin'			=> '0.00',
 		  		'komisi'		=> '0.00',
 		  		'proc'			=> '0.00',

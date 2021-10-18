@@ -205,6 +205,8 @@
                       <label>Tipe Harga Jual :</label><br>
                         <input type="radio" name="type_harga" id="item-satu_harga" value="Satu Harga" <?php if($item['type_harga'] == 'Satu Harga'){ echo "checked"; } ?> > <label for="item-satu_harga">Satu Harga</label>&nbsp;&nbsp;
                         <input type="radio" name="type_harga" id="item-satuan" value="Satuan" <?php if($item['type_harga'] == 'Satuan'){ echo "checked"; } ?> > <label for="item-satuan">Satuan</label>
+                        <input type="radio" name="type_harga" id="item-level" value="Level" <?php if($item['type_harga'] == 'Level'){ echo "checked"; } ?> > <label for="item-level">Level</label>
+                        <input type="radio" name="type_harga" id="item-jumlah" value="Jumlah" <?php if($item['type_harga'] == 'Jumlah'){ echo "checked"; } ?> > <label for="item-jumlah">Jumlah</label>
                     </div>
                   </div>
                 </div>
@@ -287,7 +289,11 @@
                       </div>
                   </div>
                   </div>
-
+                  <!-- satu harga -->
+                <div class="col-md-12" id="content-satuan">
+                            satuan
+                </div>
+                <!-- satu harga end -->
                 </div>
                 </div>
               </div>
@@ -524,6 +530,9 @@
       function(){
           if ($(this).is(':checked')) {
               $('#content-satuharga').css('display', 'block');
+              $('#content-satuan').css('display', 'none');
+              $('#content-level').css('display', 'none');
+              $('#content-jumlah').css('display', 'none');
           }
       });
 
@@ -531,6 +540,29 @@
       function(){
           if ($(this).is(':checked')) {
               $('#content-satuharga').css('display', 'none');
+              $('#content-satuan').css('display', 'block');
+              $('#content-level').css('display', 'none');
+              $('#content-jumlah').css('display', 'none');
+          }
+      });
+      
+      $('#item-level').change(
+      function(){
+          if ($(this).is(':checked')) {
+              $('#content-satuharga').css('display', 'none');
+              $('#content-satuan').css('display', 'none');
+              $('#content-level').css('display', 'block');
+              $('#content-jumlah').css('display', 'none');
+          }
+      });
+      
+      $('#item-jumlah').change(
+      function(){
+          if ($(this).is(':checked')) {
+              $('#content-satuharga').css('display', 'none');
+              $('#content-satuan').css('display', 'none');
+              $('#content-level').css('display', 'jumlah');
+              $('#content-jumlah').css('display', 'none');
           }
       });
 

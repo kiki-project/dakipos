@@ -50,7 +50,7 @@
                     data += '<td>'+row["harga_jual"]+'</td>';
                     data += '</tr>';
                 });
-                $("#item-jenis").html(data);
+                $("#tbl-satuan_harga").html(data);
             },
         });
     }

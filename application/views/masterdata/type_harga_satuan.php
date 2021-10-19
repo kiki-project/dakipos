@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th>No</th>
-            <th>Satuan</th>
+            <th style="width:100px;">Satuan</th>
             <th>Jns Satuan</th>
             <th>Jml Konversi</th>
             <th>Barcode</th>

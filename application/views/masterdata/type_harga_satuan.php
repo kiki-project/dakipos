@@ -40,7 +40,7 @@
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>'
-                    data += '<select class="form-control" name="price_units" id="price-unit">'
+                    data += '<select class="form-control price-unit" name="price_units"">'
                     data += '</select>'
                     data += '</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';

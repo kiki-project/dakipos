@@ -39,11 +39,11 @@
                 $.each(result, function (i, row) {
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
-                    data += '<td>'+row["satuan"]+'</td>';
                     data += '<td>'
                     data += '<select class="form-control" name="price_units" id="price-unit">'
                     data += '</select>'
                     data += '</td>';
+                    data += '<td>'+row["jenis_satuan"]+'</td>';
                     data += '<td style="text-align:right;">'
                     if(row["jenis_satuan"] == "Konversi"){
                     data += '<input type="text" class="form-control" value="'+row["konversi"]+'" style="text-align:right;">'

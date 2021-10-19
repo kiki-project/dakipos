@@ -45,10 +45,9 @@
                     data += '</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';
                     data += '<td style="text-align:right;">'
-                    var id_konv = 'konv'+row['id'];
-                    var crn_konv = "'"+id_konv+"'"", this.value";
+                    var id_konv = 'konv'+row['id']
                     if(row["jenis_satuan"] == "Konversi"){
-                    data += '<input type="text" class="form-control" value="'+row["konversi"]+'" id="'+id_konv+'" oninput="set_currency_value('+crn_konv+')" style="text-align:right;">'
+                    data += '<input type="text" class="form-control" value="'+row["konversi"]+'" id="'+id_konv+'" oninput="set_currency_value('+id_konv+', this.value)" style="text-align:right;">'
                     }else{
                     data += '<input type="text" class="form-control" value="'+row["konversi"]+'" readonly style="text-align:right;">'
                     }

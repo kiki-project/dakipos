@@ -10,8 +10,9 @@ class Items extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->Mod_adm->deleted_price_units_rel();
-		$this->Mod_adm->deleted_new();
+		$user_id = $this->session->userdata('user_id');
+		$this->Mod_adm->deleted_price_units_rel($user_id);
+		$this->Mod_adm->deleted_new($user_id);
 		
 		$src = $this->input->post('src');
 		$data = $this->main_data();
@@ -311,6 +312,7 @@ class Items extends CI_Controller {
 	function json_add_price_unit(){
 		$item_id = $this->input->post('item_id');
 		$cek = $this->Mod_adm->get_price_units($item_id)->result();
+		$created = $this->session->userdata('user_id');
 
 		if(empty($cek)){
 			$jenis = 'Satuan Dasar';

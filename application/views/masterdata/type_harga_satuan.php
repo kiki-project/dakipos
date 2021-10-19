@@ -44,8 +44,7 @@
                     data += '</select>'
                     data += '</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';
-                    data += '<td style="text-align:right;">'
-                    var id_konv = 
+                    data += '<td style="text-align:right;">';
                     if(row["jenis_satuan"] == "Konversi"){
                     data += '<input type="text" class="form-control" value="'+row["konversi"]+'" id="'+row["id"]+'" oninput="set_currency_value('+1001+row['id']+', this.value)" style="text-align:right;">'
                     }else{

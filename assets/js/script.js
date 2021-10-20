@@ -252,6 +252,21 @@ function get_units_select() {
           '<option value="' + row["kode"] + '">' + row["kode"] + "</option>";
       });
       $("#item-unit").html(data);
+    },
+  });
+}
+function get_units_select_price_type() {
+  $.ajax({
+    type: "GET",
+    url: base_url("json/get-item_units"),
+    success: function (response) {
+      result = JSON.parse(response);
+      var data = "";
+      data += '<option value=""></option>';
+      $.each(result, function (i, row) {
+        data +=
+          '<option value="' + row["kode"] + '">' + row["kode"] + "</option>";
+      });
       $(".price-unit").html(data);
     },
   });

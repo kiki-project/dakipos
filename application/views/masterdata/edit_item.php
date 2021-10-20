@@ -494,7 +494,7 @@
 </div>
 <script type="text/javascript">
  $( document ).ready(function() {
-      get_units_select()
+
           if ($('#item-inv').is(':checked')) {
               $('#item-hpp').prop('disabled', false);
               $('#item-pajak').prop('readonly', false);
@@ -532,6 +532,8 @@
       });
       change_type_harga()
       get_price_units('<?php echo $item['id'] ?>')
+      get_units_select()
+      get_units_select_price_type()
       read_type_harga()
   });
   function read_type_harga(){

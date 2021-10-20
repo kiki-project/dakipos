@@ -741,10 +741,12 @@ function hitung_price_units(id, code,val){
       .replace(",", "");
 
   var n_proc = (parseInt(harga_pokok) * 100) / parseInt(harga_jual);
+  if(parseInt(proc) != 0 || parseInt(harga_pokok) != 0){
   var n_jual = (parseInt(proc) * parseInt(harga_pokok)) / 100;
-  console.log(parseInt(harga_pokok))+'<br>';
-  console.log(parseInt(harga_jual))+'<br>';
-  console.log(parseInt(proc))+'<br>';
+  }else{
+  var n_jual = parseInt(harga_pokok);
+  }
+  
   $("#"+1005+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));
   $("#"+1006+''+id).val(currency(parseInt(n_jual)).format().replace("$", ""));
   

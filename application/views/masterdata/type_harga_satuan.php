@@ -47,17 +47,17 @@
                     data += '<td>'+row["jenis_satuan"]+'</td>';
                     data += '<td style="text-align:right;">';
                     if(row["jenis_satuan"] == "Konversi"){
-                    data += '<input type="text" class="form-control" value="'+row["konversi"]+'" id="'+1001+row["id"]+'" oninput="set_currency_value('+1001+row['id']+', this.value)" style="text-align:right;">';
+                    data += '<input type="text" class="form-control" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+1001+row["id"]+'" oninput="set_currency_value('+1001+row['id']+', this.value)" style="text-align:right;">';
                     }else{
-                    data += '<input type="text" class="form-control" value="'+row["konversi"]+'" readonly style="text-align:right;">';
+                    data += '<input type="text" class="form-control" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+1001+row["id"]+'" readonly style="text-align:right;">';
                     }
                     data += '</td>';
                     data += '<td><input type="text" class="form-control" id="bar'+row['id']+'" value="'+row["barcode"]+'"></td>';
-                    data += '<td><input type="text" class="form-control" value="'+row["poin"]+'" id="'+1002+row["id"]+'" oninput="set_currency_value('+1002+row['id']+', this.value)" style="text-align:right;"></td>';
-                    data += '<td><input type="text" class="form-control" value="'+row["komisi"]+'" id="'+1003+row["id"]+'" oninput="set_currency_value('+1003+row['id']+', this.value)" style="text-align:right;"></td>';
-                    data += '<td><input type="text" class="form-control" value="'+row["harga_pokok"]+'" id="'+1004+row["id"]+'" oninput="set_currency_value('+1004+row['id']+', this.value)" style="text-align:right;"></td>';
-                    data += '<td><input type="text" class="form-control" value="'+row["proc"]+'" id="'+1005+row["id"]+'" oninput="set_currency_value('+1005+row['id']+', this.value)" style="text-align:right;"></td>';
-                    data += '<td><input type="text" class="form-control" value="'+row["harga_jual"]+'" id="'+1006+row["id"]+'" oninput="set_currency_value('+1006+row['id']+', this.value)"  style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+currency(row["poin"]).format().replace("$", "")+'" id="'+1002+row["id"]+'" oninput="set_currency_value('+1002+row['id']+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+currency(row["komisi"]).format().replace("$", "")+'" id="'+1003+row["id"]+'" oninput="set_currency_value('+1003+row['id']+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+currency(row["harga_pokok"]).format().replace("$", "")+'" id="'+1004+row["id"]+'" oninput="set_currency_value('+1004+row['id']+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+currency(row["proc"]).format().replace("$", "")+'" id="'+1005+row["id"]+'" oninput="set_currency_value('+1005+row['id']+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-control" value="'+currency(row["harga_jual"]).format().replace("$", "")+'" id="'+1006+row["id"]+'" oninput="set_currency_value('+1006+row['id']+', this.value)"  style="text-align:right;"></td>';
                     data += '<td><a href="#" class="btn btn-sm btn-primary" onclick="save_unit_price('+row['id']+')">save</button></td>';
                     data += '</tr>';
                 });
@@ -68,13 +68,25 @@
 
     function save_unit_price(a){
         var satuan = document.getElementById('unit'+a).value;
+        var konversi = document.getElementById(1001+a).value;
+        var poin = document.getElementById(1002+a).value;
+        var komisi = document.getElementById(1003+a).value;
+        var harga_pokok = document.getElementById(1004+a).value;
+        var proc = document.getElementById(1005+a).value;
+        var harga_jual = document.getElementById(1006+a).value;
 
             $.ajax({
             type: "POST",
             url: base_url("json/update-unit-price/"),
             data: { 
-                satuan: satuan, 
                 id: a 
+                satuan: satuan, 
+                konversi: konversi, 
+                poin: poin, 
+                komisi: komisi, 
+                harga_pokok: harga_pokok, 
+                proc: proc, 
+                harga_jual: harga_jual, 
             },
             success: function (response) {
              get_price_units('<?php echo $id; ?>')

@@ -340,10 +340,15 @@ class Items extends CI_Controller {
 	}
 	function json_update_price_unit(){
 		$id = $this->input->post('id');
-		$satuan = $this->input->post('satuan');
 		
 		$data = array(
-		  		'satuan'	=> $satuan,
+		  		'satuan'		=> $this->input->post('satuan'),
+		  		'konversi'		=> str_replace(',', '', $this->input->post('konversi')),
+		  		'poin'			=> str_replace(',', '', $this->input->post('poin')),
+		  		'komisi'		=> str_replace(',', '', $this->input->post('komisi')),
+		  		'harga_pokok'	=> str_replace(',', '', $this->input->post('harga_pokok')),
+		  		'proc'			=> str_replace(',', '', $this->input->post('proc')),
+		  		'harga_jual' 	=> str_replace(',', '', $this->input->post('harga_jual')),
 			);
 		$this->Mod_adm->update_price_units($data,$id);
 	}

@@ -255,7 +255,7 @@ function get_units_select() {
     },
   });
 }
-function get_units_select_price_type(a, b) {
+function get_units_select_price_type(a,b) {
   $.ajax({
     type: "GET",
     url: base_url("json/get-item_units"),
@@ -264,21 +264,14 @@ function get_units_select_price_type(a, b) {
       var data = "";
       data += '<option value=""></option>';
       $.each(result, function (i, row) {
-        if (b == row["kode"]) {
-          select = 'selected="true"';
-        } else {
-          select = "";
-        }
-        data +=
-          '<option value="' +
-          row["kode"] +
-          '" ' +
-          select +
-          ">" +
-          row["kode"] +
-          "</option>";
+        if(b == row['kode']){ 
+           select = 'selected="true"';
+         }else{
+           select = '';
+         }
+        data +='<option value="'+row["kode"] + '" '+select+'>'+row["kode"] + "</option>";
       });
-      $("#" + a).html(data);
+      $("#"+a).html(data);
     },
   });
 }

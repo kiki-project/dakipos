@@ -69,7 +69,7 @@
     function save_unit_price(a){
         var satuan = document.getElementById('unit'+a).value;
         var barcode = document.getElementById('bar'+a).value;
-        var konversi = document.getElementById(1001+a).value;
+        var konversi = $("#"+1001+a).val();
         var poin = document.getElementById(1002+a).value;
         var komisi = document.getElementById(1003+a).value;
         var harga_pokok = document.getElementById(1004+a).value;

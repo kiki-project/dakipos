@@ -356,7 +356,7 @@ class Items extends CI_Controller {
 	function json_delete_price_unit(){
 		$id = $this->input->post('id');
 		$cek = $this->Mod_adm->get_price_units_id($id)->row_array();
-		if($cek['jenis_satuan'] == 'konversi'){
+		if($cek['jenis_satuan'] == 'Konversi'){
 			$this->Mod_adm->delete_price_units($id);
 		}else{
 			$this->Mod_adm->delete_price_units_item($cek['item_id']);

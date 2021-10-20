@@ -79,7 +79,7 @@
             type: "POST",
             url: base_url("json/update-unit-price/"),
             data: { 
-                id: a 
+                id: a,
                 satuan: satuan, 
                 konversi: konversi, 
                 poin: poin, 

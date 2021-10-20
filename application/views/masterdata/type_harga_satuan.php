@@ -67,30 +67,30 @@
     }
 
     function save_unit_price(a){
-        // var satuan = document.getElementById('unit'+a).value;
-        // var konversi = document.getElementById(1001+a).value;
-        // var poin = document.getElementById(1002+a).value;
-        // var komisi = document.getElementById(1003+a).value;
-        // var harga_pokok = document.getElementById(1004+a).value;
-        // var proc = document.getElementById(1005+a).value;
-        // var harga_jual = document.getElementById(1006+a).value;
+        var satuan = document.getElementById('unit'+a).value;
+        var konversi = document.getElementById(1001+a).value;
+        var poin = document.getElementById(1002+a).value;
+        var komisi = document.getElementById(1003+a).value;
+        var harga_pokok = document.getElementById(1004+a).value;
+        var proc = document.getElementById(1005+a).value;
+        var harga_jual = document.getElementById(1006+a).value;
 
-        //     $.ajax({
-        //     type: "POST",
-        //     url: base_url("json/update-unit-price/"),
-        //     data: { 
-        //         id: a 
-        //         satuan: satuan, 
-        //         konversi: konversi, 
-        //         poin: poin, 
-        //         komisi: komisi, 
-        //         harga_pokok: harga_pokok, 
-        //         proc: proc, 
-        //         harga_jual: harga_jual, 
-        //     },
-        //     success: function (response) {
-        //     //  get_price_units('<?php echo $id; ?>')
-        //     },
-        // });
+            $.ajax({
+            type: "POST",
+            url: base_url("json/update-unit-price/"),
+            data: { 
+                id: a 
+                satuan: satuan, 
+                konversi: konversi, 
+                poin: poin, 
+                komisi: komisi, 
+                harga_pokok: harga_pokok, 
+                proc: proc, 
+                harga_jual: harga_jual
+            },
+            success: function (response) {
+             get_price_units('<?php echo $id; ?>')
+            },
+        });
     }
 </script>

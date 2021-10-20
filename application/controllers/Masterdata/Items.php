@@ -357,9 +357,9 @@ class Items extends CI_Controller {
 		$id = $this->input->post('id');
 		$cek = $this->Mod_adm->get_price_units_id($id)->row_array();
 		if($cek['jenis_satuan'] == 'Konversi'){
-			$this->Mod_adm->delete_price_units($id);
+			$this->Mod_adm->deleted_price_units($id);
 		}else{
-			$this->Mod_adm->delete_price_units_item($cek['item_id']);
+			$this->Mod_adm->deleted_price_units_item($cek['item_id']);
 		}
 	}
 

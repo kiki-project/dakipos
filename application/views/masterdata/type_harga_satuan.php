@@ -15,15 +15,17 @@
     </thead>
     <tbody id="tbl-satuan_harga"></tbody>
 </table>
-<a href="#" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
+<a href="#" id="btn-add_satuan" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
 <script>
     function add_satuan(a){
+        $("#btn-add_satuan").html('Menyiapkan data ..');
         $.ajax({
             type: "POST",    
             data: { item_id: a },
             url: base_url("json/add-unit-price"),
             success: function (result) {
                 get_price_units(a)
+                $("#btn-add_satuan").html('Tambah satuan');
             },
         });
     }

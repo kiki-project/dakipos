@@ -740,8 +740,8 @@ function hitung_price_units(id, code,val){
       .replace(",", "")
       .replace(",", "");
 
-  var n_proc = (harga_pokok * 100) / harga_jual;
-  var n_jual = (proc * harga_pokok) / 100;
+  var n_proc = (parseInt(harga_pokok) * 100) / parseInt(harga_jual);
+  var n_jual = (parseInt(proc) * parseInt(harga_pokok)) / 100;
   console.log(harga_pokok)+'<br>';
   console.log(harga_pokok)+'<br>';
   console.log(proc)+'<br>';

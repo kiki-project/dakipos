@@ -672,7 +672,8 @@ function hitung_purchases(id) {
 }
 
 function hitung_currency_price_units(id,code, val) {
-  set_currency_value(code+id, val);
+  idcr = code+id;
+  set_currency_value(idcr, val);
   hitung_price_units(id,code);
 }
 function hitung_price_units(id, code){

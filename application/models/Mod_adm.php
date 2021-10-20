@@ -78,6 +78,9 @@ class Mod_adm extends CI_model {
 	function get_price_units($item_id){
 		return $this->db->query("SELECT * FROM price_units WHERE item_id = '$item_id' ");
 	}
+	function get_price_units_id($id){
+		return $this->db->query("SELECT * FROM price_units WHERE id = '$item_id' ");
+	}
 	function cek_item_brands($kode){
 		return $this->db->query("SELECT * FROM item_brands WHERE kode = '$kode'");
 	}
@@ -152,6 +155,10 @@ class Mod_adm extends CI_model {
 	}
 	function deleted_price_units_item($id){
 		$this->db->where('item_id', $id);
+		$this->db->delete('price_units');
+	}
+	function deleted_price_units($id){
+		$this->db->where('id', $id);
 		$this->db->delete('price_units');
 	}
 	function deleted_price_units_rel($created){

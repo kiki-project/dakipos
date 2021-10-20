@@ -106,7 +106,7 @@
             $.ajax({
             type: "POST",
             url: base_url("json/delete-unit-price"),
-            data: {id: a, },
+            data: {id: a },
             success: function (response) {
              get_price_units('<?php echo $id; ?>')
             },

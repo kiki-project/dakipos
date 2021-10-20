@@ -104,7 +104,7 @@
         });
     }
     function delete_unit_price(a){
-        confirm('Hapus data?'){
+        if(confirm('Hapus data?')){
             $.ajax({
                 type: "POST",
                 url: base_url("json/delete-unit-price"),

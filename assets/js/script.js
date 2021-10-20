@@ -332,6 +332,8 @@ function toggle_item_brands(source) {
   }
 }
 function set_currency_value(id, num) {
+  console.log(id)
+
   var num = num
     .replace(",", "")
     .replace(",", "")
@@ -371,7 +373,6 @@ function set_currency_value(id, num) {
   }
 
   $("#" + id).val(currency(num).format().replace("$", ""));
-  console.log(id)
 }
 function input_clear_currency(id) {
   if (id == "item-persentase") {
@@ -673,7 +674,7 @@ function hitung_purchases(id) {
 }
 
 function hitung_currency_price_units(id,code, val) {
-  idcr = code+id;
+  idcr = code+''+id;
   set_currency_value(idcr, val);
   hitung_price_units(id,code);
 }

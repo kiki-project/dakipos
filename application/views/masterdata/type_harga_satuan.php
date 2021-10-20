@@ -89,7 +89,7 @@
                 harga_jual: harga_jual, 
             },
             success: function (response) {
-             get_price_units('<?php echo $id; ?>')
+            //  get_price_units('<?php echo $id; ?>')
             },
         });
     }

@@ -531,9 +531,39 @@
           }
       });
       change_type_harga()
+      read_type_harga()
       get_price_units('<?php echo $item['id'] ?>')
       get_units_select()
   });
+  function read_type_harga(){
+    
+          if ($('#item-satu_harga').is(':checked')) {
+              $('#content-satuharga').css('display', 'block');
+              $('#content-satuan').css('display', 'none');
+              $('#content-level').css('display', 'none');
+              $('#content-jumlah').css('display', 'none');
+          }
+          
+          if ($('#item-satuan').is(':checked')) {
+              $('#content-satuharga').css('display', 'none');
+              $('#content-satuan').css('display', 'block');
+              $('#content-level').css('display', 'none');
+              $('#content-jumlah').css('display', 'none');
+          }
+          if ($('#item-level').is(':checked')) {
+              $('#content-satuharga').css('display', 'none');
+              $('#content-satuan').css('display', 'none');
+              $('#content-level').css('display', 'block');
+              $('#content-jumlah').css('display', 'none');
+          }
+          if ($('#item-jumlah').is(':checked')) {
+              $('#content-satuharga').css('display', 'none');
+              $('#content-satuan').css('display', 'none');
+              $('#content-level').css('display', 'jumlah');
+              $('#content-jumlah').css('display', 'none');
+          }
+
+  }
   function change_type_harga(){
       $('#item-satu_harga').change(
       function(){

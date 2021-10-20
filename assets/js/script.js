@@ -670,3 +670,11 @@ function hitung_purchases(id) {
   );
   $("#kredit").val(currency(kurang).format().replace("$", ""));
 }
+
+function hitung_currency_price_units(id,code, val) {
+  set_currency_value(code+id, val);
+  hitung_price_units(id,code);
+}
+function hitung_price_units(id, code){
+
+}

@@ -104,14 +104,15 @@
         });
     }
     function delete_unit_price(a){
-        confirm('Hapus data?')
+        confirm('Hapus data?'){
             $.ajax({
-            type: "POST",
-            url: base_url("json/delete-unit-price"),
-            data: {id: a },
-            success: function (response) {
-             get_price_units('<?php echo $id; ?>')
-            },
-        });
+                type: "POST",
+                url: base_url("json/delete-unit-price"),
+                data: {id: a },
+                success: function (response) {
+                get_price_units('<?php echo $id; ?>')
+                },
+            });
+        }
     }
 </script>

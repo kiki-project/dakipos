@@ -11,6 +11,7 @@ input[type="number"] {
 }
 .form-price{
   border: none;
+  width: auto;
 }
 .right {
   text-align: right;

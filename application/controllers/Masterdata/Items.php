@@ -278,6 +278,7 @@ class Items extends CI_Controller {
 	}
 	function delete(){
 		$id = $this->uri->segment(2);
+		$this->Mod_adm->deleted_price_units_item($id);
 		$this->Mod_adm->deleted_item($id);
 		redirect(base_url().$this->path());
 	}

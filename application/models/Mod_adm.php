@@ -150,6 +150,10 @@ class Mod_adm extends CI_model {
 		$this->db->where('created_by', $created);
 		$this->db->delete('items');
 	}
+	function deleted_price_units_item($id){
+		$this->db->where('item_id', $id);
+		$this->db->delete('price_units');
+	}
 	function deleted_price_units_rel($created){
 		$this->db->query("DELETE FROM price_units WHERE item_id IN (SELECT id FROM items WHERE status ='new' AND created_by = '$created') ");
 	}

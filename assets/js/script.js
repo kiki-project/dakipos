@@ -679,7 +679,7 @@ function hitung_currency_price_units(id,code, val) {
 }
 function hitung_price_units(id, code,val){
 
-  var konversi = $("#"+1001+''+id)
+  var konversi = $("#"+1001+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -689,7 +689,7 @@ function hitung_price_units(id, code,val){
       .replace(",", "")
       .replace(",", "");
 
-  var poin = $("#"+1002+''+id)
+  var poin = $("#"+1002+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -699,7 +699,7 @@ function hitung_price_units(id, code,val){
       .replace(",", "")
       .replace(",", "");
       
-  var komisi = $("#"+1003+''+id)
+  var komisi = $("#"+1003+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -710,7 +710,7 @@ function hitung_price_units(id, code,val){
       .replace(",", "");
 
       
-  var harga_pokok = $("#"+1004+''+id)
+  var harga_pokok = $("#"+1004+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -720,7 +720,7 @@ function hitung_price_units(id, code,val){
       .replace(",", "")
       .replace(",", "");
       
-  var proc = $("#"+1005+''+id)
+  var proc = $("#"+1005+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -730,7 +730,7 @@ function hitung_price_units(id, code,val){
       .replace(",", "")
       .replace(",", "");
       
-  var harga_jual = $("#"+1006+''+id)
+  var harga_jual = $("#"+1006+id)
       .val()
       .replace(".00", "")
       .replace(",", "")

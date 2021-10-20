@@ -533,7 +533,6 @@
       change_type_harga()
       get_price_units('<?php echo $item['id'] ?>')
       get_units_select()
-      get_units_select_price_type()
       read_type_harga()
   });
   function read_type_harga(){

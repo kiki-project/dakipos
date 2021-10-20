@@ -255,7 +255,7 @@ function get_units_select() {
     },
   });
 }
-function get_units_select_price_type() {
+function get_units_select_price_type(a,b) {
   $.ajax({
     type: "GET",
     url: base_url("json/get-item_units"),
@@ -265,9 +265,9 @@ function get_units_select_price_type() {
       data += '<option value=""></option>';
       $.each(result, function (i, row) {
         data +=
-          '<option value="' + row["kode"] + '">' + row["kode"] + "</option>";
+          '<option value="' + row["kode"] + '" '+if(a == row['kode']){ +'selected="true"'+ }+'>' + row["kode"] + "</option>";
       });
-      $(".price-unit").html(data);
+      $("#"+a).html(data);
     },
   });
 }

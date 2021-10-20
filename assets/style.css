@@ -9,6 +9,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.form-price{
+  border: none;
+}
 .right {
   text-align: right;
 }

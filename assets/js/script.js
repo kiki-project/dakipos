@@ -739,12 +739,12 @@ function hitung_price_units(id, code,val){
       .replace(",", "")
       .replace(",", "")
       .replace(",", "");
-  if(parseInt(harga_pokok) != 0 || parseInt(harga_jual) != 0){
+  if(parseInt(harga_pokok) != 0 && parseInt(harga_jual) != 0){
   var n_proc = (parseInt(harga_pokok) * 100) / parseInt(harga_jual);
   }else{
   var n_proc = 0;
   }
-  if(parseInt(proc) != 0 || parseInt(harga_pokok) != 0){
+  if(parseInt(proc) != 0 && parseInt(harga_pokok) != 0){
   var n_jual = (parseInt(proc) * parseInt(harga_pokok)) / 100;
   }else{
   var n_jual = parseInt(harga_pokok);

@@ -338,5 +338,14 @@ class Items extends CI_Controller {
 		$data = $this->Mod_adm->get_price_units($item_id)->result();
 		echo json_encode($data);
 	}
+	function json_update_price_unit(){
+		$id = $this->input->post('id');
+		$satuan = $this->input->post('satuan');
+		
+		$data = array(
+		  		'satuan'	=> $satuan,
+			);
+		$this->Mod_adm->update_price_units($data,$id);
+	}
 
 }

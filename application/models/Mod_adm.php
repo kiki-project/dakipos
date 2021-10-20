@@ -173,4 +173,8 @@ class Mod_adm extends CI_model {
 		$this->db->where('id',$id);
 		$this->db->update('roles',$data);	
 	}
+	function update_price_units($data,$id){
+		$this->db->where('id',$id);
+		$this->db->update('price_units',$data);	
+	}
 }

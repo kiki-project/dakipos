@@ -37,11 +37,10 @@
                 result = JSON.parse(response);
                 var data = "";
                 $.each(result, function (i, row) {
-                    data += '';
-                    data += '<form method="post" action="'+base_url("update/unit-price")+'" ><tr>';
+                    data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>';
-                    data += '<select class="form-control price-unit" name="price_units"">';
+                    data += '<select class="form-control price-unit" id="unit'+row['id']+'" name="price_units"">';
                     data += '</select>';
                     data += '</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';
@@ -52,17 +51,32 @@
                     data += '<input type="text" class="form-control" value="'+row["konversi"]+'" readonly style="text-align:right;">';
                     }
                     data += '</td>';
-                    data += '<td><input type="text" class="form-control" value="'+row["barcode"]+'"></td>';
+                    data += '<td><input type="text" class="form-control" id="bar'+row['id']+'" value="'+row["barcode"]+'"></td>';
                     data += '<td><input type="text" class="form-control" value="'+row["poin"]+'" id="'+1002+row["id"]+'" oninput="set_currency_value('+1002+row['id']+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-control" value="'+row["komisi"]+'" id="'+1003+row["id"]+'" oninput="set_currency_value('+1003+row['id']+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-control" value="'+row["harga_pokok"]+'" id="'+1004+row["id"]+'" oninput="set_currency_value('+1004+row['id']+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-control" value="'+row["proc"]+'" id="'+1005+row["id"]+'" oninput="set_currency_value('+1005+row['id']+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-control" value="'+row["harga_jual"]+'" id="'+1006+row["id"]+'" oninput="set_currency_value('+1006+row['id']+', this.value)"  style="text-align:right;"></td>';
-                    data += '<td><button type="submit" class="btn btn-sm btn-primary">save</button></td>';
+                    data += '<td><a href="#" class="btn btn-sm btn-primary" onclick="save_unit_price('+row['id']+')">save</button></td>';
                     data += '</tr>';
-                    data += '</form>';
                 });
                 $("#tbl-satuan_harga").html(data);
+            },
+        });
+    }
+
+    function save_unit_price(a){
+        var satuan = document.getElementById('unit'+a).value;
+
+            $.ajax({
+            type: "POST",
+            url: base_url("json/update-unit-price/"),
+            data: { 
+                satuan: satuan, 
+                id: a 
+            },
+            success: function (response) {
+             get_price_units('<?php echo $id; ?>')
             },
         });
     }

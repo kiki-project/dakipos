@@ -79,7 +79,7 @@ class Mod_adm extends CI_model {
 		return $this->db->query("SELECT * FROM price_units WHERE item_id = '$item_id' ");
 	}
 	function get_price_units_id($id){
-		return $this->db->query("SELECT * FROM price_units WHERE id = '$item_id' ");
+		return $this->db->query("SELECT * FROM price_units WHERE id = '$id' ");
 	}
 	function cek_item_brands($kode){
 		return $this->db->query("SELECT * FROM item_brands WHERE kode = '$kode'");

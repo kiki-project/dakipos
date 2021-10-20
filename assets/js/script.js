@@ -739,7 +739,7 @@ function hitung_price_units(id, code,val){
       .replace(",", "")
       .replace(",", "")
       .replace(",", "");
-  if(parseInt(harga_pokok) != 0 && parseInt(harga_jual) != 0 && code != 1006){
+  if(parseInt(harga_pokok) != 0 && parseInt(harga_jual) != 0 && code == 1006){
   var n_proc = (parseInt(harga_pokok) * 100) / parseInt(harga_jual);
   }else{
   var n_proc = proc;

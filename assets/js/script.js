@@ -745,7 +745,7 @@ function hitung_price_units(id, code,val){
   console.log(harga_pokok)+'<br>';
   console.log(harga_pokok)+'<br>';
   console.log(proc)+'<br>';
-  $("#"+1005+''+id).val(currency(n_proc).format().replace("$", ""));
-  $("#"+1006+''+id).val(currency(n_jual).format().replace("$", ""));
+  $("#"+1005+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));
+  $("#"+1006+''+id).val(currency(parseInt(n_jual)).format().replace("$", ""));
   
 }

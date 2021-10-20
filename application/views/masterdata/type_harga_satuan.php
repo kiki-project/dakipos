@@ -13,9 +13,7 @@
             <th>Harga Jual</th>
         </tr>
     </thead>
-    <form method="post" action="<?php echo base_url(); ?>update/unit-price">
     <tbody id="tbl-satuan_harga"></tbody>
-    </form>
 </table>
 <a href="#" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
 <a href="#" class="btn btn-sm btn-danger">Hapus satuan</a>
@@ -42,6 +40,7 @@
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>';
+                    data += '<form method="post" action="'+base_url("update/unit-price")+'" >';
                     data += '<select class="form-control price-unit" name="price_units"">';
                     data += '</select>';
                     data += '</td>';
@@ -59,7 +58,7 @@
                     data += '<td><input type="text" class="form-control" value="'+row["harga_pokok"]+'" id="'+1004+row["id"]+'" oninput="set_currency_value('+1004+row['id']+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-control" value="'+row["proc"]+'" id="'+1005+row["id"]+'" oninput="set_currency_value('+1005+row['id']+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-control" value="'+row["harga_jual"]+'" id="'+1006+row["id"]+'" oninput="set_currency_value('+1006+row['id']+', this.value)"  style="text-align:right;"></td>';
-                    data += '<td><button type="submit" class="btn btn-sm btn-primary">save</button></td>';
+                    data += '<td><button type="submit" class="btn btn-sm btn-primary">save</button></form></td>';
                     data += '</tr>';
                 });
                 $("#tbl-satuan_harga").html(data);

@@ -343,6 +343,7 @@ class Items extends CI_Controller {
 		
 		$data = array(
 		  		'satuan'		=> $this->input->post('satuan'),
+		  		'barcode'		=> $this->input->post('barcode'),
 		  		'konversi'		=> str_replace(',', '', $this->input->post('konversi')),
 		  		'poin'			=> str_replace(',', '', $this->input->post('poin')),
 		  		'komisi'		=> str_replace(',', '', $this->input->post('komisi')),

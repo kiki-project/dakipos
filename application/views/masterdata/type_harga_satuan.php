@@ -68,6 +68,7 @@
 
     function save_unit_price(a){
         var satuan = document.getElementById('unit'+a).value;
+        var barcode = document.getElementById('bar'+a).value;
         var konversi = document.getElementById(1001+a).value;
         var poin = document.getElementById(1002+a).value;
         var komisi = document.getElementById(1003+a).value;
@@ -81,6 +82,7 @@
             data: { 
                 id: a,
                 satuan: satuan, 
+                barcode: barcode, 
                 konversi: konversi, 
                 poin: poin, 
                 komisi: komisi, 

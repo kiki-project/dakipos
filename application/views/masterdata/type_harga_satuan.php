@@ -59,7 +59,7 @@
                     data += '<td><input type="text" class="form-price" value="'+currency(row["harga_jual"]).format().replace("$", "")+'" id="'+1006+row["id"]+'" oninput="set_currency_value('+1006+row['id']+', this.value)"  style="text-align:right;"></td>';
                     data += '<td>';
                     data += '<div class="btn-group" ">';
-                    data += '<a href="#" id="btn-save-'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_unit_price('+row['id']+')">save</button>&nbsp;&nbsp;';
+                    data += '<a href="#" id="btn-save-'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_unit_price('+row['id']+')"><i class="fa fa-save"></i></button>&nbsp;&nbsp;';
                     data += '<a href="#" id="btn-delete-'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_unit_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
                     data += '</div>';
                     data += '</td>';
@@ -98,7 +98,7 @@
             },
             success: function (response) {
                 console.log(poin)
-            $("#btn-save-"+a).html('save');
+            $("#btn-save-"+a).html('<i class="fa fa-save"></i>');
              get_price_units('<?php echo $id; ?>')
             },
         });

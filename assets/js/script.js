@@ -332,7 +332,6 @@ function toggle_item_brands(source) {
   }
 }
 function set_currency_value(id, num) {
-  console.log(id)
 
   var num = num
     .replace(",", "")
@@ -674,10 +673,76 @@ function hitung_purchases(id) {
 }
 
 function hitung_currency_price_units(id,code, val) {
-  idcr = code+''+id;
-  set_currency_value(idcr, val);
+  id_code = code+''+id;
+  set_currency_value(id_code, val);
   hitung_price_units(id,code);
 }
-function hitung_price_units(id, code){
+function hitung_price_units(id, code,val){
 
+  var konversi = $("#"+1001+''+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+
+  var poin = $("#"+1002+''+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+      
+  var komisi = $("#"+1003+''+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+
+      
+  var harga_pokok = $("#"+1004+''+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+      
+  var proc = $("#"+1005+''+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+      
+  var harga_jual = $("#"+1006+''+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+
+  var n_proc = (harga_pokok * 100) / harga_jual;
+  var n_jual = (proc * harga_pokok) / 100;
+  $("#"+1005+''+id).val(currency(n_proc).format().replace("$", ""));
+  $("#"+1006+''+id).val(currency(n_jual).format().replace("$", ""));
+  
 }

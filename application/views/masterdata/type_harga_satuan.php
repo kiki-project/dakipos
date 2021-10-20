@@ -67,14 +67,14 @@
     }
 
     function save_unit_price(a){
-        var satuan = document.getElementById('unit'+a).value;
-        var barcode = document.getElementById('bar'+a).value;
+        var satuan = $("#unit"+a).val();
+        var barcode = $("#bar"+a).val();
         var konversi = $("#"+1001+a).val();
-        var poin = document.getElementById(1002+a).value;
-        var komisi = document.getElementById(1003+a).value;
-        var harga_pokok = document.getElementById(1004+a).value;
-        var proc = document.getElementById(1005+a).value;
-        var harga_jual = document.getElementById(1006+a).value;
+        var poin = $("#"+1002+a).val();
+        var komisi = $("#"+1003+a).val();
+        var harga_pokok = $("#"+1004+a).val();
+        var proc = $("#"+1005+a).val();
+        var harga_jual = $("#"+1006+a).val();
     
         $("#btn-save-"+a).html('..');
 

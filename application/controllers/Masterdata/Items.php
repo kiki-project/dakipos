@@ -115,7 +115,7 @@ class Items extends CI_Controller {
 		$cek 	= $this->Mod_adm->cek_item_id($id)->row_array();
 		$cek_kode 	= $this->Mod_adm->cek_items($kode)->row_array();
 
-		$data_main = array(
+		$data = array(
 			'kode' 	=> $this->input->post('kode'),
 			'custom_code' 	=> $this->input->post('custom_code'),
 			'type' 	=> $this->input->post('type'), 
@@ -139,21 +139,22 @@ class Items extends CI_Controller {
 			'supplier' 		=> $this->input->post('supplier'), 
 			'description' 	=> $this->input->post('desc'), 
 			'finish' 		=> 1, 
+			'status'	 	=> 'ok',
+			'updated_at' 	=> date('Y-m-d H:i:s'),
+			'created_by' 	=> $created,
+			'updated_by' 	=> $created,
 		);
 
 			if (empty($cek_kode)) {
-				$data_b = array(
-					'status'	 	=> 'ok',
-					'updated_at' 	=> date('Y-m-d H:i:s'),
-					'created_by' 	=> $created,
-					'updated_by' 	=> $created,
-				);
-				$data = array_merge($data_b, $data_main);
-
 				$this->Mod_adm->update_item($data,$id);
 				$err = 0;
 			}else{
-				$err = 1;
+				if($cek_kode['id'] == $id){
+					$this->Mod_adm->update_item($data,$id);
+					$err = 0;
+				}else{
+					$err = 1;
+				}
 			}
 		
 		echo json_encode($err);

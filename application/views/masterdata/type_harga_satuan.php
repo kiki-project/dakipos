@@ -104,9 +104,8 @@
     }
     function delete_unit_price(a){
             $.ajax({
-            type: "POST",
-            url: base_url("json/delete-unit-price"),
-            data: {id: a },
+            type: "GET",
+            url: base_url("json/delete-unit-price"+a),
             success: function (response) {
              get_price_units('<?php echo $id; ?>')
             },

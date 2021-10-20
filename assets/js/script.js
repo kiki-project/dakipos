@@ -371,6 +371,7 @@ function set_currency_value(id, num) {
   }
 
   $("#" + id).val(currency(num).format().replace("$", ""));
+  console.log(id)
 }
 function input_clear_currency(id) {
   if (id == "item-persentase") {

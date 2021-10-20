@@ -78,25 +78,25 @@
     
         $("#btn-save-"+a).html('..');
 
-        //     $.ajax({
-        //     type: "POST",
-        //     url: base_url("json/update-unit-price/"),
-        //     data: { 
-        //         id: a,
-        //         satuan: satuan, 
-        //         barcode: barcode, 
-        //         konversi: konversi, 
-        //         poin: poin, 
-        //         komisi: komisi, 
-        //         harga_pokok: harga_pokok, 
-        //         proc: proc, 
-        //         harga_jual: harga_jual
-        //     },
-        //     success: function (response) {
-        //         console.log(poin)
-        //     $("#btn-save-"+a).html('save');
-        //      get_price_units('<?php echo $id; ?>')
-        //     },
-        // });
+            $.ajax({
+            type: "POST",
+            url: base_url("json/update-unit-price/"),
+            data: { 
+                id: a,
+                satuan: satuan, 
+                barcode: barcode, 
+                konversi: konversi, 
+                poin: poin, 
+                komisi: komisi, 
+                harga_pokok: harga_pokok, 
+                proc: proc, 
+                harga_jual: harga_jual
+            },
+            success: function (response) {
+                console.log(poin)
+            $("#btn-save-"+a).html('save');
+             get_price_units('<?php echo $id; ?>')
+            },
+        });
     }
 </script>

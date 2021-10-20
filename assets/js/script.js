@@ -742,6 +742,8 @@ function hitung_price_units(id, code,val){
 
   var n_proc = (harga_pokok * 100) / harga_jual;
   var n_jual = (proc * harga_pokok) / 100;
+  console.log(n_proc).'<br>';
+  console.log(n_jual).'<br>';
   $("#"+1005+''+id).val(currency(n_proc).format().replace("$", ""));
   $("#"+1006+''+id).val(currency(n_jual).format().replace("$", ""));
   

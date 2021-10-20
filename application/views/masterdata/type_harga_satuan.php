@@ -40,8 +40,8 @@
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>';
-                    data += '<form method="post" action="'+base_url("update/unit-price")+'" >';
-                    data += '<select class="form-control price-unit" name="price_units"">';
+                    data += '';
+                    data += '<form method="post" action="'+base_url("update/unit-price")+'" ><select class="form-control price-unit" name="price_units""></form>';
                     data += '</select>';
                     data += '</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';

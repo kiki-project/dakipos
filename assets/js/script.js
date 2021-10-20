@@ -742,9 +742,9 @@ function hitung_price_units(id, code,val){
 
   var n_proc = (parseInt(harga_pokok) * 100) / parseInt(harga_jual);
   var n_jual = (parseInt(proc) * parseInt(harga_pokok)) / 100;
-  console.log(harga_pokok)+'<br>';
-  console.log(harga_pokok)+'<br>';
-  console.log(proc)+'<br>';
+  console.log(parseInt(harga_pokok))+'<br>';
+  console.log(parseInt(harga_jual))+'<br>';
+  console.log(parseInt(proc))+'<br>';
   $("#"+1005+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));
   $("#"+1006+''+id).val(currency(parseInt(n_jual)).format().replace("$", ""));
   

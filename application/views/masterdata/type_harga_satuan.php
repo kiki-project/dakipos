@@ -102,7 +102,7 @@
             },
         });
     }
-    fuction delete_unit_price(a){
+    function delete_unit_price(a){
             $.ajax({
             type: "POST",
             url: base_url("json/delete-unit-price"),

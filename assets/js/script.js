@@ -739,7 +739,7 @@ function hitung_price_units(id, code){
     }
   }
   
-  $("#"+1005+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));
-  $("#"+1006+''+id).val(currency(parseInt(n_jual)).format().replace("$", ""));
+  $("#"+id_proc+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));
+  $("#"+id_hj+''+id).val(currency(parseInt(n_jual)).format().replace("$", ""));
   
 }

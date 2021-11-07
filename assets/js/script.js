@@ -679,9 +679,23 @@ function hitung_currency_price_units(id,code, val) {
 }
 function hitung_price_units(id, code){
   var cd = code.toString();
-  var first = cd.substring( 0,1 );
-  var part = parseInt(first);
-  var harga_pokok = $("#"+part+004+id)
+  var part = cd.substring( 0,1 );
+
+  if(part == 1){
+  	var id_hp = 1004;
+  	var id_proc = 1005;
+  	var id_hj = 1006;
+  }else if(part == 2){
+  	var id_hp = 2004;
+  	var id_proc = 2005;
+  	var id_hj = 2006;
+  }else{
+  	var id_hp = 0004;
+  	var id_proc = 0005;
+  	var id_hj = 0006;
+  }
+
+  var harga_pokok = $("#"+id_hp+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -691,7 +705,7 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "");
       
-  var proc = $("#"+1005+id)
+  var proc = $("#"+id_proc+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -701,7 +715,7 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "");
       
-  var harga_jual = $("#"+1006+id)
+  var harga_jual = $("#"+id_hj+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -710,11 +724,11 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "")
       .replace(",", "");
-  if(code == 1006){
+  if(code == id_hj){
   var laba = parseInt(harga_jual) - parseInt(harga_pokok);
   var n_proc = (laba / parseInt(harga_pokok)) * 100;
   var n_jual = harga_jual;
-  }else if(code == 1005 || code == 1004){
+  }else if(code == id_proc || code == id_hp){
   var n_proc = proc;
     
     if(harga_jual != 0 && proc != 0){

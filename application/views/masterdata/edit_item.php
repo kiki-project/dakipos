@@ -298,7 +298,7 @@
                 
                   <!-- level -->
                 <div class="col-md-12 none" id="content-level" >
-                            Level
+                    <?php $this->load->view('masterdata/type_harga_level', $item); ?>
                 </div>
                 <!-- end -->
 

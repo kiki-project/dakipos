@@ -742,14 +742,15 @@ function hitung_price_units(id, code,val){
   if(code == 1006){
   var laba = parseInt(harga_jual) - parseInt(harga_pokok);
   var n_proc = (laba / parseInt(harga_pokok)) * 100;
-  }else{
+  }else if(code == 1005 || code == 1004){
   var n_proc = proc;
-  }
-  if(harga_jual != 0 && proc != 0){
-  var laba = (parseInt(proc) * parseInt(harga_pokok)) / 100;
-  var n_jual = (parseInt(harga_pokok) + parseInt(laba))
-  }else{
-  var n_jual = parseInt(harga_pokok);
+    
+    if(harga_jual != 0 && proc != 0){
+    var laba = (parseInt(proc) * parseInt(harga_pokok)) / 100;
+    var n_jual = (parseInt(harga_pokok) + parseInt(laba))
+    }else{
+    var n_jual = parseInt(harga_pokok);
+    }
   }
   
   $("#"+1005+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));

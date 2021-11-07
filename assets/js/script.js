@@ -678,7 +678,8 @@ function hitung_currency_price_units(id,code, val) {
   hitung_price_units(id,code);
 }
 function hitung_price_units(id, code){
-  var part = code.substring( 0,1 )
+  var cd = code.toString();
+  var part = cd.substring( 0,1 );
   console.log(part)
   var harga_pokok = $("#"+1004+id)
       .val()

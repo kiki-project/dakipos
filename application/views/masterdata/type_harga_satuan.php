@@ -15,18 +15,18 @@
     </thead>
     <tbody id="tbl-satuan_harga"></tbody>
 </table>
-<a href="#" id="btn-add_satuan" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
-<a href="#" id="btn-add_refresh" class="btn btn-sm btn-success" onclick="get_price_units('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh tabel</a>
+<a href="#" id="btn-add_satuan_unit" class="btn btn-sm btn-primary" onclick="add_satuan_unit('<?php echo $id; ?>')">Tambah satuan</a>
+<a href="#" id="btn-refresh_unit" class="btn btn-sm btn-success" onclick="get_price_units('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh tabel</a>
 <script>
-    function add_satuan(a){
-        $("#btn-add_satuan").html('Menyiapkan data ..');
+    function add_satuan_unit(a){
+        $("#btn-add_satuan_unit").html('Menyiapkan data ..');
         $.ajax({
             type: "POST",    
             data: { item_id: a },
             url: base_url("json/add-unit-price"),
             success: function (result) {
                 get_price_units(a)
-                $("#btn-add_satuan").html('Tambah satuan');
+                $("#btn-add_satuan_unit").html('Tambah satuan');
             },
         });
     }

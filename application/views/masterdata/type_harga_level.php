@@ -19,17 +19,19 @@
     </thead>
     <tbody id="tbl-level_harga"></tbody>
 </table>
-<a href="#" id="btn-add_satuan" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
+<a href="#" id="btn-add_satuan_level" class="btn btn-sm btn-primary" onclick="add_satuan_level('<?php echo $id; ?>')">Tambah satuan</a>
+<a href="#" id="btn-refresh_level" class="btn btn-sm btn-success" onclick="get_price_level('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh tabel</a>
+
 <script>
-    function add_satuan(a){
-        $("#btn-add_satuan").html('Menyiapkan data ..');
+    function add_satuan_level(a){
+        $("#btn-add_satuan_level").html('Menyiapkan data ..');
         $.ajax({
             type: "POST",    
             data: { item_id: a },
             url: base_url("json/add-unit-price"),
             success: function (result) {
                 get_price_level(a)
-                $("#btn-add_satuan").html('Tambah satuan');
+                $("#btn-add_satuan_level").html('Tambah satuan');
             },
         });
     }

@@ -531,7 +531,8 @@
           }
       });
       change_type_harga()
-      get_price_units('<?php echo $item['id'] ?>')
+      get_price_units('<?php echo $item['id'] ?>');
+      get_price_level('<?php echo $item['id'] ?>');
       get_units_select()
       read_type_harga()
   });

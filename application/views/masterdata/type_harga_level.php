@@ -19,7 +19,7 @@
     </thead>
     <tbody id="tbl-level_harga"></tbody>
 </table>
-<a href="#" id="btn-add_satuan_level" class="btn btn-sm btn-primary" onclick="add_satuan_level('<?php echo $id; ?>')">Tambah satuan</a>
+<a href="#" id="btn-add_satuan_level" class="btn btn-sm btn-primary" onclick="add_satuan_level('<?php echo $id; ?>')"><i class="fa fa-plus"></i> Tambah satuan</a>
 <a href="#" id="btn-refresh_level" class="btn btn-sm btn-success" onclick="get_price_level('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh tabel</a>
 
 <script>
@@ -54,14 +54,14 @@
                     data += '<td>'+row["jenis_satuan"]+'</td>';
                     data += '<td style="text-align:right;">';
                     if(row["jenis_satuan"] == "Konversi"){
-                    data += '<input type="text" class="form-price" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+2001+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+2001+', this.value)" style="text-align:right;">';
+                    data += '<input type="text" class="form-price" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+2001+row["id"]+'" oninput="currency_price_units('+row['id']+','+2001+', this.value)" style="text-align:right;">';
                     }else{
                     data += '<input type="text" class="form-price" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+2001+row["id"]+'" readonly style="text-align:right;">';
                     }
                     data += '</td>';
                     data += '<td><input type="text" class="form-price" id="bar'+row['id']+'" value="'+row["barcode"]+'"></td>';
-                    data += '<td><input type="text" class="form-price" value="'+currency(row["poin"]).format().replace("$", "")+'" id="'+2002+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+2002+', this.value)" style="text-align:right;"></td>';
-                    data += '<td><input type="text" class="form-price" value="'+currency(row["komisi"]).format().replace("$", "")+'" id="'+2003+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+2003+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-price" value="'+currency(row["poin"]).format().replace("$", "")+'" id="'+2002+row["id"]+'" oninput="currency_price_units('+row['id']+','+2002+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-price" value="'+currency(row["komisi"]).format().replace("$", "")+'" id="'+2003+row["id"]+'" oninput="currency_price_units('+row['id']+','+2003+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-price" value="'+currency(row["harga_pokok"]).format().replace("$", "")+'" id="'+2004+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+2004+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-price" value="'+currency(row["proc"]).format().replace("$", "")+'" id="'+2005+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+2005+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-price" value="'+currency(row["proc2"]).format().replace("$", "")+'" id="'+20052+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+20052+', this.value)" style="text-align:right;"></td>';

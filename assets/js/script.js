@@ -677,39 +677,9 @@ function hitung_currency_price_units(id,code, val) {
   set_currency_value(id_code, val);
   hitung_price_units(id,code);
 }
-function hitung_price_units(id, code,val){
-
-  var konversi = $("#"+1001+id)
-      .val()
-      .replace(".00", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "");
-
-  var poin = $("#"+1002+id)
-      .val()
-      .replace(".00", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "");
-      
-  var komisi = $("#"+1003+id)
-      .val()
-      .replace(".00", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "")
-      .replace(",", "");
-
-      
+function hitung_price_units(id, code){
+  var part = code.substring(1)
+  console.log(part)
   var harga_pokok = $("#"+1004+id)
       .val()
       .replace(".00", "")

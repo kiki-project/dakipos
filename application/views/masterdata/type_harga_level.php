@@ -42,11 +42,11 @@
                 result = JSON.parse(response);
                 var data = "";
                 $.each(result, function (i, row) {
-                    get_units_select_price_type('unit'+row['id'], row['satuan'])
+                    get_units_select_price_type('level'+row['id'], row['satuan'])
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>';
-                    data += '<select class="form-price price-unit" id="unit'+row['id']+'" name="price_units"">';
+                    data += '<select class="form-price price-unit" id="level'+row['id']+'" name="price_units"">';
                     data += '</select>';
                     data += '</td>';
                     data += '<td>'+row["jenis_satuan"]+'</td>';

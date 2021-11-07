@@ -49,14 +49,14 @@
                     data += '<td>'+row["jenis_satuan"]+'</td>';
                     data += '<td style="text-align:right;">';
                     if(row["jenis_satuan"] == "Konversi"){
-                    data += '<input type="text" class="form-price" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+1001+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+1001+', this.value)" style="text-align:right;">';
+                    data += '<input type="text" class="form-price" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+1001+row["id"]+'" oninput="currency_price_units('+row['id']+','+1001+', this.value)" style="text-align:right;">';
                     }else{
                     data += '<input type="text" class="form-price" value="'+currency(row["konversi"]).format().replace("$", "")+'" id="'+1001+row["id"]+'" readonly style="text-align:right;">';
                     }
                     data += '</td>';
                     data += '<td><input type="text" class="form-price" id="bar'+row['id']+'" value="'+row["barcode"]+'"></td>';
-                    data += '<td><input type="text" class="form-price" value="'+currency(row["poin"]).format().replace("$", "")+'" id="'+1002+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+1002+', this.value)" style="text-align:right;"></td>';
-                    data += '<td><input type="text" class="form-price" value="'+currency(row["komisi"]).format().replace("$", "")+'" id="'+1003+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+1003+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-price" value="'+currency(row["poin"]).format().replace("$", "")+'" id="'+1002+row["id"]+'" oninput="currency_price_units('+row['id']+','+1002+', this.value)" style="text-align:right;"></td>';
+                    data += '<td><input type="text" class="form-price" value="'+currency(row["komisi"]).format().replace("$", "")+'" id="'+1003+row["id"]+'" oninput="currency_price_units('+row['id']+','+1003+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-price" value="'+currency(row["harga_pokok"]).format().replace("$", "")+'" id="'+1004+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+1004+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-price" value="'+currency(row["proc"]).format().replace("$", "")+'" id="'+1005+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+1005+', this.value)" style="text-align:right;"></td>';
                     data += '<td><input type="text" class="form-price" value="'+currency(row["harga_jual"]).format().replace("$", "")+'" id="'+1006+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+1006+', this.value)"  style="text-align:right;"></td>';

@@ -742,6 +742,7 @@ function hitung_price_units(id, code,val){
   if(code == 1006){
   var laba = parseInt(harga_jual) - parseInt(harga_pokok);
   var n_proc = (laba / parseInt(harga_pokok)) * 100;
+  var n_jual = harga_jual;
   }else if(code == 1005 || code == 1004){
   var n_proc = proc;
     

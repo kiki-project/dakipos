@@ -680,8 +680,8 @@ function hitung_currency_price_units(id,code, val) {
 function hitung_price_units(id, code){
   var cd = code.toString();
   var part = cd.substring( 0,1 );
-  console.log(part)
-  var harga_pokok = $("#"+1004+id)
+  
+  var harga_pokok = $("#"+part+004+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -691,7 +691,7 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "");
       
-  var proc = $("#"+1005+id)
+  var proc = $("#"+part+005+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -701,7 +701,7 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "");
       
-  var harga_jual = $("#"+1006+id)
+  var harga_jual = $("#"+part+006+id)
       .val()
       .replace(".00", "")
       .replace(",", "")
@@ -710,11 +710,11 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "")
       .replace(",", "");
-  if(code == 1006){
+  if(code == (part+006)){
   var laba = parseInt(harga_jual) - parseInt(harga_pokok);
   var n_proc = (laba / parseInt(harga_pokok)) * 100;
   var n_jual = harga_jual;
-  }else if(code == 1005 || code == 1004){
+  }else if(code == (part+005) || code == (part+004)){
   var n_proc = proc;
     
     if(harga_jual != 0 && proc != 0){

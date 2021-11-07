@@ -17,7 +17,7 @@
             <th>HJ Level 3</th>
         </tr>
     </thead>
-    <tbody id="tbl-satuan_harga"></tbody>
+    <tbody id="tbl-level_harga"></tbody>
 </table>
 <a href="#" id="btn-add_satuan" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
 <script>
@@ -28,12 +28,12 @@
             data: { item_id: a },
             url: base_url("json/add-unit-price"),
             success: function (result) {
-                get_price_units(a)
+                get_price_level(a)
                 $("#btn-add_satuan").html('Tambah satuan');
             },
         });
     }
-    function get_price_units(a){
+    function get_price_level(a){
         $.ajax({
             type: "POST",    
             data: { item_id: a },
@@ -75,7 +75,7 @@
                     data += '</td>';
                     data += '</tr>';
                 });
-                $("#tbl-satuan_harga").html(data);
+                $("#tbl-level_harga").html(data);
             },
         });
     }
@@ -109,7 +109,7 @@
             success: function (response) {
                 console.log(poin)
             $("#btn-save-"+a).html('<i class="fa fa-save"></i>');
-             get_price_units('<?php echo $id; ?>')
+             get_price_level('<?php echo $id; ?>')
             },
         });
     }
@@ -120,7 +120,7 @@
                 url: base_url("json/delete-unit-price"),
                 data: {id: a },
                 success: function (response) {
-                get_price_units('<?php echo $id; ?>')
+                get_price_level('<?php echo $id; ?>')
                 },
             });
         }

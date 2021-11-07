@@ -69,8 +69,8 @@
                     data += '<td><input type="text" class="form-price" value="'+currency(row["harga_jual3"]).format().replace("$", "")+'" id="'+20063+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+20063+', this.value)"  style="text-align:right;"></td>';
                     data += '<td>';
                     data += '<div class="btn-group" ">';
-                    data += '<a href="#" id="btn-save-'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_unit_price('+row['id']+')"><i class="fa fa-save"></i></button>';
-                    data += '<a href="#" id="btn-delete-'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_unit_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
+                    data += '<a href="#" id="btn-save-'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_level_price('+row['id']+')"><i class="fa fa-save"></i></button>';
+                    data += '<a href="#" id="btn-delete-'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_level_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
                     data += '</div>';
                     data += '</td>';
                     data += '</tr>';
@@ -80,7 +80,7 @@
         });
     }
 
-    function save_unit_price(a){
+    function save_level_price(a){
         var satuan = $("#unit"+a).val();
         var barcode = $("#bar"+a).val();
         var konversi = $("#"+2001+a).val();
@@ -113,7 +113,7 @@
             },
         });
     }
-    function delete_unit_price(a){
+    function delete_level_price(a){
         if(confirm('Hapus data?')){
             $.ajax({
                 type: "POST",

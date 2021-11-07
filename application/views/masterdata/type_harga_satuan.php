@@ -16,6 +16,7 @@
     <tbody id="tbl-satuan_harga"></tbody>
 </table>
 <a href="#" id="btn-add_satuan" class="btn btn-sm btn-primary" onclick="add_satuan('<?php echo $id; ?>')">Tambah satuan</a>
+<a href="#" id="btn-add_refresh" class="btn btn-sm btn-success" onclick="get_price_units('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh tabel</a>
 <script>
     function add_satuan(a){
         $("#btn-add_satuan").html('Menyiapkan data ..');

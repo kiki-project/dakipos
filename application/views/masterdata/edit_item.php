@@ -363,14 +363,11 @@
                             </div>
                         </div>
                       </div>
-                      <!-- satuan --> 
-                      <div class="col-md-12" id="dimensi-satuan">
-                            satuan <br>
-                            satuan <br>
-                            satuan <br>
-                            satuan <br>
-                            satuan <br>
-                      </div>
+                    </div>
+                  
+                    <!-- satuan --> 
+                    <div class="col-md-12" id="dimensi-satuan">
+                          satuan <br>
                     </div>
                 </div>
               </div>

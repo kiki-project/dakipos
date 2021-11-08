@@ -749,6 +749,20 @@ function hitung_currency_price_level(id,code, val) {
 }
 function hitung_price_level(id, code){
 
+  var cd = code.toString();
+  var part = cd.substring( 0,1 );
+
+  if(part == 3){
+    
+  	var id_hp = 3004;
+  	var id_proc = 3005;
+  	var id_proc2 = 30052;
+  	var id_proc3 = 30053;
+  	var id_hj = 3006;
+  	var id_hj2 = 30062;
+  	var id_hj3 = 30063;
+  }else{
+    
   	var id_hp = 2004;
   	var id_proc = 2005;
   	var id_proc2 = 20052;
@@ -756,6 +770,8 @@ function hitung_price_level(id, code){
   	var id_hj = 2006;
   	var id_hj2 = 20062;
   	var id_hj3 = 20063;
+  }
+
 
   var harga_pokok = $("#"+id_hp+id)
       .val()

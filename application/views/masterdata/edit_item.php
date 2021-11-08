@@ -367,6 +367,7 @@
                       <div class="col-md-12" id="dimensi-satuan">
                             satuan
                       </div>
+                    </div>
                 </div>
               </div>
               <!-- gambar -->

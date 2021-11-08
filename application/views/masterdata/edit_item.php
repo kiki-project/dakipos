@@ -320,6 +320,54 @@
                     Satuan ukur Berat = gram, Satuan ukur Panjang, Lebar dan Tinggi = cm.
                   </div>
                 </div>
+                <div class="row">
+                      
+                    <div class="col-md-6" id="dimensi-satuharga">
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Komisi Sales :</label>
+                            <div class="input-group ">
+                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <div class="input-group-append">
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Komisi Sales :</label>
+                            <div class="input-group ">
+                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <div class="input-group-append">
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Komisi Sales :</label>
+                            <div class="input-group ">
+                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <div class="input-group-append">
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Komisi Sales :</label>
+                            <div class="input-group ">
+                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <div class="input-group-append">
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- satuan -->
+                      <div class="col-md-12" id="dimensi-satuan">
+                            satuan
+                      </div>
+                </div>
               </div>
               <!-- gambar -->
               <div class="tab-pane" id="gambar">
@@ -561,6 +609,9 @@
               $('#content-satuan').css('display', 'none');
               $('#content-level').css('display', 'none');
               $('#content-jumlah').css('display', 'none');
+              
+              $('#dimensi-satuharga').css('display', 'block');
+              $('#dimensi-satuan').css('display', 'none');
           }
           
           if ($('#item-satuan').is(':checked')) {
@@ -568,18 +619,27 @@
               $('#content-satuan').css('display', 'block');
               $('#content-level').css('display', 'none');
               $('#content-jumlah').css('display', 'none');
+              
+              $('#dimensi-satuharga').css('display', 'none');
+              $('#dimensi-satuan').css('display', 'block');
           }
           if ($('#item-level').is(':checked')) {
               $('#content-satuharga').css('display', 'none');
               $('#content-satuan').css('display', 'none');
               $('#content-level').css('display', 'block');
               $('#content-jumlah').css('display', 'none');
+              
+              $('#dimensi-satuharga').css('display', 'none');
+              $('#dimensi-satuan').css('display', 'block');
           }
           if ($('#item-jumlah').is(':checked')) {
               $('#content-satuharga').css('display', 'none');
               $('#content-satuan').css('display', 'none');
               $('#content-level').css('display', 'none');
               $('#content-jumlah').css('display', 'block');
+              
+              $('#dimensi-satuharga').css('display', 'none');
+              $('#dimensi-satuan').css('display', 'block');
           }
 
   }
@@ -591,6 +651,9 @@
               $('#content-satuan').css('display', 'none');
               $('#content-level').css('display', 'none');
               $('#content-jumlah').css('display', 'none');
+
+              $('#dimensi-satuharga').css('display', 'block');
+              $('#dimensi-satuan').css('display', 'none');
           }
       });
 
@@ -601,6 +664,9 @@
               $('#content-satuan').css('display', 'block');
               $('#content-level').css('display', 'none');
               $('#content-jumlah').css('display', 'none');
+              
+              $('#dimensi-satuharga').css('display', 'none');
+              $('#dimensi-satuan').css('display', 'block');
           }
       });
       
@@ -611,6 +677,9 @@
               $('#content-satuan').css('display', 'none');
               $('#content-level').css('display', 'block');
               $('#content-jumlah').css('display', 'none');
+              
+              $('#dimensi-satuharga').css('display', 'none');
+              $('#dimensi-satuan').css('display', 'block');
           }
       });
       
@@ -621,6 +690,9 @@
               $('#content-satuan').css('display', 'none');
               $('#content-level').css('display', 'none');
               $('#content-jumlah').css('display', 'block');
+              
+              $('#dimensi-satuharga').css('display', 'none');
+              $('#dimensi-satuan').css('display', 'block');
           }
       });
 

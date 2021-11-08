@@ -363,7 +363,7 @@
                             </div>
                         </div>
                       </div>
-                      <!-- satuan -->
+                      <!-- satuan --> 
                       <div class="col-md-12" id="dimensi-satuan">
                             satuan
                       </div>

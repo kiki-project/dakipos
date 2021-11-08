@@ -564,8 +564,8 @@
           if ($('#item-jumlah').is(':checked')) {
               $('#content-satuharga').css('display', 'none');
               $('#content-satuan').css('display', 'none');
-              $('#content-level').css('display', 'jumlah');
-              $('#content-jumlah').css('display', 'none');
+              $('#content-level').css('display', 'none');
+              $('#content-jumlah').css('display', 'block');
           }
 
   }
@@ -605,8 +605,8 @@
           if ($(this).is(':checked')) {
               $('#content-satuharga').css('display', 'none');
               $('#content-satuan').css('display', 'none');
-              $('#content-level').css('display', 'jumlah');
-              $('#content-jumlah').css('display', 'none');
+              $('#content-level').css('display', 'none');
+              $('#content-jumlah').css('display', 'block');
           }
       });
 

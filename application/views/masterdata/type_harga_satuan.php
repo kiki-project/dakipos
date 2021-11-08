@@ -97,7 +97,8 @@
                 komisi: komisi, 
                 harga_pokok: harga_pokok, 
                 proc: proc, 
-                harga_jual: harga_jual
+                harga_jual: harga_jual,
+                type: 'satuan'
             },
             success: function (response) {
                 console.log(poin)

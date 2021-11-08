@@ -340,8 +340,21 @@ class Items extends CI_Controller {
 	}
 	function json_update_price_unit(){
 		$id = $this->input->post('id');
+		$type = $this->input->post('type');
 		
-		$data = array(
+		if($type == 'satuan'){
+			$data = array(
+		  		'satuan'		=> $this->input->post('satuan'),
+		  		'barcode'		=> $this->input->post('barcode'),
+		  		'konversi'		=> str_replace(',', '', $this->input->post('konversi')),
+		  		'poin'			=> str_replace(',', '', $this->input->post('poin')),
+		  		'komisi'		=> str_replace(',', '', $this->input->post('komisi')),
+		  		'harga_pokok'	=> str_replace(',', '', $this->input->post('harga_pokok')),
+		  		'proc'			=> str_replace(',', '', $this->input->post('proc')),
+		  		'harga_jual' 	=> str_replace(',', '', $this->input->post('harga_jual')),
+			);
+		}elseif($type == 'level'){
+			$data = array(
 		  		'satuan'		=> $this->input->post('satuan'),
 		  		'barcode'		=> $this->input->post('barcode'),
 		  		'konversi'		=> str_replace(',', '', $this->input->post('konversi')),
@@ -355,6 +368,7 @@ class Items extends CI_Controller {
 		  		'harga_jual2' 	=> str_replace(',', '', $this->input->post('harga_jual2')),
 		  		'harga_jual3' 	=> str_replace(',', '', $this->input->post('harga_jual3')),
 			);
+		}
 		$this->Mod_adm->update_price_units($data,$id);
 	}
 	function json_delete_price_unit(){

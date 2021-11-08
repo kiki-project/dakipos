@@ -114,7 +114,8 @@
                 proc3: proc3, 
                 harga_jual: harga_jual,
                 harga_jual2: harga_jual2,
-                harga_jual3: harga_jual3
+                harga_jual3: harga_jual3,
+                type: 'level'
             },
             success: function (response) {
                 console.log(poin)

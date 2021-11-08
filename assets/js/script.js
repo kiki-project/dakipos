@@ -873,22 +873,29 @@ function hitung_price_level(id, code){
     if(proc != 0){
     var laba = (parseInt(proc) * parseInt(harga_pokok)) / 100;
     var n_jual = (parseInt(harga_pokok) + parseInt(laba))
+    var n_proc = proc;
+
     }else{
     var n_jual = parseInt(harga_pokok);
+    var n_proc = proc;
     }
 
     if(proc2 != 0){
     var laba2 = (parseInt(proc2) * parseInt(harga_pokok)) / 100;
     var n_jual2 = (parseInt(harga_pokok) + parseInt(laba2))
+    var n_proc2 = proc2;
     }else{
     var n_jual2 = parseInt(harga_pokok);
+    var n_proc2 = proc2;
     }
     
     if(proc3 != 0){
     var laba3 = (parseInt(proc3) * parseInt(harga_pokok)) / 100;
     var n_jual3 = (parseInt(harga_pokok) + parseInt(laba3))
+    var n_proc3 = proc3;
     }else{
     var n_jual3 = parseInt(harga_pokok);
+    var n_proc3 = proc3;
     }
 
   $("#"+id_proc+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));

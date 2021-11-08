@@ -718,7 +718,29 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "")
       .replace(",", "");
+  
       
+  var proc2 = $("#"+id_proc2+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+    
+      
+  var proc3 = $("#"+id_proc3+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+
   var harga_jual = $("#"+id_hj+id)
       .val()
       .replace(".00", "")
@@ -728,7 +750,28 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "")
       .replace(",", "");
+
       
+  var harga_jual2 = $("#"+id_hj2+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+
+  var harga_jual3 = $("#"+id_hj3+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+
   if(code == id_hj){
   var laba = parseInt(harga_jual) - parseInt(harga_pokok);
   var n_proc = (laba / parseInt(harga_pokok)) * 100;
@@ -743,8 +786,44 @@ function hitung_price_units(id, code){
     var n_jual = parseInt(harga_pokok);
     }
   }
+
+  
+  if(code == id_hj2){
+  var laba2 = parseInt(harga_jual2) - parseInt(harga_pokok);
+  var n_proc2 = (laba2 / parseInt(harga_pokok)) * 100;
+  var n_jual2 = harga_jual2;
+  }else if(code == id_proc2 || code == id_hp){
+  var n_proc2 = proc2;
+    
+    if(harga_jual2 != 0 && proc2 != 0){
+    var laba2 = (parseInt(proc2) * parseInt(harga_pokok)) / 100;
+    var n_jual2 = (parseInt(harga_pokok) + parseInt(laba2))
+    }else{
+    var n_jual2 = parseInt(harga_pokok);
+    }
+  }
+
+  
+  if(code == id_hj3){
+  var laba3 = parseInt(harga_jual3) - parseInt(harga_pokok);
+  var n_proc3 = (laba3 / parseInt(harga_pokok)) * 100;
+  var n_jual3 = harga_jual3;
+  }else if(code == id_proc3 || code == id_hp){
+  var n_proc3 = proc3;
+    
+    if(harga_jual3 != 0 && proc3 != 0){
+    var laba3 = (parseInt(proc3) * parseInt(harga_pokok)) / 100;
+    var n_jual3 = (parseInt(harga_pokok) + parseInt(laba3))
+    }else{
+    var n_jual3 = parseInt(harga_pokok);
+    }
+  }
   
   $("#"+id_proc+''+id).val(currency(parseInt(n_proc)).format().replace("$", ""));
+  $("#"+id_proc2+''+id).val(currency(parseInt(n_proc2)).format().replace("$", ""));
+  $("#"+id_proc3+''+id).val(currency(parseInt(n_proc3)).format().replace("$", ""));
   $("#"+id_hj+''+id).val(currency(parseInt(n_jual)).format().replace("$", ""));
+  $("#"+id_hj2+''+id).val(currency(parseInt(n_jual2)).format().replace("$", ""));
+  $("#"+id_hj3+''+id).val(currency(parseInt(n_jual3)).format().replace("$", ""));
   
 }

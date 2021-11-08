@@ -688,7 +688,11 @@ function hitung_price_units(id, code){
   }else if(part == 2){
   	var id_hp = 2004;
   	var id_proc = 2005;
+  	var id_proc2 = 20052;
+  	var id_proc3 = 20053;
   	var id_hj = 2006;
+  	var id_hj2 = 20062;
+  	var id_hj3 = 20063;
   }else{
   	var id_hp = 0004;
   	var id_proc = 0005;
@@ -724,6 +728,7 @@ function hitung_price_units(id, code){
       .replace(",", "")
       .replace(",", "")
       .replace(",", "");
+      
   if(code == id_hj){
   var laba = parseInt(harga_jual) - parseInt(harga_pokok);
   var n_proc = (laba / parseInt(harga_pokok)) * 100;

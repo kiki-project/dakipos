@@ -349,7 +349,11 @@ class Items extends CI_Controller {
 		  		'komisi'		=> str_replace(',', '', $this->input->post('komisi')),
 		  		'harga_pokok'	=> str_replace(',', '', $this->input->post('harga_pokok')),
 		  		'proc'			=> str_replace(',', '', $this->input->post('proc')),
+		  		'proc2'			=> str_replace(',', '', $this->input->post('proc2')),
+		  		'proc3'			=> str_replace(',', '', $this->input->post('proc3')),
 		  		'harga_jual' 	=> str_replace(',', '', $this->input->post('harga_jual')),
+		  		'harga_jual2' 	=> str_replace(',', '', $this->input->post('harga_jual2')),
+		  		'harga_jual3' 	=> str_replace(',', '', $this->input->post('harga_jual3')),
 			);
 		$this->Mod_adm->update_price_units($data,$id);
 	}

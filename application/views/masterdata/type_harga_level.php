@@ -90,7 +90,11 @@
         var komisi = $("#"+2003+a).val();
         var harga_pokok = $("#"+2004+a).val();
         var proc = $("#"+2005+a).val();
+        var proc2 = $("#"+20052+a).val();
+        var proc3 = $("#"+20053+a).val();
         var harga_jual = $("#"+2006+a).val();
+        var harga_jual2 = $("#"+20062+a).val();
+        var harga_jual3 = $("#"+20063+a).val();
     
         $("#btn-save-"+a).html('..');
 
@@ -106,7 +110,11 @@
                 komisi: komisi, 
                 harga_pokok: harga_pokok, 
                 proc: proc, 
+                proc2: proc2, 
+                proc3: proc3, 
                 harga_jual: harga_jual
+                harga_jual2: harga_jual2
+                harga_jual3: harga_jual3
             },
             success: function (response) {
                 console.log(poin)

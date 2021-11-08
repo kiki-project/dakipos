@@ -112,8 +112,8 @@
                 proc: proc, 
                 proc2: proc2, 
                 proc3: proc3, 
-                harga_jual: harga_jual
-                harga_jual2: harga_jual2
+                harga_jual: harga_jual,
+                harga_jual2: harga_jual2,
                 harga_jual3: harga_jual3
             },
             success: function (response) {

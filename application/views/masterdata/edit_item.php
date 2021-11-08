@@ -312,7 +312,7 @@
                 </div>
               </div>
               <!-- dimensi barang -->
-              <div class="tab-pane" id="dimesi-barang">
+              <div class="tab-pane" id="dimensi-barang">
                 <div class="row">
                   <div class="alert alert-warning" role="alert">
                     KETERANGAN : <br>

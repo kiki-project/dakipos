@@ -73,8 +73,8 @@
                     data += '<td><input type="text" class="form-price" value="'+currency(row["harga_jual3"]).format().replace("$", "")+'" id="'+20063+row["id"]+'" oninput="hitung_currency_price_level('+row['id']+','+20063+', this.value)"  style="text-align:right;"></td>';
                     data += '<td>';
                     data += '<div class="btn-group" ">';
-                    data += '<a href="#" id="btn-save-'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_level_price('+row['id']+')"><i class="fa fa-save"></i></button>';
-                    data += '<a href="#" id="btn-delete-'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_level_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
+                    data += '<a href="#" id="btn-save-level'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_level_price('+row['id']+')"><i class="fa fa-save"></i></button>';
+                    data += '<a href="#" id="btn-delete-level'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_level_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
                     data += '</div>';
                     data += '</td>';
                     data += '</tr>';
@@ -98,7 +98,7 @@
         var harga_jual2 = $("#"+20062+a).val();
         var harga_jual3 = $("#"+20063+a).val();
     
-        $("#btn-save-"+a).html('..');
+        $("#btn-save-level"+a).html('..');
 
             $.ajax({
             type: "POST",
@@ -121,7 +121,7 @@
             },
             success: function (response) {
                 console.log(poin)
-            $("#btn-save-"+a).html('<i class="fa fa-save"></i>');
+            $("#btn-save-level"+a).html('<i class="fa fa-save"></i>');
              get_price_level('<?php echo $id; ?>')
             },
         });

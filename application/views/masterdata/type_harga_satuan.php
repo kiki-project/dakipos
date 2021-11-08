@@ -64,8 +64,8 @@
                     data += '<td><input type="text" class="form-price" value="'+currency(row["harga_jual"]).format().replace("$", "")+'" id="'+1006+row["id"]+'" oninput="hitung_currency_price_units('+row['id']+','+1006+', this.value)"  style="text-align:right;"></td>';
                     data += '<td>';
                     data += '<div class="btn-group" ">';
-                    data += '<a href="#" id="btn-save-'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_unit_price('+row['id']+')"><i class="fa fa-save"></i></button>';
-                    data += '<a href="#" id="btn-delete-'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_unit_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
+                    data += '<a href="#" id="btn-save-satuan'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_unit_price('+row['id']+')"><i class="fa fa-save"></i></button>';
+                    data += '<a href="#" id="btn-delete-satuan'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_unit_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
                     data += '</div>';
                     data += '</td>';
                     data += '</tr>';
@@ -85,7 +85,7 @@
         var proc = $("#"+1005+a).val();
         var harga_jual = $("#"+1006+a).val();
     
-        $("#btn-save-"+a).html('..');
+        $("#btn-save-satuan"+a).html('..');
 
             $.ajax({
             type: "POST",
@@ -104,7 +104,7 @@
             },
             success: function (response) {
                 console.log(poin)
-            $("#btn-save-"+a).html('<i class="fa fa-save"></i>');
+            $("#btn-save-satuan"+a).html('<i class="fa fa-save"></i>');
              get_price_units('<?php echo $id; ?>')
             },
         });

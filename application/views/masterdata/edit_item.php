@@ -26,6 +26,9 @@
                       <a class="nav-link" data-toggle="tab" href="#satuan-harga">Satuan & Harga</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#dimensi-barang">Dimensi Barang</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#gambar">Gambar</a>
                     </li>
                   </ul>
@@ -306,6 +309,16 @@
                 </div>
                 <!-- end -->
 
+                </div>
+              </div>
+              <!-- dimensi barang -->
+              <div class="tab-pane" id="dimesi-barang">
+                <div class="row">
+                  <div class="alert alert-warning" role="alert">
+                    KETERANGAN : <br>
+                    Data yang tampil sesuai dengan satuan yang telah diinput pada tab Satuan dan Harga. <br>
+                    Satuan ukur Berat = gram, Satuan ukur Panjang, Lebar dan Tinggi = cm.
+                  </div>
                 </div>
               </div>
               <!-- gambar -->

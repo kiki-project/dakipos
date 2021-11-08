@@ -300,6 +300,10 @@
                 <div class="col-md-12 none" id="content-level" >
                     <?php $this->load->view('masterdata/type_harga_level', $item); ?>
                 </div>
+                  <!-- jumlah -->
+                <div class="col-md-12 none" id="content-jumlah" >
+                    <?php $this->load->view('masterdata/type_harga_jumlah', $item); ?>
+                </div>
                 <!-- end -->
 
                 </div>

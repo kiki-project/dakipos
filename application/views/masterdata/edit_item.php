@@ -29,6 +29,9 @@
                       <a class="nav-link" id="tab-dimensi" data-toggle="tab" href="#dimensi-barang">Dimensi Barang</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#potongan-harga">Potongan Harga Jual</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#gambar">Gambar</a>
                     </li>
                   </ul>
@@ -372,6 +375,11 @@
                 </div>
               </div>
               <!-- gambar -->
+              <div class="tab-pane" id="potongan-harga">
+                <div class="col-md-12">
+                    potongan
+                </div>
+              </div>
               <div class="tab-pane" id="gambar">
               <div class="col-md-6">
                 <?php 

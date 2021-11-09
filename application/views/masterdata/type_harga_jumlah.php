@@ -77,6 +77,12 @@
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga_jual"]).format().replace("$", "")+'" id="'+3006+row["id"]+'" oninput="hitung_currency_price_level('+row['id']+','+3006+', this.value)"  style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga_jual2"]).format().replace("$", "")+'" id="'+30062+row["id"]+'" oninput="hitung_currency_price_level('+row['id']+','+30062+', this.value)"  style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga_jual3"]).format().replace("$", "")+'" id="'+30063+row["id"]+'" oninput="hitung_currency_price_level('+row['id']+','+30063+', this.value)"  style="text-align:right;"></td>';
+                    data += '<td>';
+                    data += '<div class="btn-group" ">';
+                    data += '<a href="#" id="btn-save-jumlah'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_jumlah_price('+row['id']+')"><i class="fa fa-save"></i></button>';
+                    data += '<a href="#" id="btn-delete-jumlah'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_jumlah_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
+                    data += '</div>';
+                    data += '</td>';
                     data += '</tr>';
                 });
                 $("#tbl-jumlah_harga").html(data);

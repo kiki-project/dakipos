@@ -26,7 +26,7 @@
                       <a class="nav-link" data-toggle="tab" href="#satuan-harga">Satuan & Harga</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#dimensi-barang">Dimensi Barang</a>
+                      <a class="nav-link" id="tab-dimensi" data-toggle="tab" href="#dimensi-barang">Dimensi Barang</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#gambar">Gambar</a>
@@ -568,6 +568,7 @@
               $('#item-serial').prop('disabled', false);
               $('#item-harga-pokok').prop('readonly', false);
               $('#item-persentase').prop('readonly', false);
+              $('#tab-dimensi').css('display', 'block');
           }
           if ($('#item-srv').is(':checked')) {
               $('#item-hpp').prop('disabled', true);
@@ -575,6 +576,7 @@
               $('#item-serial').prop('disabled', true);
               $('#item-harga-pokok').prop('readonly', true);
               $('#item-persentase').prop('readonly', true);
+              $('#tab-dimensi').css('display', 'none');
           }
 
       $('#item-inv').change(
@@ -585,6 +587,7 @@
               $('#item-serial').prop('disabled', false);
               $('#item-harga-pokok').prop('readonly', false);
               $('#item-persentase').prop('readonly', false);
+              $('#tab-dimensi').css('display', 'block');
           }
       });
       $('#item-srv').change(
@@ -595,6 +598,7 @@
               $('#item-serial').prop('disabled', true);
               $('#item-harga-pokok').prop('readonly', true);
               $('#item-persentase').prop('readonly', true);
+              $('#tab-dimensi').css('display', 'none');
           }
       });
       change_type_harga()

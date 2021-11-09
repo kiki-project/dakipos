@@ -376,7 +376,7 @@
               </div>
               <!-- gambar -->
               <div class="tab-pane" id="potongan-harga">
-                <div class="col-md-12">
+                <div class="row">
                     potongan
                 </div>
               </div>

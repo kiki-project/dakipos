@@ -376,7 +376,7 @@
               </div>
               <!-- gambar -->
               <div class="tab-pane" id="potongan-harga">
-                <div class="row">
+                <div class="col-md-12">
                     <?php $this->load->view('masterdata/item_discount', $item); ?>
                 </div>
               </div>

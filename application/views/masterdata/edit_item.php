@@ -367,7 +367,7 @@
                   
                     <!-- satuan --> 
                     <div class="col-md-12" id="dimensi-satuan">
-                    <?php $this->load->view('masterdata/type_harga_level', $item); ?>
+                    <?php $this->load->view('masterdata/type_harga_dimensi', $item); ?>
                     </div>
                 </div>
               </div>

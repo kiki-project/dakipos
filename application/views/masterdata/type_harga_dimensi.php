@@ -13,8 +13,8 @@
     <tbody id="tbl-dimensi_harga"></tbody>
 </table>
 </div>
-<a href="#" id="btn-add_satuan_dimensi" class="btn btn-sm btn-primary" onclick="add_satuan_dimensi('<?php echo $id; ?>')"><i class="fa fa-plus"></i> Tambah satuan</a>
-<a href="#" id="btn-refresh_dimensi" class="btn btn-sm btn-success" onclick="get_price_dimensi('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh tabel</a>
+<a href="#" id="btn-add_satuan_dimensi" class="btn btn-sm btn-primary" onclick="add_satuan_dimensi('<?php echo $id; ?>')"><i class="fa fa-plus"></i> Tambah Satuan</a>
+<a href="#" id="btn-refresh_dimensi" class="btn btn-sm btn-success" onclick="get_price_dimensi('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh Tabel</a>
 
 <script>
     function add_satuan_dimensi(a){

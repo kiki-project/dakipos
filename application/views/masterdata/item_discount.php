@@ -4,9 +4,10 @@
         <tr>
             <th style="width:20px;">No</th>
             <th style="width:150px;">Kode Group</th>
-            <th>Potongan1</th>
-            <th>Potongan1</th>
-            <th>Potongan1</th>
+            <th>Potongan 1 (%)</th>
+            <th>Potongan 2 (%)</th>
+            <th>Potongan 3 (%)</th>
+            <th>Potongan 4 (%)</th>
         </tr>
     </thead>
     <tbody id="tbl-dimensi_harga"></tbody>

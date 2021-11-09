@@ -325,40 +325,40 @@
                     <div class="col-md-6" id="dimensi-satuharga">
                       <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label>Komisi Sales :</label>
+                            <label>Berat :</label>
                             <div class="input-group ">
-                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <input type="text" name="berat" class="form-control" id="item-berat" oninput="set_currency_value('item-berat', this.value)" style="text-align: right;" value="<?php echo number_format($item['berat'], 2); ?>">
                               <div class="input-group-append">
-                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-berat')"><i class="fa fa-trash"></i></div>
                               </div>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Komisi Sales :</label>
+                            <label>Panjang :</label>
                             <div class="input-group ">
-                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <input type="text" name="panjang" class="form-control" id="item-panjang" oninput="set_currency_value('item-panjang', this.value)" style="text-align: right;" value="<?php echo number_format($item['panjang'], 2); ?>">
                               <div class="input-group-append">
-                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-panjang')"><i class="fa fa-trash"></i></div>
                               </div>
                             </div>
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label>Komisi Sales :</label>
+                            <label>Lebar :</label>
                             <div class="input-group ">
-                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <input type="text" name="lebar" class="form-control" id="item-lebar" oninput="set_currency_value('item-lebar', this.value)" style="text-align: right;" value="<?php echo number_format($item['lebar'], 2); ?>">
                               <div class="input-group-append">
-                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-lebar')"><i class="fa fa-trash"></i></div>
                               </div>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Komisi Sales :</label>
+                            <label>Tinggi :</label>
                             <div class="input-group ">
-                              <input type="text" name="komisi_sales" class="form-control" id="item-komisi-sales" oninput="set_currency_value('item-komisi-sales', this.value)" style="text-align: right;" value="<?php echo number_format($item['komisi_sales'], 2); ?>">
+                              <input type="text" name="tinggi" class="form-control" id="item-tinggi" oninput="set_currency_value('item-tinggi', this.value)" style="text-align: right;" value="<?php echo number_format($item['tinggi'], 2); ?>">
                               <div class="input-group-append">
-                                <div class="btn btn-danger" onclick="input_clear_currency('item-komisi-sales')"><i class="fa fa-trash"></i></div>
+                                <div class="btn btn-danger" onclick="input_clear_currency('item-tinggi')"><i class="fa fa-trash"></i></div>
                               </div>
                             </div>
                         </div>

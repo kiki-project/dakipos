@@ -738,6 +738,11 @@ function hitung_price_units(id, code){
 }
 
 
+function currency_price_dimensi(id,code, val) {
+  id_code = code+''+id;
+  set_currency_value(id_code, val);
+}
+
 function currency_price_level(id,code, val) {
   id_code = code+''+id;
   set_currency_value(id_code, val);

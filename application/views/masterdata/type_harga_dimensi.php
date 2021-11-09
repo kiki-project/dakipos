@@ -2,7 +2,7 @@
 <table class="table table-bordered table-stripped">
     <thead>
         <tr>
-            <th>No</th>
+            <th style="width:20px;">No</th>
             <th style="width:150px;">Satuan</th>
             <th>Berat</th>
             <th>Panjang</th>

@@ -72,10 +72,7 @@
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga_jual2"]).format().replace("$", "")+'" id="'+20062+row["id"]+'" oninput="hitung_currency_price_level('+row['id']+','+20062+', this.value)"  style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga_jual3"]).format().replace("$", "")+'" id="'+20063+row["id"]+'" oninput="hitung_currency_price_level('+row['id']+','+20063+', this.value)"  style="text-align:right;"></td>';
                     data += '<td>';
-                    data += '<div class="btn-group" ">';
-                    data += '<a href="#" id="btn-save-level'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_level_price('+row['id']+')"><i class="fa fa-save"></i></button>';
-                    data += '<a href="#" id="btn-delete-level'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_level_price('+row['id']+')"><i class="fa fa-trash"></i></button>';
-                    data += '</div>';
+                    data += 'a';
                     data += '</td>';
                     data += '</tr>';
                 });

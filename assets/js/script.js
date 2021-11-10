@@ -340,6 +340,27 @@ function frm_units_item() {
     },
   });
 }
+function frm_discounts_item() {
+  $.ajax({
+    type: "GET",
+    url: base_url("json/get-item_discounts"),
+    success: function (response) {
+      result = JSON.parse(response);
+      var data = "";
+      $.each(result, function (i, row) {
+        data += "<tr>";
+        data +=
+          '<td><input type="checkbox" id="cb_item_discounts" name="cb_item_discounts[]" value="' +
+          row["id"] +
+          '"></td>';
+        data += "<td>" + row["kode"] + "</td>";
+        data += "<td>" + row["description"] + "</td>";
+        data += "</tr>";
+      });
+      $("#item-tbl-units").html(data);
+    },
+  });
+}
 
 function toggle_item_types(source) {
   var checkboxes = document.querySelectorAll("#cb_item_types");

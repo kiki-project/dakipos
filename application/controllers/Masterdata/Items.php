@@ -390,6 +390,14 @@ class Items extends CI_Controller {
 		  		'harga_jual2' 	=> str_replace(',', '', $this->input->post('harga_jual2')),
 		  		'harga_jual3' 	=> str_replace(',', '', $this->input->post('harga_jual3')),
 			);
+		}elseif($type == 'dimensi'){
+			$data = array(
+		  		'satuan'		=> $this->input->post('satuan'),
+		  		'panjang'		=> str_replace(',', '', $this->input->post('panjang'),
+		  		'berat' 		=> str_replace(',', '', $this->input->post('berat')),
+		  		'lebar' 		=> str_replace(',', '', $this->input->post('lebar')),	
+		  		'tinggi' 		=> str_replace(',', '', $this->input->post('tinggi')),
+			);
 		}
 		$this->Mod_adm->update_price_units($data,$id);
 	}

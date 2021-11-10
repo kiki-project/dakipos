@@ -209,7 +209,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Tipe Harga Jual :</label><br>
-                        <input type="radio" name="type_harga" id="item-satu_harga" value="Satu Harga" <?php if($item['type_harga'] == 'Satu Harga' OR is_null($item['type_harga'])){ echo "checked"; } ?> > <label for="item-satu_harga">Satu Harga</label>&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="type_harga" id="item-satu_harga" value="Satu Harga" <?php if($item['type_harga'] == 'Satu Harga' || $item['type_harga'] == NULL){ echo "checked"; } ?> > <label for="item-satu_harga">Satu Harga</label>&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="type_harga" id="item-satuan" value="Satuan" <?php if($item['type_harga'] == 'Satuan'){ echo "checked"; } ?> > <label for="item-satuan">Satuan</label>&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="type_harga" id="item-level" value="Level" <?php if($item['type_harga'] == 'Level'){ echo "checked"; } ?> > <label for="item-level">Level</label>&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="type_harga" id="item-jumlah" value="Jumlah" <?php if($item['type_harga'] == 'Jumlah'){ echo "checked"; } ?> > <label for="item-jumlah">Jumlah</label>&nbsp;&nbsp;&nbsp;

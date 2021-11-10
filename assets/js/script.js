@@ -340,17 +340,17 @@ function frm_units_item() {
     },
   });
 }
-function frm_discounts_item() {
+function frm_groups_item() {
   $.ajax({
     type: "GET",
-    url: base_url("json/get-item_discounts"),
+    url: base_url("json/get-item_groups"),
     success: function (response) {
       result = JSON.parse(response);
       var data = "";
       $.each(result, function (i, row) {
         data += "<tr>";
         data +=
-          '<td><input type="checkbox" id="cb_item_discounts" name="cb_item_discounts[]" value="' +
+          '<td><input type="checkbox" id="cb_item_groups" name="cb_item_groups[]" value="' +
           row["id"] +
           '"></td>';
         data += "<td>" + row["kode"] + "</td>";

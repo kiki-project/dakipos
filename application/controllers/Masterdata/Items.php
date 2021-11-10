@@ -343,6 +343,7 @@ class Items extends CI_Controller {
 	function json_add_discount(){
 		$item_id = $this->input->post('item_id');
 		$data = array(
+		  		'item_id'	=> $item_id,
 		  		'potongan'	=> '0.00',
 		  		'potongan2'	=> '0.00',
 		  		'potongan3'	=> '0.00',

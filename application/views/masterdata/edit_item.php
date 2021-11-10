@@ -614,6 +614,7 @@
       get_price_level('<?php echo $item['id'] ?>');
       get_price_jumlah('<?php echo $item['id'] ?>');
       get_price_dimensi('<?php echo $item['id'] ?>');
+      get_price_discount('<?php echo $item['id'] ?>');
       get_units_select()
       read_type_harga()
   });

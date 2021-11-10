@@ -36,7 +36,7 @@
             url: base_url("json/add-unit-price"),
             success: function (result) {
                 get_price_jumlah(a)
-                $("#btn-add_satuan_jumlah").html('Tambah satuan');
+                $("#btn-add_satuan_jumlah").html('Tambah Satuan');
             },
         });
     }

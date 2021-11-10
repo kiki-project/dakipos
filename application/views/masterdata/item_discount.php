@@ -49,7 +49,7 @@
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan2"]).format().replace("$", "")+'" id="'+4009+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4009+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan3"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan4"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
-                    data += '<td>';
+                    data += '<td style="width:50px;">';
                     data += '<div class="btn-group">';
                     data += '<a href="#" id="btn-save-discount'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_discount_price('+row['id']+')"><i class="fa fa-save"></i></button>';
                     data += '<a href="#" id="btn-delete-discount'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_discount_price('+row['id']+')"><i class="fa fa-trash"></i></button>';

@@ -108,6 +108,28 @@ class Items extends CI_Controller {
 		}
 		echo json_encode($submit);
 	}
+	function insert_item_groups(){
+		$cek 	= $this->input->post('cb_item_groups');
+		$submit = $this->uri->segment(2);
+		if ($submit == 'hapus') {
+			if (!empty($cek)) {
+				foreach ($cek as $id) {
+			 		$this->Mod_adm->deleted_item_groups($id);
+					}
+			}
+		}elseif ($submit == 'simpan') {
+			$kode 	= $this->input->post('kode');
+			$cek_kode = $this->Mod_adm->cek_item_groups($kode)->result();
+			$data = array(
+					'kode' => $kode, 
+					'description' => $this->input->post('desc'), 
+				);
+			if (!empty($kode) AND empty($cek_kode)) {
+				$this->Mod_adm->insert_item_groups($data);
+			}
+		}
+		echo json_encode($submit);
+	}
 	function insert(){
 		$created = $this->session->userdata('user_id');
 		$submit = $this->uri->segment(2);

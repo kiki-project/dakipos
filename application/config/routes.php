@@ -75,6 +75,7 @@ $route['insert-item/(:any)'] 		= 'Masterdata/Items/insert';
 $route['insert-item-types/(:any)'] 	= 'Masterdata/Items/insert_item_types';
 $route['insert-item-brands/(:any)'] = 'Masterdata/Items/insert_item_brands';
 $route['insert-item-units/(:any)'] = 'Masterdata/Items/insert_item_units';
+$route['insert-item-groups/(:any)'] = 'Masterdata/Items/insert_item_groups';
 $route['edit-item/(:any)'] 			= 'Masterdata/Items/edit';
 $route['update-item-img/(:any)'] 	= 'Masterdata/Items/update_item_img';
 $route['delete-item-img/(:any)'] 	= 'Masterdata/Items/delete_item_img';

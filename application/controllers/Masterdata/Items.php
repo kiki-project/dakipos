@@ -420,6 +420,18 @@ class Items extends CI_Controller {
 		}
 		$this->Mod_adm->update_price_units($data,$id);
 	}
+	function json_update_discount(){
+		$id = $this->input->post('id');
+			$data = array(
+		  		'kode_group'		=> $this->input->post('kode_group'),
+		  		'potongan'		=> str_replace(',', '', $this->input->post('potongan')),
+		  		'potongan2'		=> str_replace(',', '', $this->input->post('potongan2')),
+		  		'potongan3'		=> str_replace(',', '', $this->input->post('potongan3')),
+		  		'potongan4'		=> str_replace(',', '', $this->input->post('potongan4')),
+			);
+		$this->Mod_adm->update_item_discounts($data,$id);
+
+	}
 	function json_delete_price_unit(){
 		$id = $this->input->post('id');
 		$cek = $this->Mod_adm->get_price_units_id($id)->row_array();

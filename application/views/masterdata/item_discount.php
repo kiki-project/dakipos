@@ -13,19 +13,19 @@
     <tbody id="tbl-discount_harga"></tbody>
 </table>
 </div>
-<a href="#" id="btn-add_satuan_discount" class="btn btn-sm btn-primary" onclick="add_satuan_discount('<?php echo $id; ?>')"><i class="fa fa-plus"></i> Tambah Potongan</a>
+<a href="#" id="btn-add_discount" class="btn btn-sm btn-primary" onclick="add_discount('<?php echo $id; ?>')"><i class="fa fa-plus"></i> Tambah Potongan</a>
 <a href="#" id="btn-refresh_discount" class="btn btn-sm btn-success" onclick="get_price_discount('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh Tabel</a>
 
 <script>
-    function add_satuan_discount(a){
-        $("#btn-add_satuan_discount").html('Menyiapkan data ..');
+    function add_discount(a){
+        $("#btn-add_discount").html('Menyiapkan data ..');
         $.ajax({
             type: "POST",    
             data: { item_id: a },
             url: base_url("json/add-item-discount"),
             success: function (result) {
                 get_price_discount(a)
-                $("#btn-add_satuan_discount").html('Tambah satuan');
+                $("#btn-add_discount").html('Tambah Potongan');
             },
         });
     }
@@ -38,7 +38,7 @@
                 result = JSON.parse(response);
                 var data = "";
                 $.each(result, function (i, row) {
-                    get_units_select_price_type('discount'+row['id'], row['satuan'])
+                    get_group_select('discount'+row['id'], row['kode_group'])
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>';
@@ -63,7 +63,7 @@
     }
 
     function save_discount_price(a){
-        var satuan = $("#group"+a).val();
+        var kode_group = $("#group"+a).val();
         var potongan = $("#"+4008+a).val();
         var potongan2 = $("#"+4009+a).val();
         var potongan3 = $("#"+4010+a).val();
@@ -76,7 +76,7 @@
             url: base_url("json/update-item-discount/"),
             data: { 
                 id: a,
-                satuan: satuan, 
+                kode_group: kode_group, 
                 potongan: potongan, 
                 potongan2: potongan2, 
                 potongan3: potongan3, 

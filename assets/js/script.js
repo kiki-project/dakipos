@@ -340,7 +340,7 @@ function frm_units_item() {
     },
   });
 }
-function frm_groups_item() {
+function frm_discounts_item() {
   $.ajax({
     type: "GET",
     url: base_url("json/get-item_groups"),

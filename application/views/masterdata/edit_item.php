@@ -377,7 +377,7 @@
               <!-- gambar -->
               <div class="tab-pane" id="potongan-harga">
                 <div class="col-md-12">
-                    <?php $this->load->view('masterdata/item_group', $item); ?>
+                    <?php $this->load->view('masterdata/item_discount', $item); ?>
                 </div>
               </div>
               <div class="tab-pane" id="gambar">
@@ -544,7 +544,7 @@
   </div>
 </div>
   <!-- Modal -->
-<div class="modal fade" id="modal-group" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" aria-hidden="true">
+<div class="modal fade" id="modal-discount" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-md modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -553,29 +553,29 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form method="post" action="<?php echo base_url(); ?>insert-item-groups" id="frm-item-groups">
+      <form method="post" action="<?php echo base_url(); ?>insert-item-discounts" id="frm-item-discounts">
         <div class="modal-body">
           <table class="table table-striped table-bordered">
             <thead>
               <tr>
-                <th><input type="checkbox" name="cb_item_groups_all" id="cb_item_groups_all" onclick="toggle_item_groups(this)" title="pilih semua"></th>
+                <th><input type="checkbox" name="cb_item_discounts_all" id="cb_item_discounts_all" onclick="toggle_item_discounts(this)" title="pilih semua"></th>
                 <th>Kode</th>
                 <th>Keterangan</th>
               </tr>
             </thead>
-            <tbody id="item-tbl-groups"></tbody>
+            <tbody id="item-tbl-discounts"></tbody>
             <thead>
               <tr>
                 <td></td>
-                <td><input type="text" name="kode" class="form-control" id="item-groups-kode" placeholder="tambah kode disini.."></td>
-                <td><input type="text" name="desc" class="form-control" id="item-groups-desc" placeholder="tambah ket disini.."></td>
+                <td><input type="text" name="kode" class="form-control" id="item-discounts-kode" placeholder="tambah kode disini.."></td>
+                <td><input type="text" name="desc" class="form-control" id="item-discounts-desc" placeholder="tambah ket disini.."></td>
               </tr>
             </thead>
           </table>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-danger" id="item-brand-hapus" name="submit" value="hapus" onclick="btn_submit_item_groups('hapus')"><i class="fa fa-trash"></i> Hapus</button>
-          <button type="submit" class="btn btn-info" id="item-brand-submit" name="submit" value="simpan" onclick="btn_submit_item_groups('simpan')"><i class="fa fa-plus"></i> Tambah</button>
+          <button type="submit" class="btn btn-danger" id="item-brand-hapus" name="submit" value="hapus" onclick="btn_submit_item_discounts('hapus')"><i class="fa fa-trash"></i> Hapus</button>
+          <button type="submit" class="btn btn-info" id="item-brand-submit" name="submit" value="simpan" onclick="btn_submit_item_discounts('simpan')"><i class="fa fa-plus"></i> Tambah</button>
         </div>
       </form>
     </div>
@@ -652,7 +652,7 @@
       get_price_level('<?php echo $item['id'] ?>');
       get_price_jumlah('<?php echo $item['id'] ?>');
       get_price_dimensi('<?php echo $item['id'] ?>');
-      get_price_group('<?php echo $item['id'] ?>');
+      get_price_discount('<?php echo $item['id'] ?>');
       get_units_select()
       read_type_harga()
   });
@@ -848,8 +848,8 @@
         })
       });
    }
-   function btn_submit_item_groups(submit){
-    $("#frm-item-groups").submit(function(event){
+   function btn_submit_item_discounts(submit){
+    $("#frm-item-discounts").submit(function(event){
         event.preventDefault(); //prevent default action 
         var post_url = $(this).attr("action")+'/'+submit; //get form action url
         var request_method = $(this).attr("method"); //get form GET/POST method
@@ -861,10 +861,10 @@
           data : form_data,
           success: function(response){
 
-            frm_groups_item()
-            get_groups_select()
-            $('#item-groups-kode').val('');
-            $('#item-groups-desc').val('');
+            frm_discounts_item()
+            get_discounts_select()
+            $('#item-discounts-kode').val('');
+            $('#item-discounts-desc').val('');
           }
         })
       });

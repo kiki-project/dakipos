@@ -78,8 +78,14 @@ class Mod_adm extends CI_model {
 	function get_price_units($item_id){
 		return $this->db->query("SELECT * FROM price_units WHERE item_id = '$item_id' ");
 	}
+	function get_item_discounts($item_id){
+		return $this->db->query("SELECT * FROM item_discounts WHERE item_id = '$item_id' ");
+	}
 	function get_price_units_id($id){
 		return $this->db->query("SELECT * FROM price_units WHERE id = '$id' ");
+	}
+	function get_item_discounts_id($id){
+		return $this->db->query("SELECT * FROM item_discounts WHERE id = '$id' ");
 	}
 	function cek_item_brands($kode){
 		return $this->db->query("SELECT * FROM item_brands WHERE kode = '$kode'");
@@ -119,6 +125,9 @@ class Mod_adm extends CI_model {
 	}
 	function insert_price_units($data){
 		$this->db->insert('price_units', $data);
+	}
+	function insert_item_discounts($data){
+		$this->db->insert('item_discounts', $data);
 	}
 	function delete_user($id){
 		$this->db->where('id',$id);
@@ -161,8 +170,15 @@ class Mod_adm extends CI_model {
 		$this->db->where('id', $id);
 		$this->db->delete('price_units');
 	}
+	function deleted_item_discounts($id){
+		$this->db->where('id', $id);
+		$this->db->delete('item_discounts');
+	}
 	function deleted_price_units_rel($created){
 		$this->db->query("DELETE FROM price_units WHERE item_id IN (SELECT id FROM items WHERE status ='new' AND created_by = '$created') ");
+	}
+	function deleted_item_discounts_rel($created){
+		$this->db->query("DELETE FROM item_discounts WHERE item_id IN (SELECT id FROM items WHERE status ='new' AND created_by = '$created') ");
 	}
 	function update_user($data,$id){
 		$this->db->where('id',$id);
@@ -183,5 +199,9 @@ class Mod_adm extends CI_model {
 	function update_price_units($data,$id){
 		$this->db->where('id',$id);
 		$this->db->update('price_units',$data);	
+	}
+	function update_item_discounts($data,$id){
+		$this->db->where('id',$id);
+		$this->db->update('item_discounts',$data);	
 	}
 }

@@ -131,7 +131,7 @@ $route['json/update-unit-price']    = 'Masterdata/Items/json_update_price_unit';
 $route['json/delete-unit-price']    = 'Masterdata/Items/json_delete_price_unit';
 $route['json/get-unit-price']       = 'Masterdata/Items/json_get_price_units';
 
-$route['json/add-item-discount']       = 'Masterdata/Items/json_add_item_discount';
-$route['json/update-item-discount']    = 'Masterdata/Items/json_update_item_discount';
-$route['json/delete-item-discount']    = 'Masterdata/Items/json_delete_item_discount';
-$route['json/get-item-discount']       = 'Masterdata/Items/json_get_item_discounts';
+$route['json/add-item-discount']       = 'Masterdata/Items/json_add_discount';
+$route['json/update-item-discount']    = 'Masterdata/Items/json_update_discount';
+$route['json/delete-item-discount']    = 'Masterdata/Items/json_delete_discount';
+$route['json/get-item-discount']       = 'Masterdata/Items/json_get_discount';

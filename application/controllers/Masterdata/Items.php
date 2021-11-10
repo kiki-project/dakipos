@@ -12,6 +12,7 @@ class Items extends CI_Controller {
 	{
 		$user_id = $this->session->userdata('user_id');
 		$this->Mod_adm->deleted_price_units_rel($user_id);
+		$this->Mod_adm->deleted_item_discounts_rel($user_id);
 		$this->Mod_adm->deleted_new($user_id);
 		
 		$src = $this->input->post('src');
@@ -338,9 +339,25 @@ class Items extends CI_Controller {
 			);
 		$this->Mod_adm->insert_price_units($data);
 	}
+	
+	function json_add_discount(){
+		$item_id = $this->input->post('item_id');
+		$data = array(
+		  		'potongan'	=> '0.00',
+		  		'potongan2'	=> '0.00',
+		  		'potongan3'	=> '0.00',
+		  		'potongan4'	=> '0.00',
+			);
+		$this->Mod_adm->insert_item_discounts($data);
+	}
 	function json_get_price_units(){
 		$item_id = $this->input->post('item_id');
 		$data = $this->Mod_adm->get_price_units($item_id)->result();
+		echo json_encode($data);
+	}
+	function json_get_discount(){
+		$item_id = $this->input->post('item_id');
+		$data = $this->Mod_adm->get_item_discounts($item_id)->result();
 		echo json_encode($data);
 	}
 	function json_update_price_unit(){

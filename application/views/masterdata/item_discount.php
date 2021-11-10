@@ -22,7 +22,7 @@
         $.ajax({
             type: "POST",    
             data: { item_id: a },
-            url: base_url("json/add-unit-price"),
+            url: base_url("json/add-item-discount"),
             success: function (result) {
                 get_price_discount(a)
                 $("#btn-add_satuan_discount").html('Tambah satuan');
@@ -33,7 +33,7 @@
         $.ajax({
             type: "POST",    
             data: { item_id: a },
-            url: base_url("json/get-unit-price"),
+            url: base_url("json/get-item-discount"),
             success: function (response) {            
                 result = JSON.parse(response);
                 var data = "";
@@ -42,13 +42,13 @@
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>';
-                    data += '<select class="form-price price-unit" id="discount'+row['id']+'" name="price_units"">';
+                    data += '<select class="form-price price-unit" id="group'+row['id']+'" name="kode_group"">';
                     data += '</select>';
                     data += '</td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["berat"]).format().replace("$", "")+'" id="'+4008+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4008+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["panjang"]).format().replace("$", "")+'" id="'+4009+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4009+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["lebar"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["tinggi"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan"]).format().replace("$", "")+'" id="'+4008+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4008+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan2"]).format().replace("$", "")+'" id="'+4009+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4009+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan3"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan4"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_discount('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '</tr>';
                 });
                 $("#tbl-discount_harga").html(data);
@@ -57,28 +57,28 @@
     }
 
     function save_discount_price(a){
-        var satuan = $("#unit"+a).val();
-        var berat = $("#"+4008+a).val();
-        var panjang = $("#"+4009+a).val();
-        var lebar = $("#"+4010+a).val();
-        var tinggi = $("#"+4011+a).val();
+        var satuan = $("#group"+a).val();
+        var potongan = $("#"+4008+a).val();
+        var potongan2 = $("#"+4009+a).val();
+        var potongan3 = $("#"+4010+a).val();
+        var potongan4 = $("#"+4011+a).val();
     
         $("#btn-save-discount"+a).html('..');
 
             $.ajax({
             type: "POST",
-            url: base_url("json/update-unit-price/"),
+            url: base_url("json/update-item-discount/"),
             data: { 
                 id: a,
                 satuan: satuan, 
-                berat: berat, 
-                panjang: panjang, 
-                lebar: lebar, 
-                tinggi: tinggi, 
+                potongan: potongan, 
+                potongan2: potongan2, 
+                potongan3: potongan3, 
+                potongan4: potongan4, 
                 type: 'discount'
             },
             success: function (response) {
-                console.log(berat)
+                console.log(potongan)
             $("#btn-save-discount"+a).html('<i class="fa fa-save"></i>');
              get_price_discount('<?php echo $id; ?>')
             },
@@ -88,7 +88,7 @@
         if(confirm('Hapus data?')){
             $.ajax({
                 type: "POST",
-                url: base_url("json/delete-unit-price"),
+                url: base_url("json/delete-item-discount"),
                 data: {id: a },
                 success: function (response) {
                 get_price_discount('<?php echo $id; ?>')

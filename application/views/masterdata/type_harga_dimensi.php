@@ -7,7 +7,7 @@
             <th>Berat</th>
             <th>Panjang</th>
             <th>Lebar</th>
-            <th>Tinggi</th>
+            <th>Tinggia</th>
         </tr>
     </thead>
     <tbody id="tbl-dimensi_harga"></tbody>

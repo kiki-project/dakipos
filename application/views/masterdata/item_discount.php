@@ -3,7 +3,7 @@
     <thead>
         <tr>
             <th style="width:20px;">No</th>
-            <th style="width:150px;"><a class="btn btn-sm btn-primary"><i class="fa fa-plus"></i></a> Kode Group</th>
+            <th style="width:150px;">Kode Group <a class="btn btn-sm btn-primary" style="color:#fff;"><i class="fa fa-plus"></i></a></th>
             <th>Potongan 1 (%)</th>
             <th>Potongan 2 (%)</th>
             <th>Potongan 3 (%)</th>

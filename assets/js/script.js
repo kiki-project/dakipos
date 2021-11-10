@@ -357,7 +357,7 @@ function frm_groups_item() {
         data += "<td>" + row["description"] + "</td>";
         data += "</tr>";
       });
-      $("#item-tbl-units").html(data);
+      $("#item-tbl-groups").html(data);
     },
   });
 }

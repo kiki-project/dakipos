@@ -429,5 +429,9 @@ class Items extends CI_Controller {
 			$this->Mod_adm->deleted_price_units_item($cek['item_id']);
 		}
 	}
+	function json_delete_discount(){
+		$id = $this->input->post('id');
+		$this->Mod_adm->deleted_item_discounts($id);
+	}
 
 }

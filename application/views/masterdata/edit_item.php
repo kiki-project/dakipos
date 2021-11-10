@@ -862,7 +862,7 @@
           success: function(response){
 
             frm_groups_item()
-            get_groups_select()
+            get_item_group_select()
             $('#item-groups-kode').val('');
             $('#item-groups-desc').val('');
           }

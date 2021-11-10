@@ -677,6 +677,11 @@ function currency_price_units(id,code, val) {
   set_currency_value(id_code, val);
 }
 
+function currency_price_discounts(id,code, val) {
+  id_code = code+''+id;
+  set_currency_value(id_code, val);
+}
+
 function hitung_currency_price_units(id,code, val) {
   id_code = code+''+id;
   set_currency_value(id_code, val);

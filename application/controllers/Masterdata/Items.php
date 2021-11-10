@@ -393,7 +393,7 @@ class Items extends CI_Controller {
 		}elseif($type == 'dimensi'){
 			$data = array(
 		  		'satuan'		=> $this->input->post('satuan'),
-		  		'panjang'		=> str_replace(',', '', $this->input->post('panjang'),
+		  		'panjang'		=> str_replace(',', '', $this->input->post('panjang')),
 		  		'berat' 		=> str_replace(',', '', $this->input->post('berat')),
 		  		'lebar' 		=> str_replace(',', '', $this->input->post('lebar')),	
 		  		'tinggi' 		=> str_replace(',', '', $this->input->post('tinggi')),

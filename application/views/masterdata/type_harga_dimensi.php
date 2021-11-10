@@ -46,9 +46,7 @@
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["panjang"]).format().replace("$", "")+'" id="'+4009+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4009+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["lebar"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["tinggi"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
-                    data += '<td>';
-                    data += 'ad';
-                    data += '</td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["tinggi"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '</tr>';
                 });
                 $("#tbl-dimensi_harga").html(data);

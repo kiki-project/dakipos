@@ -3,7 +3,7 @@
     <thead>
         <tr>
             <th style="width:20px;">No</th>
-            <th style="width:150px;"><a class="btn btn-sm btn-primary" style="color:#fff;" data-toggle="modal" data-target="#modal-discount" onclick="frm_discounts_item()"><i class="fa fa-plus"></i></a> Kode Group</th>
+            <th style="width:150px;"><a class="btn btn-sm btn-primary" style="color:#fff;" data-toggle="modal" data-target="#modal-group" onclick="frm_groups_item()"><i class="fa fa-plus"></i></a> Kode Group</th>
             <th>Potongan 1 (%)</th>
             <th>Potongan 2 (%)</th>
             <th>Potongan 3 (%)</th>

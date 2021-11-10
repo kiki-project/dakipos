@@ -54,6 +54,9 @@ class Mod_adm extends CI_model {
 	function get_item_units(){
 		return $this->db->query("SELECT * FROM item_units");
 	}
+	function get_item_groups(){
+		return $this->db->query("SELECT * FROM item_groups");
+	}
 	function get_items_limit($limit,$offset){
 		return $this->db->query("SELECT * FROM items ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}

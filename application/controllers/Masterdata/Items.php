@@ -300,6 +300,10 @@ class Items extends CI_Controller {
 		$data = $this->Mod_adm->get_item_units()->result();
 		echo json_encode($data);
 	}
+	function json_get_item_groups(){
+		$data = $this->Mod_adm->get_item_groups()->result();
+		echo json_encode($data);
+	}
 	function json_get_item(){
 		$limit = $this->input->post('limit');
 		$src = $this->input->post('src');

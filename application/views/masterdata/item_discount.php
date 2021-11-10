@@ -38,7 +38,7 @@
                 result = JSON.parse(response);
                 var data = "";
                 $.each(result, function (i, row) {
-                    get_group_select('discount'+row['id'], row['kode_group'])
+                    get_item_group_select('discount'+row['id'], row['kode_group'])
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>';

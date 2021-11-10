@@ -275,6 +275,28 @@ function get_units_select_price_type(a,b) {
     },
   });
 }
+
+function get_item_group_select(a,b) {
+  $.ajax({
+    type: "GET",
+    url: base_url("json/get-item_groups"),
+    success: function (response) {
+      result = JSON.parse(response);
+      var data = "";
+      data += '<option value=""></option>';
+      $.each(result, function (i, row) {
+        if(b == row['kode']){ 
+           select = 'selected="true"';
+         }else{
+           select = '';
+         }
+        data +='<option value="'+row["kode"] + '" '+select+'>'+row["kode"] + "</option>";
+      });
+      $("#"+a).html(data);
+    },
+  });
+}
+
 function frm_brands_item() {
   $.ajax({
     type: "GET",

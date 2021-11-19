@@ -200,7 +200,7 @@
                     });
               }
             }  
-          }
+          });
         }
      }else{
       alert('No item selected !')

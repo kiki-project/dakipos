@@ -308,6 +308,7 @@ class Items extends CI_Controller {
 		$id = $this->uri->segment(2);
 		$this->Mod_adm->deleted_price_units_item($id);
 		$this->Mod_adm->deleted_item($id);
+		$this->Mod_adm->deleted_item_discounts_rel($user_id);
 		redirect(base_url().$this->path());
 	}
 	function json_get_item_types(){

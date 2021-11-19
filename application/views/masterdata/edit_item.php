@@ -228,7 +228,7 @@
 
                             foreach ($item_units as $key) {
                               ?>
-                              <option value="<?php echo $key->kode; ?>" <?php if($item['satuan_dasar'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option>
+                              <!-- <option value="<?php echo $key->kode; ?>" <?php if($item['satuan_dasar'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option> -->
                               <?php
                             }
                           ?>

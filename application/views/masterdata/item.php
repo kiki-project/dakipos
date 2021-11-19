@@ -29,7 +29,7 @@
                   if ($rm['delete'] != 'None') {
                         
                       ?>
-                <button onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data">&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</button>
+                <button onclick="bulk_action('del')" class="btn btn-sm btn-danger" title="Hapus data">&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</button>
                       <?php
                     } 
                 ?>

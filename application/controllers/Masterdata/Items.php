@@ -455,12 +455,12 @@ class Items extends CI_Controller {
 		if($cek['jenis_satuan'] != 'Konversi'){
 
 			$data_item = array(
-		  		'satuan_dasar'		=> $this->input->post('satuan'),
+		  		'satuan_dasar'	=> $this->input->post('satuan'),
 		  		'barcode'		=> $this->input->post('barcode'),
-		  		'poin'			=> str_replace(',', '', $this->input->post('poin')),
-		  		'komisi'		=> str_replace(',', '', $this->input->post('komisi')),
+		  		'poin_dasar'	=> str_replace(',', '', $this->input->post('poin')),
+		  		'komisi_sales'	=> str_replace(',', '', $this->input->post('komisi')),
 		  		'harga_pokok'	=> str_replace(',', '', $this->input->post('harga_pokok')),
-		  		'persentase'			=> str_replace(',', '', $this->input->post('proc')),
+		  		'persentase'	=> str_replace(',', '', $this->input->post('proc')),
 		  		'harga_jual' 	=> str_replace(',', '', $this->input->post('harga_jual')),
 			);
 			$this->Mod_adm->update_item($data_item,$cek['item_id']);

@@ -96,7 +96,7 @@
                       <?php 
                         if ($rm['edit'] != 'None' OR $rm['delete'] != 'None') {
                           ?>
-                          <th style="width: 150px;text-align: center;">Action</th>
+                          <th style="width: 50px;text-align: center;">Action</th>
                           <?php
                         }
                        ?>
@@ -138,12 +138,6 @@
                           <a href="<?php echo base_url(); ?>edit-item/<?php echo $key->kode; ?>" class="btn btn-sm btn-primary" onclick="edit_user('<?php echo $key->id; ?>')"><i class="fa fa-edit" title="Edit"></i></a>
                           <?php
                         }
-                        if ($rm['delete'] != 'None') {
-                             
-                            ?>
-                            <a href="<?php echo base_url(); ?>delete-item/<?php echo $key->id; ?>" class="btn btn-sm btn-danger" title="hapus data" onclick="return confirm('hapus data?')"><i class="fa fa-trash"></i></a>
-                            <?php
-                         } 
                        ?>
                     </td>
                     <?php } ?>

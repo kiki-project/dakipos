@@ -66,10 +66,12 @@
             </div>
           </div>
           <div class="card-body" style="overflow:auto;white-space: nowrap;">
+          <form method="post" action="<?php echo base_url(); ?>bulk-Action-items">
               <table class="table table-bordered table-striped">
                   <thead>
                     <tr class="f-color1">
                       <th style="width:10px;">No</th>
+                      <th style="width:10px;"><input type="checkbox" name="cb_1page" id="cb_1page" onclick="toggle_check(this)" title="select all this page"></th>
                       <th style="width:100px;">Kode Item</th>
                       <th style="width: 200px;text-align:center;">Barcode</th>
                       <th>Nama Item</th>
@@ -97,6 +99,7 @@
                 ?>
                   <tr>
                     <td style="text-align: center;"><?php echo $no++; ?></td>
+                    <td><input type="checkbox" id="cb_id" name="cb_id[]" value="<?php echo $key->id; ?>"></td>
                     <td>
                       <?php 
                         if ($key->status == 'new') {
@@ -140,6 +143,7 @@
                  ?>
                   </tbody>
                 </table>
+              </form>
           </div>
           <div class="card-footer" style="text-align: right;">
             <?php echo $pg['pg_link']; ?>
@@ -152,3 +156,14 @@
     </div>
   </div>
 </section>
+
+<script>
+
+    function toggle_check(source) {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i] != source)
+                checkboxes[i].checked = source.checked;
+        }
+    }
+</script>

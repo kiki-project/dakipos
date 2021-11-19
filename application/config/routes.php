@@ -80,6 +80,7 @@ $route['edit-item/(:any)'] 			= 'Masterdata/Items/edit';
 $route['update-item-img/(:any)'] 	= 'Masterdata/Items/update_item_img';
 $route['delete-item-img/(:any)'] 	= 'Masterdata/Items/delete_item_img';
 $route['delete-item/(:any)']    	= 'Masterdata/Items/delete';
+$route['json/delete-item/(:any)']   = 'Masterdata/Items/json_delete';
 
 $route['customers-list'] 			= 'Masterdata/Customers';
 $route['customers-list/(:any)'] 	= 'Masterdata/Customers';

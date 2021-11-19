@@ -455,7 +455,7 @@ class Items extends CI_Controller {
 		if($cek['jenis_satuan'] != 'Konversi'){
 
 			$data_item = array(
-		  		'satuan'		=> $this->input->post('satuan'),
+		  		'satuan_dasar'		=> $this->input->post('satuan'),
 		  		'barcode'		=> $this->input->post('barcode'),
 		  		'poin'			=> str_replace(',', '', $this->input->post('poin')),
 		  		'komisi'		=> str_replace(',', '', $this->input->post('komisi')),

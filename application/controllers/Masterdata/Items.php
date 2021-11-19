@@ -451,6 +451,21 @@ class Items extends CI_Controller {
 		  		'tinggi' 		=> str_replace(',', '', $this->input->post('tinggi')),
 			);
 		}
+		$cek = $this->Mod_adm->get_price_units_id($id)->row_array();
+		if($cek['jenis_satuan'] != 'Konversi'){
+
+			$data_item = array(
+		  		'satuan'		=> $this->input->post('satuan'),
+		  		'barcode'		=> $this->input->post('barcode'),
+		  		'poin'			=> str_replace(',', '', $this->input->post('poin')),
+		  		'komisi'		=> str_replace(',', '', $this->input->post('komisi')),
+		  		'harga_pokok'	=> str_replace(',', '', $this->input->post('harga_pokok')),
+		  		'persentase'			=> str_replace(',', '', $this->input->post('proc')),
+		  		'harga_jual' 	=> str_replace(',', '', $this->input->post('harga_jual')),
+			);
+			$this->Mod_adm->update_item($data_item,$cek['item_id']);
+		}
+
 		$this->Mod_adm->update_price_units($data,$id);
 	}
 	function json_update_discount(){

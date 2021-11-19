@@ -181,7 +181,7 @@
      if (long != 0) {
 
           if (a == 'del') {
-          jConfirm('Delete ?',  '', function(r) {
+          confirm('Delete '+long+' item ?',  '', function(r) {
             if (r == true) {          
                       
               for (var i = 0; i < long; i++) {

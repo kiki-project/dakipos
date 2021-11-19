@@ -20,7 +20,7 @@
           <div class="card-header d-flex p-0" id="div-head">
             <h3 class="card-title p-3">
             	  <a href="<?php echo base_url(); ?>edit-item/new" class="btn btn-sm bg-color1" style="color: #fff;"><i class="fa fa-plus"></i> Tambah Data</a>
-                <a onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data"><i class="fa fa-copy"></i>&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</a>
+                <button onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data"><i class="fa fa-copy"></i>&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</button>
             </h3>
           </div>
 
@@ -250,7 +250,7 @@
                     document.getElementById('bar').style.background = 'green';
                     document.getElementById('check').style.display = '';
                 document.getElementById('i-processing').innerHTML = '<b style="color:green"><i class="fa fa-check"></i> Done '+formatter.format(width * 100 / long).replace('IDR','')+'%</b>';
-                window.location.href='<?php echo base_url().$module['path']; ?>'
+               // window.location.href='<?php echo base_url().$module['path']; ?>'
               }else{
 
                 document.getElementById('i-processing').innerHTML = '<i>Please Waitt.. '+formatter.format(width * 100 / long).replace('IDR','')+'%</i>';

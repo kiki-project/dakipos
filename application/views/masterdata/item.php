@@ -183,7 +183,7 @@
           if (a == 'del') {
           confirm('Delete '+long+' item ?',  '', function(r) {
             if (r == true) {          
-                      
+              console.log('s') 
               for (var i = 0; i < long; i++) {
                     $.ajax({
                       url : "<?php echo base_url(); ?>json/delete-item/"+id[i],

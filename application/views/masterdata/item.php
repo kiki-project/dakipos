@@ -14,19 +14,28 @@
     <div class="row">
       <section class="col-lg-12">
         <div class="card">
-              <?php 
-                if ($rm['edit'] != 'None') {
-                  ?>
+             
           <div class="card-header d-flex p-0" id="div-head">
             <h3 class="card-title p-3">
+               <?php 
+                if ($rm['edit'] != 'None') {
+                  ?>
             	  <a href="<?php echo base_url(); ?>edit-item/new" class="btn btn-sm bg-color1" style="color: #fff;"><i class="fa fa-plus"></i> Tambah Data</a>
-                <button onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data">&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</button>
-            </h3>
-          </div>
-
+               
                   <?php
                 }
                ?>
+                <?php 
+                  if ($rm['delete'] != 'None') {
+                        
+                      ?>
+                <button onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data">&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</button>
+                      <?php
+                    } 
+                ?>
+            </h3>
+          </div>
+
           <?php 
             if ($rm['list'] != 'None') {
               ?>
@@ -68,7 +77,6 @@
             </div>
           </div>
           <div class="card-body" style="overflow:auto;white-space: nowrap;">
-          <form method="post" action="<?php echo base_url(); ?>bulk-Action-items">
               <table class="table table-bordered table-striped">
                   <thead>
                     <tr class="f-color1">
@@ -145,7 +153,6 @@
                  ?>
                   </tbody>
                 </table>
-              </form>
           </div>
           <div class="card-footer" style="text-align: right;">
             <?php echo $pg['pg_link']; ?>

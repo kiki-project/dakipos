@@ -20,7 +20,7 @@
           <div class="card-header d-flex p-0" id="div-head">
             <h3 class="card-title p-3">
             	  <a href="<?php echo base_url(); ?>edit-item/new" class="btn btn-sm bg-color1" style="color: #fff;"><i class="fa fa-plus"></i> Tambah Data</a>
-                <button onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data"><i class="fa fa-copy"></i>&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</button>
+                <button onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data">&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</button>
             </h3>
           </div>
 
@@ -188,10 +188,10 @@
               dataType : "JSON",
               success: function(result){
                 var yourval = jQuery.parseJSON(JSON.stringify(result));
-                window.location.href='<?php echo base_url().$module['path']; ?>'
+                // window.location.href='<?php echo base_url().$module['path']; ?>'
               },
               error :function(e){
-                window.location.href='<?php echo base_url().$module['path']; ?>'
+                // window.location.href='<?php echo base_url().$module['path']; ?>'
               }
             });
        }

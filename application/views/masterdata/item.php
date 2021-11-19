@@ -94,7 +94,7 @@
                       <th style="width: 200px;text-align:right;">Harga pokok</th>
                       <th style="width: 200px;text-align:right;">Harga jual</th>
                       <?php 
-                        if ($rm['edit'] != 'None' OR $rm['delete'] != 'None') {
+                        if ($rm['edit'] != 'None') {
                           ?>
                           <th style="width: 50px;text-align: center;">Action</th>
                           <?php
@@ -131,7 +131,7 @@
                     <?php 
                       if ($rm['edit'] != 'None' OR $rm['delete'] != 'None') {
                          ?>
-                    <td>
+                    <td style="text-align:center;">
                       <?php 
                         if ($rm['edit'] != 'None') {
                           ?>
@@ -189,10 +189,10 @@
               dataType : "JSON",
               success: function(result){
                 var yourval = jQuery.parseJSON(JSON.stringify(result));
-                // window.location.href='<?php echo base_url().$module['path']; ?>'
+                window.location.href='<?php echo base_url().$module['path']; ?>'
               },
               error :function(e){
-                // window.location.href='<?php echo base_url().$module['path']; ?>'
+                window.location.href='<?php echo base_url().$module['path']; ?>'
               }
             });
        }

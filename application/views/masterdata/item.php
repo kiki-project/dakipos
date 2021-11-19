@@ -59,7 +59,7 @@
                   <div class="input-group-append">
                     <div class="btn btn-default"><?php echo "Total: ".$total['row']; ?></div>
                   </div>
-                </div><br>
+                </div>
               </form>
             </div>
             <div class="col-md-6">

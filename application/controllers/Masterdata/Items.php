@@ -312,7 +312,7 @@ class Items extends CI_Controller {
 		redirect(base_url().$this->path());
 	}
 	function json_delete(){
-		$id = $this->uri->segment(2);
+		$id = $this->uri->segment(3);
 		$this->Mod_adm->deleted_price_units_item($id);
 		$this->Mod_adm->deleted_item($id);
 		$this->Mod_adm->deleted_item_discounts_rel($user_id);

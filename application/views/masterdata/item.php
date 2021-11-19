@@ -189,10 +189,10 @@
               dataType : "JSON",
               success: function(result){
                 var yourval = jQuery.parseJSON(JSON.stringify(result));
-                // window.location.href='<?php echo base_url().$module['path']; ?>'
+                window.location.href='<?php echo base_url().$module['path']; ?>'
               },
               error :function(e){
-                // window.location.href='<?php echo base_url().$module['path']; ?>'
+                window.location.href='<?php echo base_url().$module['path']; ?>'
               }
             });
        }

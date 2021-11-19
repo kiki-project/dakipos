@@ -25,17 +25,16 @@
           </div>
 
           <div class="card-header d-flex p-0"  style="display: none;" id="progres">
+            <div class="card-title p-3">
+              <span id="progres-title"></span>  
+                <i><i class="fa fa-circle-o-notch muter" id="loding"></i>&nbsp;Executed.. </i><b id="run">0</b>&nbsp;/&nbsp;<b id="of"></b>&nbsp;<i class="fa fa-check" id="check" style="color: green;display: none;"></i><br>
+                Success : <b id="success">0</b><br>
+                <p id="er_mail"></p>
+                Error Query : <b id="er">0</b><br>
+              </div>
+              <div id="bar" style="width: 0%;height: 5px;border-radius: 20px;"></div>
+                <i id="i-processing"></i>
             <div>
-              <span id="progres-title"></span>
-            </div>
-            <div>
-              <i><i class="fa fa-circle-o-notch muter" id="loding"></i>&nbsp;Executed.. </i><b id="run">0</b>&nbsp;/&nbsp;<b id="of"></b>&nbsp;<i class="fa fa-check" id="check" style="color: green;display: none;"></i><br>
-              Success : <b id="success">0</b><br>
-              <p id="er_mail"></p>
-              Error Query : <b id="er">0</b><br>
-            </div>
-            <div id="bar" style="width: 0%;height: 5px;border-radius: 20px;"></div>
-              <i id="i-processing"></i>
           </div>
 
                   <?php

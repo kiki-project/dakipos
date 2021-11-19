@@ -223,15 +223,6 @@
                       <label>Satuan Dasar :</label>
                       <div class="input-group ">
                         <select class="form-control" name="satuan_dasar" id="item-unit">
-                              <option value=""></option>
-                          <?php
-
-                            foreach ($item_units as $key) {
-                              ?>
-                              <!-- <option value="<?php echo $key->kode; ?>" <?php if($item['satuan_dasar'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode; ?></option> -->
-                              <?php
-                            }
-                          ?>
                         </select>
                           <div class="input-group-append">
                             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-unit" onclick="frm_units_item()"><i class="fa fa-plus"></i></a>
@@ -653,7 +644,7 @@
       get_price_jumlah('<?php echo $item['id'] ?>');
       get_price_dimensi('<?php echo $item['id'] ?>');
       get_price_discount('<?php echo $item['id'] ?>');
-      get_units_select()
+      get_units_select('<?php echo $item['satuan_dasar'] ?>')
       read_type_harga()
   });
   function read_type_harga(){
@@ -841,7 +832,7 @@
           success: function(response){
 
             frm_units_item()
-            get_units_select()
+            get_units_select('<?php echo $item['satuan_dasar'] ?>')
             $('#item-units-kode').val('');
             $('#item-units-desc').val('');
           }

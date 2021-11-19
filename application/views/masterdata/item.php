@@ -181,8 +181,7 @@
      if (long != 0) {
 
           if (a == 'del') {
-          confirm('Delete '+long+' item ?',  '', function(r) {
-            if (r == true) {          
+            if (confirm('Delete '+long+' item ?')) {          
               console.log('s') 
               for (var i = 0; i < long; i++) {
                     $.ajax({
@@ -199,7 +198,6 @@
                     });
               }
             }  
-          });
         }
      }else{
       alert('No item selected !')

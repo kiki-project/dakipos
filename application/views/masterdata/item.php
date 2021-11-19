@@ -181,22 +181,27 @@
      if (long != 0) {
 
           if (a == 'del') {
-       for (var i = 0; i < long; i++) {
-         console.log('a')
-            $.ajax({
-              url : "<?php echo base_url(); ?>json/delete-item/"+id[i],
-              type : "GET",
-              dataType : "JSON",
-              success: function(result){
-                var yourval = jQuery.parseJSON(JSON.stringify(result));
-                window.location.href='<?php echo base_url().$module['path']; ?>'
-              },
-              error :function(e){
-                window.location.href='<?php echo base_url().$module['path']; ?>'
+          confirm('Delete ?',  '', function(r) {
+            if (r == true) {          
+                      
+              for (var i = 0; i < long; i++) {
+                console.log('a')
+                    $.ajax({
+                      url : "<?php echo base_url(); ?>json/delete-item/"+id[i],
+                      type : "GET",
+                      dataType : "JSON",
+                      success: function(result){
+                        var yourval = jQuery.parseJSON(JSON.stringify(result));
+                        window.location.href='<?php echo base_url().$module['path']; ?>'
+                      },
+                      error :function(e){
+                        window.location.href='<?php echo base_url().$module['path']; ?>'
+                      }
+                    });
               }
-            });
-       }
+            }  
           }
+        }
      }else{
       alert('No item selected !')
      }

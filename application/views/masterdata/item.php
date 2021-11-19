@@ -17,11 +17,27 @@
               <?php 
                 if ($rm['edit'] != 'None') {
                   ?>
-          <div class="card-header d-flex p-0">
+          <div class="card-header d-flex p-0" id="div-head">
             <h3 class="card-title p-3">
-            	   <a href="<?php echo base_url(); ?>edit-item/new" class="btn btn-sm bg-color1" style="color: #fff;"><i class="fa fa-plus"></i> Tambah Data</a>
+            	  <a href="<?php echo base_url(); ?>edit-item/new" class="btn btn-sm bg-color1" style="color: #fff;"><i class="fa fa-plus"></i> Tambah Data</a>
+                <a onclick="bulk_action('del')" class="btn btn-danger" title="Hapus data"><i class="fa fa-copy"></i>&nbsp;<i class="fa fa-trash"></i>&nbsp;Hapus</a>
             </h3>
           </div>
+
+          <div class="card-header d-flex p-0"  style="display: none;" id="progres">
+            <div>
+              <span id="progres-title"></span>
+            </div>
+            <div>
+              <i><i class="fa fa-circle-o-notch muter" id="loding"></i>&nbsp;Executed.. </i><b id="run">0</b>&nbsp;/&nbsp;<b id="of"></b>&nbsp;<i class="fa fa-check" id="check" style="color: green;display: none;"></i><br>
+              Success : <b id="success">0</b><br>
+              <p id="er_mail"></p>
+              Error Query : <b id="er">0</b><br>
+            </div>
+            <div id="bar" style="width: 0%;height: 5px;border-radius: 20px;"></div>
+              <i id="i-processing"></i>
+          </div>
+
                   <?php
                 }
                ?>
@@ -166,4 +182,86 @@
                 checkboxes[i].checked = source.checked;
         }
     }
+
+  function bulk_action(a){
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 2
+    })
+
+     var selected = [];
+    $('#cb_id:checked').each(function() {
+        selected.push($(this).val());
+    });
+     id = selected
+     long = id.length
+     if (long != 0) {
+
+          document.getElementById('loding').style.display = '';
+          document.getElementById('check').style.display = 'none';
+          document.getElementById('div-head').style.display = 'none';
+          document.getElementById('progres').style.display = 'block';
+          document.getElementById('of').innerHTML = long;
+
+       var done   = 0
+       var er   = 0
+       var width  = 0
+       var er_mail  = 0
+          if (a == 'del') {
+
+          document.getElementById('bar').style.background = 'red';
+          document.getElementById('progres-title').innerHTML = '<b><i class="fa fa-copy"></i> Cek Duplicated:</b>';
+       for (var i = 0; i < long; i++) {
+            $.ajax({
+              url : "<?php echo base_url(); ?>json/delete-item/"+id[i],
+              type : "GET",
+              dataType : "JSON",
+              success: function(result){
+                var yourval = jQuery.parseJSON(JSON.stringify(result));
+            width += 1
+                done += 1
+                er += 0
+            document.getElementById('run').innerHTML = width;
+            document.getElementById('success').innerHTML = done+' <i class="fa fa-check" style="color: green"></i>';
+            document.getElementById('bar').style.width = width * 100 / long+'%';
+
+              if (width == long) {
+                    document.getElementById('bar').style.background = 'green';
+                    document.getElementById('loding').style.display = 'none';
+                    document.getElementById('check').style.display = '';
+                document.getElementById('i-processing').innerHTML = '<b style="color:green"><i class="fa fa-check"></i> Done '+formatter.format(width * 100 / long).replace('IDR','')+'%</b>';
+                window.location.href='<?php echo base_url().$module['path']; ?>'
+              }else{
+
+                document.getElementById('i-processing').innerHTML = '<i>Please Waitt.. '+formatter.format(width * 100 / long).replace('IDR','')+'%</i>';
+              }
+              },
+              error :function(e){
+                // console.log('eror' +e);
+            width += 1
+                done += 0
+                er += 1
+            document.getElementById('er').innerHTML = er+' <i class="fa fa-warning" style="color: #f78f32"></i>';
+            document.getElementById('run').innerHTML = width;
+            document.getElementById('bar').style.width = width * 100 / long+'%';
+              if (width == long) {
+                    document.getElementById('loding').style.display = 'none';
+                    document.getElementById('bar').style.background = 'green';
+                    document.getElementById('check').style.display = '';
+                document.getElementById('i-processing').innerHTML = '<b style="color:green"><i class="fa fa-check"></i> Done '+formatter.format(width * 100 / long).replace('IDR','')+'%</b>';
+                window.location.href='<?php echo base_url().$module['path']; ?>'
+              }else{
+
+                document.getElementById('i-processing').innerHTML = '<i>Please Waitt.. '+formatter.format(width * 100 / long).replace('IDR','')+'%</i>';
+              }
+
+              }
+            });
+       }
+          }
+     }else{
+      alert('No item selected !')
+     }
+  }
 </script>

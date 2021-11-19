@@ -181,11 +181,10 @@
      if (long != 0) {
 
           if (a == 'del') {
-          confirm('Delete ?',  '', function(r) {
+          jConfirm('Delete ?',  '', function(r) {
             if (r == true) {          
                       
               for (var i = 0; i < long; i++) {
-                console.log('a')
                     $.ajax({
                       url : "<?php echo base_url(); ?>json/delete-item/"+id[i],
                       type : "GET",

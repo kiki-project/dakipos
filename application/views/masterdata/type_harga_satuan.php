@@ -103,12 +103,16 @@
                 type: 'satuan'
             },
             success: function (response) {
-                console.log(poin)
+            replace_satu_harga(response)
             $("#btn-save-satuan"+a).html('<i class="fa fa-save"></i>');
              get_price_units('<?php echo $id; ?>')
             },
         });
     }
+    function replace_satu_harga(data){
+        console.log(data);
+    }
+    function type_harga
     function delete_unit_price(a){
         if(confirm('Hapus data?')){
             $.ajax({

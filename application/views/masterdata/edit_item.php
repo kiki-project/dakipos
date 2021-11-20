@@ -244,7 +244,7 @@
                   <div class="form-group col-md-6">
                       <label>Barcode :</label>
                       <div class="input-group ">
-                        <input type="text" name="barcode" class="form-control" value="<?php echo $item['barcode']; ?>">
+                        <input type="text" name="barcode" id="item-barcode" class="form-control" value="<?php echo $item['barcode']; ?>">
                       </div>
                   </div>
                   <div class="form-group col-md-6">

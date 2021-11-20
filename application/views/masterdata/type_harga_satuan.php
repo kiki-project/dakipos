@@ -112,7 +112,6 @@
     function replace_satu_harga(data){
         console.log(data);
     }
-    function type_harga
     function delete_unit_price(a){
         if(confirm('Hapus data?')){
             $.ajax({

@@ -103,7 +103,8 @@
                 type: 'satuan'
             },
             success: function (response) {
-            replace_satu_harga(response)
+            var result = JSON.stringify(response)
+            replace_satu_harga(result)
             $("#btn-save-satuan"+a).html('<i class="fa fa-save"></i>');
              get_price_units('<?php echo $id; ?>')
             },

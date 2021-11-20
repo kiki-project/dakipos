@@ -110,16 +110,6 @@
             },
         });
     }
-    function replace_satu_harga(data){
-        $("#item-unit").val(data['satuan_dasar']);
-        $("#item-poin-dasar").val(currency(data["poin_dasar"]).format().replace("$", ""));
-        $("#item-barcode").val(currency(data["barcode"]).format().replace("$", ""));
-        $("#item-komisi-sales").val(currency(data["komisi_sales"]).format().replace("$", ""));
-        $("#item-harga-pokok").val(currency(data["harga_pokok"]).format().replace("$", ""));
-        $("#item-persentase").val(currency(data["persentase"]).format().replace("$", ""));
-        $("#item-harga-jual").val(currency(data["harga_jual"]).format().replace("$", ""));
-
-    }
     function delete_unit_price(a){
         if(confirm('Hapus data?')){
             $.ajax({

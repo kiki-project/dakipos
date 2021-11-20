@@ -79,7 +79,6 @@
                 type: 'dimensi'
             },
             success: function (response) {
-                console.log(berat)
             $("#btn-save-dimensi"+a).html('<i class="fa fa-save"></i>');
              get_price_dimensi('<?php echo $id; ?>')
             },

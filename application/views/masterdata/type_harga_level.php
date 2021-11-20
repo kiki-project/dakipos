@@ -120,7 +120,8 @@
                 type: 'level'
             },
             success: function (response) {
-                console.log(poin)
+            var result = JSON.parse(response);
+            replace_satu_harga(result)
             $("#btn-save-level"+a).html('<i class="fa fa-save"></i>');
              get_price_level('<?php echo $id; ?>')
             },

@@ -162,24 +162,7 @@
                   <div class="col-md-6">
                     <div class="form-row">
                           
-                      <div class="form-group col-md-4" id="frm-sub_total_item">
-                        <label>Pajak (%) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pajak_percent" style="text-align: right;"  oninput="hitung_currency('pajak_percent', this.value)" id="pajak_percent" class="form-control" value="<?php echo number_format($data['pajak_percent'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency('pajak_percent')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group col-md-8" id="frm-sub_total_item">
-                        <label>Pajak (<i>nilai</i>) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pajak_nilai" style="text-align: right;"  oninput="hitung_currency('pajak_nilai', this.value)" id="pajak_nilai" class="form-control" value="<?php echo number_format($data['pajak_nilai'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency('pajak_nilai')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -252,7 +235,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-group col-md-8" id="frm-sub_total_item">
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
                     <label>Pot Nota (<i>nilai</i>) :</label>
                     <div class="input-group ">
                       <input type="text" name="pot_nota_nilai" style="text-align: right;"  oninput="hitung_currency('pot_nota_nilai', this.value)" id="pot_nota_nilai" class="form-control" value="<?php echo number_format($data['pot_nota_nilai'], 2); ?>">
@@ -263,6 +246,28 @@
                   </div>
 
                 </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-row">
+                    <div class="form-group col-md-4" id="frm-sub_total_item">
+                        <label>Pajak (%) :</label>
+                        <div class="input-group ">
+                          <input type="text" name="pajak_percent" style="text-align: right;"  oninput="hitung_currency('pajak_percent', this.value)" id="pajak_percent" class="form-control" value="<?php echo number_format($data['pajak_percent'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger"  onclick="input_clear_currency('pajak_percent')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-8" id="frm-sub_total_item">
+                        <label>Pajak (<i>nilai</i>) :</label>
+                        <div class="input-group ">
+                          <input type="text" name="pajak_nilai" style="text-align: right;"  oninput="hitung_currency('pajak_nilai', this.value)" id="pajak_nilai" class="form-control" value="<?php echo number_format($data['pajak_nilai'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger"  onclick="input_clear_currency('pajak_nilai')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
               </div>
 
             </div>

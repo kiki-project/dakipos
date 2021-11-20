@@ -130,15 +130,6 @@
                   </div>
                 </div>
                 <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-sub_total_item">
-                    <label>Potongan (%) :</label>
-                    <div class="input-group ">
-                      <input type="text" name="potongan" style="text-align: right;"  oninput="hitung_currency('potongan', this.value)" id="potongan" class="form-control" value="<?php echo number_format($data['potongan'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger"  onclick="input_clear_currency('potongan')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
                   <div class="form-group col-md-6" id="frm-provinsi">
                     <label>Titip/DP:</label>
                     <div class="input-group ">
@@ -153,24 +144,8 @@
                   <div class="col-md-6">
                     <div class="form-row">
                           
-                      <div class="form-group col-md-4" id="frm-sub_total_item">
-                        <label>Pot Nota (%) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pot_nota_percent" style="text-align: right;"  oninput="hitung_currency('pot_nota_percent', this.value)" id="pot_nota_percent" class="form-control" value="<?php echo number_format($data['pot_nota_percent'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency('pot_nota_percent')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group col-md-8" id="frm-sub_total_item">
-                        <label>Pot Nota (<i>nilai</i>) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pot_nota_nilai" style="text-align: right;"  oninput="hitung_currency('pot_nota_nilai', this.value)" id="pot_nota_nilai" class="form-control" value="<?php echo number_format($data['pot_nota_nilai'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency('pot_nota_nilai')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
+                      
+                      
                     </div>
                   </div>
                   <div class="form-group col-md-6" id="frm-Kekurangan">
@@ -233,8 +208,8 @@
               </div>
               <div class="col-md-4">
                 <div class="form-row">
-                  <div class="form-group col-md-4" id="frm-sub_total_item">
-                    <label>Sub Total Item :</label>
+                  <div class="form-group col-md-4">
+                    <label>Item :</label>
                     <div class="input-group ">
                       <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" oninput="hitung_orders('none')" class="form-control" value="<?php echo number_format($data['sub_total_item']); ?>">
                       <div class="input-group-append">
@@ -243,7 +218,7 @@
                     </div>
                   </div>
                   <div class="form-group col-md-4" id="frm-sub_total_item">
-                    <label>Sub Total Terima :</label>
+                    <label>Terima :</label>
                     <div class="input-group ">
                       <input type="text" name="sub_total_terima" style="text-align: right;" id="sub_total_terima" class="form-control" value="<?php echo number_format($data['sub_total_terima']); ?>">
                       <div class="input-group-append">
@@ -257,6 +232,36 @@
                       <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control" value="<?php echo number_format($data['sub_total_harga'],2); ?>">
                     </div>
                   </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Potongan (%) :</label>
+                    <div class="input-group ">
+                      <input type="text" name="potongan" style="text-align: right;"  oninput="hitung_currency('potongan', this.value)" id="potongan" class="form-control" value="<?php echo number_format($data['potongan'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('potongan')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Pot Nota (%) :</label>
+                    <div class="input-group ">
+                      <input type="text" name="pot_nota_percent" style="text-align: right;"  oninput="hitung_currency('pot_nota_percent', this.value)" id="pot_nota_percent" class="form-control" value="<?php echo number_format($data['pot_nota_percent'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('pot_nota_percent')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-8" id="frm-sub_total_item">
+                    <label>Pot Nota (<i>nilai</i>) :</label>
+                    <div class="input-group ">
+                      <input type="text" name="pot_nota_nilai" style="text-align: right;"  oninput="hitung_currency('pot_nota_nilai', this.value)" id="pot_nota_nilai" class="form-control" value="<?php echo number_format($data['pot_nota_nilai'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('pot_nota_nilai')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 

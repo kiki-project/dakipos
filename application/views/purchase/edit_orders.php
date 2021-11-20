@@ -257,9 +257,6 @@
                     <label>Sub Total:</label>
                     <div class="input-group ">
                       <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control" value="<?php echo number_format($data['sub_total_harga'],2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                      </div>
                     </div>
                   </div>
                 </div>

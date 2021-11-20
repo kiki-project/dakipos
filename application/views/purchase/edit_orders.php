@@ -33,6 +33,33 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Masuk ke:</label>
+                    <div class="input-group ">
+                      <select class="form-control" name="masuk_ke" id="gudang">
+                        <?php
+
+                          foreach ($gudang as $key) {
+                            ?>
+                            <option value="<?php echo $key->kode; ?>" <?php if($data['masuk_ke'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
+                            <?php
+                          }
+                         ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>PPN:</label>
+                    <div class="input-group ">
+                      <select class="form-control" name="ppn" id="ppn">
+                            <option value="Non" <?php if($data['ppn'] == 'Non'){ echo "selected='true'"; } ?> >Non</option>
+                            <option value="Include" <?php if($data['ppn'] == 'Include'){ echo "selected='true'"; } ?> >Include</option>
+                            <option value="Exclude" <?php if($data['ppn'] == 'Exclude'){ echo "selected='true'"; } ?> >Exclude</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               
                   <div class="form-group" id="frm-nama_item">
                     <label>Nama Item :</label>
@@ -209,27 +236,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-group col-md-6" id="frm-Kekurangan">
-                    <label>Masuk ke:</label>
-                    <div class="input-group ">
-                      <select class="form-control" name="masuk_ke" id="gudang">
-                        <?php
-
-                          foreach ($gudang as $key) {
-                            ?>
-                            <option value="<?php echo $key->kode; ?>" <?php if($data['masuk_ke'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
-                            <?php
-                          }
-                         ?>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group" id="frm-desc">
-                  <label>Keterangan :</label>
-                  <div class="input-group ">
-                    <textarea class="form-control" name="description" id="desc"><?php echo $data['description']; ?></textarea>
-                  </div>
                 </div>
 
               </div>
@@ -249,7 +255,13 @@
                     </div>
                   </div>
                 </div>
-                
+                <div class="form-group" id="frm-desc">
+                  <label>Keterangan :</label>
+                  <div class="input-group ">
+                    <textarea class="form-control" name="description" id="desc"><?php echo $data['description']; ?></textarea>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>

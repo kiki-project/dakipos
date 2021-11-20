@@ -225,12 +225,12 @@
                       <input type="date" name="tanggal_kirim" id="tanggal_kirim" class="form-control" value="<?php echo $data['tanggal_kirim']; ?>">
                     </div>
                   </div>
-                </div>
                 <div class="form-group" id="frm-desc">
                   <label>Keterangan :</label>
                   <div class="input-group ">
                     <textarea class="form-control" name="description" id="desc"><?php echo $data['description']; ?></textarea>
                   </div>
+                </div>
                 </div>
               </div>
               <div class="col-md-4">

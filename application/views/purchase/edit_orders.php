@@ -17,10 +17,6 @@
           <form method="post" action="<?php echo base_url(); ?>insert-orders" id="frm-orders">
           <div class="card-body" style="overflow:auto;white-space: nowrap;">
             <div class="row">
-              <div class="col-md-12 f-color1">
-                <h5><b>Data Umum</b></h5>
-                <hr>
-              </div>
               <div class="col-md-6">
                 <div class="form-row">
                   <div class="form-group col-md-6" id="frm-kode">
@@ -29,18 +25,12 @@
                       <input type="text" name="kode" id="kode" class="form-control" required="" readonly="" value="<?php echo $kode; ?>">
                     </div>
                     <small class="form-text" style="color: red;" id="err_kode"></small>
-
                   </div>
-                  <div class="form-group col-md-6" id="frm-kode">
-                    <label>Kode Item :</label>
+                  <div class="form-group col-md-6" id="frm-tanggal">
+                    <label>Tanggal : </label>
                     <div class="input-group ">
-                      <input type="text" name="kode_item" id="kode-item" class="form-control" required="" readonly="" value="<?php echo $data['kode_item']; ?>">
-                      <div class="input-group-append">
-                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-items" onclick="get_item_list_radio(10,'none')"><i class="fa fa-plus"></i></a>
-                      </div>
+                      <input type="date" name="tanggal" id="tanggal" class="form-control" value="<?php echo $data['tanggal']; ?>">
                     </div>
-                    <small class="form-text" style="color: red;" id="err_kode"></small>
-
                   </div>
                 </div>
               
@@ -67,20 +57,6 @@
                     <label>Satuan :</label>
                     <div class="input-group ">
                       <input type="text" name="satuan" id="satuan" class="form-control" readonly="" value="<?php echo $data['satuan']; ?>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-tanggal">
-                    <label>Tanggal : </label>
-                    <div class="input-group ">
-                      <input type="date" name="tanggal" id="tanggal" class="form-control" value="<?php echo $data['tanggal']; ?>">
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-tanggal">
-                    <label>Tanggal Kirim : </label>
-                    <div class="input-group ">
-                      <input type="date" name="tanggal_kirim" id="tanggal_kirim" class="form-control" value="<?php echo $data['tanggal_kirim']; ?>">
                     </div>
                   </div>
                 </div>
@@ -256,6 +232,24 @@
                   </div>
                 </div>
 
+              </div>
+            </div>
+              <hr>
+            <div class="row">
+              Table
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-row">
+                  <div class="form-group col-md-6" id="frm-tanggal">
+                    <label>Tanggal Kirim : </label>
+                    <div class="input-group ">
+                      <input type="date" name="tanggal_kirim" id="tanggal_kirim" class="form-control" value="<?php echo $data['tanggal_kirim']; ?>">
+                    </div>
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>

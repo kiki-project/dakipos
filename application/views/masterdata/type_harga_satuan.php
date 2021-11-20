@@ -113,6 +113,7 @@
     function replace_satu_harga(data){
         console.log(data);
         console.log(data['satuan_dasar']);
+        console.log(data.satuan_dasar);
     }
     function delete_unit_price(a){
         if(confirm('Hapus data?')){

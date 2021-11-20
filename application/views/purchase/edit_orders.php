@@ -119,35 +119,6 @@
 
               <div class="col-md-6">
                 <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-sub_total_item">
-                    <label>Sub Total Item :</label>
-                    <div class="input-group ">
-                      <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" oninput="hitung_orders('none')" class="form-control" value="<?php echo number_format($data['sub_total_item']); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency('sub_total_item')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Sub Total:</label>
-                    <div class="input-group ">
-                      <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control" value="<?php echo number_format($data['sub_total_harga'],2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-sub_total_item">
-                    <label>Sub Total Terima :</label>
-                    <div class="input-group ">
-                      <input type="text" name="sub_total_terima" style="text-align: right;" id="sub_total_terima" class="form-control" value="<?php echo number_format($data['sub_total_terima']); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency('sub_total_terima')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
                   <div class="form-group col-md-6" id="frm-provinsi">
                     <label>Total Akhir Harga:</label>
                     <div class="input-group ">
@@ -246,9 +217,9 @@
             </div>
             <hr>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-tanggal">
+                  <div class="form-group" id="frm-tanggal">
                     <label>Tanggal Kirim : </label>
                     <div class="input-group ">
                       <input type="date" name="tanggal_kirim" id="tanggal_kirim" class="form-control" value="<?php echo $data['tanggal_kirim']; ?>">
@@ -261,8 +232,39 @@
                     <textarea class="form-control" name="description" id="desc"><?php echo $data['description']; ?></textarea>
                   </div>
                 </div>
-
               </div>
+              <div class="col-md-4">
+                <div class="form-row">
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Sub Total Item :</label>
+                    <div class="input-group ">
+                      <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" oninput="hitung_orders('none')" class="form-control" value="<?php echo number_format($data['sub_total_item']); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger" onclick="input_clear_currency('sub_total_item')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Sub Total Terima :</label>
+                    <div class="input-group ">
+                      <input type="text" name="sub_total_terima" style="text-align: right;" id="sub_total_terima" class="form-control" value="<?php echo number_format($data['sub_total_terima']); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger" onclick="input_clear_currency('sub_total_terima')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4" id="frm-provinsi">
+                    <label>Sub Total:</label>
+                    <div class="input-group ">
+                      <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control" value="<?php echo number_format($data['sub_total_harga'],2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
             <div class="card-footer" style="text-align: right;">

@@ -1,4 +1,4 @@
-<div style="overflow:auto;white-space: nowrap;max-height:350px;">
+<div style="overflow:auto;white-space: nowrap;height:350px;border:1px solid #ccc;">
 <table class="table table-bordered table-stripped">
     <thead>
         <tr>

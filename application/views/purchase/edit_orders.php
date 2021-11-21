@@ -116,6 +116,7 @@
                     <?php $this->load->view('purchase/table_order', $data); ?>
               </div>
             </div>
+            <hr>
             <div class="row">
               <div class="col-md-4">
                   <div class="form-group" id="frm-tanggal">

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Mod_orders extends CI_model {
 
 	function cek_orders($kode){
-		return $this->db->query("SELECT * FROM purchases WHERE kode = '$kode'");
+		return $this->db->query("SELECT * FROM purchases WHERE kode = '$kode' AND finish = 1");
 	}
 	function get_orders_id($id){
 		return $this->db->query("SELECT * FROM purchases WHERE id = '$id'");

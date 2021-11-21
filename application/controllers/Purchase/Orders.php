@@ -109,7 +109,7 @@ class Orders extends CI_Controller {
 			'pot_nota_percent' 	=> str_replace(',', '', $this->input->post('pot_nota_percent')), 
 			'pot_nota_nilai' 	=> str_replace(',', '', $this->input->post('pot_nota_nilai')), 
 			'dp' 				=> str_replace(',', '', $this->input->post('dp')), 
-			'kredit' 			=> str_replace(',', '', $this->input->post('kekurangan')), 
+			'kredit' 			=> str_replace(',', '', $this->input->post('kredit')), 
 			'pajak_percent' 	=> str_replace(',', '', $this->input->post('pajak_percent')), 
 			'pajak_nilai' 		=> str_replace(',', '', $this->input->post('pajak_nilai')), 
 			'tanggal_kirim' 	=> $this->input->post('tanggal_kirim'), 

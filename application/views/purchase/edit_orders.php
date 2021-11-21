@@ -111,11 +111,11 @@
 
               </div>
             </div>
-              <hr>
             <div class="row">
-              Table
+              <div style="height:400px;overflow:auto;white-space: nowrap;">
+                    <?php $this->load->view('masterdata/type_harga_level', $item); ?>
+              </div>
             </div>
-            <hr>
             <div class="row">
               <div class="col-md-4">
                   <div class="form-group" id="frm-tanggal">

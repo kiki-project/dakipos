@@ -144,7 +144,7 @@
                   <div class="form-group col-md-6" id="frm-Kekurangan">
                     <label>Kekurangan:</label>
                     <div class="input-group ">
-                      <input type="text" name="kekurangan" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kekurangan'], 2); ?>">
+                      <input type="text" name="kredit" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">
                       <div class="input-group-append">
                         <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
                       </div>

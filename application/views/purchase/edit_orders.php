@@ -97,6 +97,12 @@
                         </div>
                       </div>
                   </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-row">
                   <div class="form-group col-md-6" id="frm-Kekurangan">
                     <label>Supplier:</label>
                     <div class="input-group ">
@@ -113,19 +119,18 @@
                       </select>
                     </div>
                   </div>
-                </div>
-
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-row">
                   <div class="form-group col-md-6" id="frm-provinsi">
                     <label>Total Akhir Harga:</label>
                     <div class="input-group ">
-                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" class="form-control" value="<?php echo number_format($data['total_akhir_harga'],2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                      </div>
+                      <select name="status" id="status">
+                        <option value=""></option>
+                            <option value="Menunggu Pembayaran" <?php if($data['status'] == 'Menunggu Pembayaran'){ echo "selected='true'"; } ?> >Menunggu Pembayaran</option>
+                            <option value="Menunggu Persetujuan" <?php if($data['status'] == 'Menunggu Persetujuan'){ echo "selected='true'"; } ?> >Menunggu Persetujuan</option>
+                            <option value="Disetujui" <?php if($data['status'] == 'Disetujui'){ echo "selected='true'"; } ?> >Disetujui</option>
+                            <option value="Dikerjakan" <?php if($data['status'] == 'Dikerjakan'){ echo "selected='true'"; } ?> >Dikerjakan</option>
+                            <option value="Selesai" <?php if($data['status'] == 'Selesai'){ echo "selected='true'"; } ?> >Selesai</option>
+                            <option value="Dibatalkan" <?php if($data['status'] == 'Dibatalkan'){ echo "selected='true'"; } ?> >Dibatalkan</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -286,9 +291,6 @@
                     <label>Total Akhir Harga:</label>
                     <div class="input-group ">
                       <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" class="form-control" value="<?php echo number_format($data['total_akhir_harga'],2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                      </div>
                     </div>
                   </div>
                 </div>

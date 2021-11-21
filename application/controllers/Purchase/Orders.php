@@ -81,6 +81,7 @@ class Orders extends CI_Controller {
 	}
 	function insert(){
 		$submit = $this->uri->segment(2);
+		$id 	= $this->input->post('id');
 		$kode 	= $this->input->post('kode');
 		$cek 	= $this->Mod_orders->cek_orders($kode)->row_array();
 		$created = $this->session->userdata('user_id');
@@ -136,7 +137,7 @@ class Orders extends CI_Controller {
 				);
 				$data = array_merge($data_b, $data_main);
 
-			$this->Mod_orders->update_orders($data);
+			$this->Mod_orders->update_orders($data),$id;
 				$err = 0;
 			}else{
 				$err = 1;

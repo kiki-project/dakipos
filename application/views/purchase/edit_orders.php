@@ -22,6 +22,7 @@
                   <div class="form-group col-md-6" id="frm-kode">
                     <label>No Transaksi :</label>
                     <div class="input-group ">
+                      <input type="text" name="id" id="id" class="form-control none" required="" readonly="" value="<?php echo $data['id']; ?>">
                       <input type="text" name="kode" id="kode" class="form-control" required="" readonly="" value="<?php echo $data['kode']; ?>">
                     </div>
                     <small class="form-text" style="color: red;" id="err_kode"></small>

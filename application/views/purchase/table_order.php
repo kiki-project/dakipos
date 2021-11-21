@@ -1,5 +1,4 @@
 <div style="overflow:auto;white-space: nowrap;height:350px;">
-<div style="overflow:auto;white-space: nowrap;">
 <table class="table table-bordered table-stripped">
     <thead>
         <tr>
@@ -18,7 +17,6 @@
 </table>
 </div>
 <a href="#" id="btn-refresh_dimensi" class="btn btn-sm btn-success" onclick="get_price_dimensi('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh Tabel</a>
-</div>
 <script>
     function add_satuan_dimensi(a){
         $("#btn-add_satuan_dimensi").html('Menyiapkan data ..');

@@ -112,8 +112,12 @@
               </div>
             </div>
             <div class="row">
-              <div >
-                    <?php $this->load->view('purchase/table_order', $data); ?>
+              <div class="col-md-12">
+                    <?php 
+                    print_r($data);
+                    $this->load->view('purchase/table_order', $data); 
+                    
+                    ?>
               </div>
             </div>
             <div class="row">

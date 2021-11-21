@@ -125,7 +125,7 @@ class Orders extends CI_Controller {
 					'updated_by' 	=> $created,
 				);
 				$data = array_merge($data_main, $data_b);
-			$this->Mod_orders->update_orders($data,$cek['id']);
+			$this->Mod_orders->update_orders($data,$id);
 				$err = 0;
 
 		}else{

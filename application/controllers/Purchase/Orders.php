@@ -137,7 +137,7 @@ class Orders extends CI_Controller {
 				);
 				$data = array_merge($data_b, $data_main);
 
-			$this->Mod_orders->update_orders($data),$id;
+			$this->Mod_orders->update_orders($data,$id);
 				$err = 0;
 			}else{
 				$err = 1;

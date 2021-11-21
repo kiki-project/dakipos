@@ -113,7 +113,7 @@
             </div>
             <div class="row">
               <div style="height:400px;overflow:auto;white-space: nowrap;">
-                    <?php $this->load->view('masterdata/type_harga_level', $data); ?>
+                    <?php $this->load->view('purchase/table_order', $data); ?>
               </div>
             </div>
             <div class="row">

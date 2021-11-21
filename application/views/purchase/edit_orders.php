@@ -101,7 +101,7 @@
                   <div class="form-group col-md-6" id="frm-harga">
                     <label>Harga :</label>
                       <div class="input-group ">
-                        <input type="text" name="harga" class="form-control" readonly="" id="harga" oninput="set_currency_value('harga', this.value)" style="text-align: right;" value="<?php echo number_format($data['harga'], 2); ?>">
+                        <input type="text" name="harga" class="form-control" id="harga" oninput="set_currency_value('harga', this.value)" style="text-align: right;" value="<?php echo number_format($data['harga'], 2); ?>">
                         <div class="input-group-append">
                           <div class="btn btn-default"><i class="fa fa-trash"></i></div>
                         </div>

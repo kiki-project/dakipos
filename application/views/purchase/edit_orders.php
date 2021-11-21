@@ -61,44 +61,6 @@
                   </div>
                 </div>
               
-                  <div class="form-group" id="frm-nama_item">
-                    <label>Nama Item :</label>
-                    <div class="input-group ">
-                      <input type="text" name="item" id="item" class="form-control" readonly="" value="<?php echo $data['item']; ?>">
-                    </div>
-                  </div>
-                <div class="form-group" id="frm-item-desc">
-                  <label>Keterangan Item:</label>
-                  <div class="input-group ">
-                    <textarea class="form-control" name="item_description" readonly="" id="item-desc"><?php echo $data['item_description']; ?></textarea>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-jenis_item">
-                    <label>Jenis Item :</label>
-                    <div class="input-group ">
-                      <input type="text" name="jenis_item" id="jenis_item" readonly="" class="form-control" value="<?php echo $data['jenis_item']; ?>">
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-satuan">
-                    <label>Satuan :</label>
-                    <div class="input-group ">
-                      <input type="text" name="satuan" id="satuan" class="form-control" readonly="" value="<?php echo $data['satuan']; ?>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-harga">
-                    <label>Harga :</label>
-                      <div class="input-group ">
-                        <input type="text" name="harga" class="form-control" readonly="" id="harga" oninput="set_currency_value('harga', this.value)" style="text-align: right;" value="<?php echo number_format($data['harga'], 2); ?>">
-                        <div class="input-group-append">
-                          <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-
               </div>
 
               <div class="col-md-6">
@@ -120,7 +82,7 @@
                     </div>
                   </div>
                   <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Total Akhir Harga:</label>
+                    <label>Status Pesanan:</label>
                     <div class="input-group ">
                       <select class="form-control" name="status" id="status">
                         <option value=""></option>
@@ -131,43 +93,6 @@
                             <option value="Selesai" <?php if($data['status'] == 'Selesai'){ echo "selected='true'"; } ?> >Selesai</option>
                             <option value="Dibatalkan" <?php if($data['status'] == 'Dibatalkan'){ echo "selected='true'"; } ?> >Dibatalkan</option>
                       </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Titip/DP:</label>
-                    <div class="input-group ">
-                      <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-row">
-                          
-                      
-                      
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-Kekurangan">
-                    <label>Kekurangan:</label>
-                    <div class="input-group ">
-                      <input type="text" name="kekurangan" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kekurangan'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-row">
-                          
-                      
                     </div>
                   </div>
                 </div>

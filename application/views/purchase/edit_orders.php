@@ -268,6 +268,30 @@
                         </div>
                       </div>
                   </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6" id="frm-biaya_lain">
+                    <label>Biaya Lain :</label>
+                    <div class="input-group ">
+                      <input type="text" name="biaya_lain" style="text-align: right;" oninput="hitung_currency_purchases('biaya_lain', this.value)" id="biaya_lain" class="form-control" value="<?php echo number_format($data['biaya_lain'],2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger" onclick="input_clear_currency_purchases('biaya_lain')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                      <div>
+                        <input type="checkbox" id="tambah_total" name="tambah_total" onchange="hitung_purchases('none')" value="1" <?php if($data['tambah_total'] == 1){ echo "checked='true'"; } ?>>
+                        <label for="tambah_total">Tambah ke total</label>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-6" id="frm-provinsi">
+                    <label>Total Akhir Harga:</label>
+                    <div class="input-group ">
+                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" class="form-control" value="<?php echo number_format($data['total_akhir_harga'],2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>

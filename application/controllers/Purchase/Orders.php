@@ -51,7 +51,8 @@ class Orders extends CI_Controller {
 			$data['data'] 			= $this->Mod_orders->get_orders_finish($created)->row_array();
 			if (empty($data['data'])) {
 			$data['kode'] = $this->Main->generate_notrx($data['module']['code'],$data['module']['code_length'],$data['cek']['no']);
-
+			$no 	= explode('/', $data['kode']);
+			
 				$add = array(
 					'kode' 			=> $data['kode'],
 					'finish' 		=> 0,
@@ -59,6 +60,7 @@ class Orders extends CI_Controller {
 					'updated_at' 	=> date('Y-m-d H:i:s'),
 					'created_by' 	=> $created,
 					'updated_by' 	=> $created,
+					'no' 	=> $no[0],
 				);
 			
 				$this->Mod_orders->insert_orders($add);
@@ -85,7 +87,6 @@ class Orders extends CI_Controller {
 		$kode 	= $this->input->post('kode');
 		$cek 	= $this->Mod_orders->cek_orders($kode)->row_array();
 		$created = $this->session->userdata('user_id');
-		$no 	= explode('/', $kode);
 
 		$data_main = array(
 			'kode'	=> $kode, 
@@ -113,8 +114,9 @@ class Orders extends CI_Controller {
 			'pajak_nilai' 		=> str_replace(',', '', $this->input->post('pajak_nilai')), 
 			'tanggal_kirim' 	=> $this->input->post('tanggal_kirim'), 
 			'tanggal' 			=> $this->input->post('tanggal'), 
-			'no' 				=> $no['0'],  
-			'status' 			=> 'Pesanan',  
+			'status' 			=> $this->input->post('status'), 
+			'finish' 			=> 1, 
+
 		);
 
 		if ($submit == 'Update') {

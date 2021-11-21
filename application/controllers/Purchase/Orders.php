@@ -48,7 +48,7 @@ class Orders extends CI_Controller {
 		$created = $this->session->userdata('user_id');
 		
 		if($id == 'new'){
-			$data['data'] 			= $this->Mod_adm->get_orders_finish($created)->row_array();
+			$data['data'] 			= $this->Mod_orders->get_orders_finish($created)->row_array();
 			if (empty($data['data'])) {
 			$data['kode'] = $this->Main->generate_notrx($data['module']['code'],$data['module']['code_length'],$data['cek']['no']);
 
@@ -61,8 +61,8 @@ class Orders extends CI_Controller {
 					'updated_by' 	=> $created,
 				);
 			
-				$this->Mod_adm->insert_orders($add);
-			$data['data'] = $this->Mod_adm->get_orders_finish($created)->row_array();
+				$this->Mod_orders->insert_orders($add);
+			$data['data'] = $this->Mod_orders->get_orders_finish($created)->row_array();
 
 			}
 		$data['action'] = 'Create';

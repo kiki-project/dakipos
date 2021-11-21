@@ -112,7 +112,7 @@
               </div>
             </div>
             <div class="row">
-              <div style="height:400px;overflow:auto;white-space: nowrap;">
+              <div >
                     <?php $this->load->view('purchase/table_order', $data); ?>
               </div>
             </div>

@@ -42,22 +42,37 @@ class Orders extends CI_Controller {
 	function edit(){
 		$id = $this->uri->segment(2);
 		$data = $this->main_data();
-		$data['data'] 			= $this->Mod_orders->get_orders_id($id)->row_array();
-		$kode 					= $data['data']['kode'];
 		$data['cek'] 			= $this->Mod_orders->get_orders_lsno()->row_array();
 		$data['supplier'] 		= $this->Mod_adm->get_suppliers()->result();
 		$data['gudang'] 		= $this->Mod_adm->get_gudang()->result();
+		$created = $this->session->userdata('user_id');
 		
-		if (empty($data['data'])) {
+		if($id == 'new'){
+			$data['data'] 			= $this->Mod_adm->get_orders_finish($created)->row_array();
+			if (empty($data['data'])) {
 			$data['kode'] = $this->Main->generate_notrx($data['module']['code'],$data['module']['code_length'],$data['cek']['no']);
-			$data['action'] = 'Create';
-			$data['submit'] = 'Simpan';
+
+				$add = array(
+					'kode' 			=> $data['kode'],
+					'finish' 		=> 0,
+					'created_at' 	=> date('Y-m-d H:i:s'),
+					'updated_at' 	=> date('Y-m-d H:i:s'),
+					'created_by' 	=> $created,
+					'updated_by' 	=> $created,
+				);
+			
+				$this->Mod_adm->insert_orders($add);
+			$data['data'] = $this->Mod_adm->get_orders_finish($created)->row_array();
+
+			}
+		$data['action'] = 'Create';
+		$data['submit'] = 'Simpan';
 		}else{
-			$data['kode'] = $kode;
-			$data['action'] = 'Edit';
-			$data['submit'] = 'Update';
+		$data['data'] 	= $this->Mod_orders->get_orders_id($id)->row_array();
+		$data['action'] = 'Edit';
+		$data['submit'] = 'Update';
 		}
-		
+
 		if ($data['rm']['edit'] != 'None') {
 			$this->Main->content($data['module']['name'],'purchase/edit_orders', $data);
 		}else{
@@ -78,27 +93,27 @@ class Orders extends CI_Controller {
 			'item_description' 	=> $this->input->post('item_description'), 
 			'kode_item' 	=> $this->input->post('kode_item'), 
 			'supplier' 		=> $this->input->post('supplier'), 
-			'jenis_item' 		=> $this->input->post('jenis_item'), 
+			'jenis_item' 	=> $this->input->post('jenis_item'), 
 			'satuan' 		=> $this->input->post('satuan'), 
 			'description' 		=> $this->input->post('description'), 
-			'jenis' 		=> 'Pembelian', 
-			'masuk_ke' 		=> $this->input->post('masuk_ke'),  
-			'sub_total_item' 		=> str_replace(',', '', $this->input->post('sub_total_item')), 
-			'sub_total_terima' 		=> str_replace(',', '', $this->input->post('sub_total_terima')), 
-			'harga' 		=> str_replace(',', '', $this->input->post('harga')), 
-			'potongan' 		=> str_replace(',', '', $this->input->post('potongan')), 
-			'sub_total_harga' 		=> str_replace(',', '', $this->input->post('sub_total_harga')), 
-			'total_akhir_harga' 		=> str_replace(',', '', $this->input->post('total_akhir_harga')), 
-			'pot_nota_percent' 		=> str_replace(',', '', $this->input->post('pot_nota_percent')), 
-			'pot_nota_nilai' 		=> str_replace(',', '', $this->input->post('pot_nota_nilai')), 
-			'dp' 		=> str_replace(',', '', $this->input->post('dp')), 
-			'kredit' 		=> str_replace(',', '', $this->input->post('kekurangan')), 
-			'pajak_percent' 		=> str_replace(',', '', $this->input->post('pajak_percent')), 
+			'jenis' 			=> 'Pembelian', 
+			'masuk_ke' 			=> $this->input->post('masuk_ke'),  
+			'sub_total_item' 	=> str_replace(',', '', $this->input->post('sub_total_item')), 
+			'sub_total_terima' 	=> str_replace(',', '', $this->input->post('sub_total_terima')), 
+			'harga' 			=> str_replace(',', '', $this->input->post('harga')), 
+			'potongan' 			=> str_replace(',', '', $this->input->post('potongan')), 
+			'sub_total_harga' 	=> str_replace(',', '', $this->input->post('sub_total_harga')), 
+			'total_akhir_harga' => str_replace(',', '', $this->input->post('total_akhir_harga')), 
+			'pot_nota_percent' 	=> str_replace(',', '', $this->input->post('pot_nota_percent')), 
+			'pot_nota_nilai' 	=> str_replace(',', '', $this->input->post('pot_nota_nilai')), 
+			'dp' 				=> str_replace(',', '', $this->input->post('dp')), 
+			'kredit' 			=> str_replace(',', '', $this->input->post('kekurangan')), 
+			'pajak_percent' 	=> str_replace(',', '', $this->input->post('pajak_percent')), 
 			'pajak_nilai' 		=> str_replace(',', '', $this->input->post('pajak_nilai')), 
-			'tanggal_kirim' 		=> $this->input->post('tanggal_kirim'), 
-			'tanggal' 		=> $this->input->post('tanggal'), 
-			'no' 		=> $no['0'],  
-			'status' 		=> 'Pesanan',  
+			'tanggal_kirim' 	=> $this->input->post('tanggal_kirim'), 
+			'tanggal' 			=> $this->input->post('tanggal'), 
+			'no' 				=> $no['0'],  
+			'status' 			=> 'Pesanan',  
 		);
 
 		if ($submit == 'Update') {
@@ -121,7 +136,7 @@ class Orders extends CI_Controller {
 				);
 				$data = array_merge($data_b, $data_main);
 
-			$this->Mod_orders->insert_orders($data);
+			$this->Mod_orders->update_orders($data);
 				$err = 0;
 			}else{
 				$err = 1;

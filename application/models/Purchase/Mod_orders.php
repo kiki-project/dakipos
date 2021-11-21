@@ -27,6 +27,9 @@ class Mod_orders extends CI_model {
 	function get_orders_total(){
 		return $this->db->query("SELECT count(id) AS row FROM purchases");
 	}
+	function get_orders_finish($created){
+		return $this->db->query("SELECT * FROM purchases WHERE finish = 0 AND created_by = $created");
+	}
 	function insert_orders($data){
 		$this->db->insert('purchases', $data);
 	}

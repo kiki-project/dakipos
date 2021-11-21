@@ -122,7 +122,7 @@
                   <div class="form-group col-md-6" id="frm-provinsi">
                     <label>Total Akhir Harga:</label>
                     <div class="input-group ">
-                      <select name="status" id="status">
+                      <select class="form-control" name="status" id="status">
                         <option value=""></option>
                             <option value="Menunggu Pembayaran" <?php if($data['status'] == 'Menunggu Pembayaran'){ echo "selected='true'"; } ?> >Menunggu Pembayaran</option>
                             <option value="Menunggu Persetujuan" <?php if($data['status'] == 'Menunggu Persetujuan'){ echo "selected='true'"; } ?> >Menunggu Persetujuan</option>

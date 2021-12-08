@@ -486,7 +486,7 @@ function get_item_list_radio(a, b) {
 }
 
 function replace_satu_harga(data){
-  if($data != 'none'){
+  if(data != 'none'){
 
     $("#item-unit").val(data['satuan_dasar']);
     $("#item-poin-dasar").val(currency(data["poin_dasar"]).format().replace("$", ""));

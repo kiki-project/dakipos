@@ -464,10 +464,12 @@ class Items extends CI_Controller {
 		  		'harga_jual' 	=> str_replace(',', '', $this->input->post('harga_jual')),
 			);
 			$this->Mod_adm->update_item($data_item,$cek['item_id']);
+		}else{
+			$data_item = 'none';
 		}
 
 		$this->Mod_adm->update_price_units($data,$id);
-		echo json_encode($data);
+		echo json_encode($data_item);
 	}
 	function json_update_discount(){
 		$id = $this->input->post('id');

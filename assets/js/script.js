@@ -486,6 +486,8 @@ function get_item_list_radio(a, b) {
 }
 
 function replace_satu_harga(data){
+  if($data != 'none'){
+
     $("#item-unit").val(data['satuan_dasar']);
     $("#item-poin-dasar").val(currency(data["poin_dasar"]).format().replace("$", ""));
     $("#item-barcode").val(data['barcode']);
@@ -493,6 +495,7 @@ function replace_satu_harga(data){
     $("#item-harga-pokok").val(currency(data["harga_pokok"]).format().replace("$", ""));
     $("#item-persentase").val(currency(data["persentase"]).format().replace("$", ""));
     $("#item-harga-jual").val(currency(data["harga_jual"]).format().replace("$", ""));
+  }
 
 }
 function toggle_items_list(source) {

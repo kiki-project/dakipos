@@ -278,7 +278,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form method="post" action="<?php echo base_url(); ?>json/insert-purchase_item" id="frm-items">
+      <form method="post" action="<?php echo base_url(); ?>json/insert-purchase_item" id="frm-itemsa">
         <input type="text" name="purchase_id" value="<?php echo $data['id']; ?>">
         <div class="modal-body">          
           <div class="form-group">

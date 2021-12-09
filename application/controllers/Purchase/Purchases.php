@@ -165,7 +165,7 @@ class Purchases extends CI_Controller {
 	function delete_purchase_item(){
 		$id = $this->input->post('id');
 		$this->Mod_purchases->delete_purchase_item($id);
-		echo json_encode('success');
+		echo json_encode($id);
 	}
 
 }

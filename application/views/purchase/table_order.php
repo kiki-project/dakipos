@@ -39,6 +39,7 @@
             url: base_url("json/get-purchase_item"),
             success: function (response) {            
                 result = JSON.parse(response);
+                console.log(result)
                 var data = "";
                 $.each(result, function (i, row) {
                     get_units_select_price_type('dimensi'+row['id'], row['satuan'])

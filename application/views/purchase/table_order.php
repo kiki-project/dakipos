@@ -30,7 +30,7 @@
                 result = JSON.parse(response);
                 var data = "";
                 $.each(result, function (i, row) {
-                    get_units_select_price_type('satuan_purchase_item'+row['id'], row['satuan'])
+                    get_units_prchase_item('satuan_purchase_item'+row['id'], row['satuan'], row['item_id'])
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>'+row['kode_item']+'</td>';

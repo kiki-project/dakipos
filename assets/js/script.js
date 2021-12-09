@@ -281,6 +281,27 @@ function get_units_select_price_type(a,b) {
     },
   });
 }
+function get_units_prchase_item(a,b,c) {
+  $.ajax({
+    type: "POST",    
+    data: { item_id: c },
+    url: base_url("json/get-unit-price"),
+    success: function (response) {
+      result = JSON.parse(response);
+      var data = "";
+      data += '<option value=""></option>';
+      $.each(result, function (i, row) {
+        if(b == row['kode']){ 
+           select = 'selected="true"';
+         }else{
+           select = '';
+         }
+        data +='<option value="'+row["satuan"] + '" '+select+'>'+row["satuan"] + "</option>";
+      });
+      $("#"+a).html(data);
+    },
+  });
+}
 
 function get_item_group_select(a,b) {
   $.ajax({

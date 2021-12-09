@@ -1053,7 +1053,9 @@ function hitung_purchase_item(id,code){
 
     if(pot != 0){
       var laba = (parseInt(pot) * parseInt(harga)) / 100;
-      var total = (parseInt(harga) - parseInt(laba))
+      var proc = (parseInt(harga) - parseInt(laba))
+      var total = (parseInt(jml) * parseInt(proc));
+
     }else{
       var total = (parseInt(jml) * parseInt(harga));
     }

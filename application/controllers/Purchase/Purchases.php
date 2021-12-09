@@ -136,6 +136,19 @@ class Purchases extends CI_Controller {
 		$this->Mod_purchases->delete_purchases($id);
 		redirect(base_url().$this->path());
 	}
+	function insert_purchase_item(){
+		$kode = $this->input->post('kode');
+		$item = $this->Mod_adm->get_items_kode($kode)->row_array();
+		$data = array(
+					'kode_item' 	=> $item['kode'],
+					'jumlah' 		=> 1,
+					'satuan' 		=> $item['satuan'],
+					'harga_pokok' 	=> $item['harga_pokok'],
+					'harga_pokok' 	=> $item['harga_pokok'],
+				);
+		$this->Mod_purchases->insert_purchase_item($data);
+
+	}
 
 }
 ?>

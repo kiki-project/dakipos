@@ -30,6 +30,9 @@ class Mod_purchases extends CI_model {
 	function insert_purchases($data){
 		$this->db->insert('purchases', $data);
 	}
+	function insert_purchase_item($data){
+		$this->db->insert('purchase_item', $data);
+	}
 	function update_purchases($data,$id){
 		$this->db->where('id',$id);
 		$this->db->update('purchases',$data);	

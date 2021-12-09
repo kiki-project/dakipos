@@ -150,9 +150,7 @@ class Purchases extends CI_Controller {
 				);
 		$this->Mod_purchases->insert_purchase_item($data);
 		}
-		echo $kode;
-		echo "add";
-		print_r($data);
+		echo json_encode($item);
 	}
 
 }

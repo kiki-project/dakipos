@@ -17,7 +17,7 @@
 </table>
 </div>
 <a href="#" id="btn-add_item" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-items" onclick="get_item_list_radio(10, '')" ><i class="fa fa-plus"></i> Tambah item</a>
-<a href="#" id="btn-refresh_dimensi" class="btn btn-sm btn-success" onclick="get_price_dimensi('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh Tabel</a>
+<a href="#" id="btn-refresh_dimensi" class="btn btn-sm btn-success" onclick="get_purchase_item('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh Tabel</a>
 
 <script>
     function add_satuan_dimensi(a){
@@ -27,16 +27,16 @@
             data: { item_id: a },
             url: base_url("json/add-unit-price"),
             success: function (result) {
-                get_price_dimensi(a)
+                get_purchase_item(a)
                 $("#btn-add_satuan_dimensi").html('Tambah satuan');
             },
         });
     }
-    function get_price_dimensi(a){
+    function get_purchase_item(a){
         $.ajax({
             type: "POST",    
-            data: { item_id: a },
-            url: base_url("json/get-unit-price"),
+            data: { purchase_id: a },
+            url: base_url("json/get-purchase_item"),
             success: function (response) {            
                 result = JSON.parse(response);
                 var data = "";
@@ -48,13 +48,13 @@
                     data += '<select class="form-price price-unit" id="dimensi'+row['id']+'" name="price_units"">';
                     data += '</select>';
                     data += '</td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["berat"]).format().replace("$", "")+'" id="'+4008+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4008+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["panjang"]).format().replace("$", "")+'" id="'+4009+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4009+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["lebar"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["tinggi"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["tinggi"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["tinggi"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["tinggi"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["kode_item"]).format().replace("$", "")+'" id="'+4008+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4008+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["name"]).format().replace("$", "")+'" id="'+4009+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4009+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah_terima"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["total"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="width:10px;">';
                     data += '<a href="#" id="btn-save-dimensi'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_dimensi_price('+row['id']+')"><i class="fa fa-save"></i></button>';
                     data += '</td>';
@@ -88,7 +88,7 @@
             },
             success: function (response) {
             $("#btn-save-dimensi"+a).html('<i class="fa fa-save"></i>');
-             get_price_dimensi('<?php echo $id; ?>')
+             get_purchase_item('<?php echo $id; ?>')
             },
         });
     }
@@ -99,7 +99,7 @@
                 url: base_url("json/delete-unit-price"),
                 data: {id: a },
                 success: function (response) {
-                get_price_dimensi('<?php echo $id; ?>')
+                get_purchase_item('<?php echo $id; ?>')
                 },
             });
         }

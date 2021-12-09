@@ -148,12 +148,19 @@ class Purchases extends CI_Controller {
 					'kode_item' 	=> $item['kode'],
 					'jumlah' 		=> 1,
 					'satuan' 		=> $item['satuan_dasar'],
+					'potongan' 		=> 0,
 					'harga' 		=> $item['harga_pokok'],
 					'total' 		=> $item['harga_pokok'],
 				);
 		$this->Mod_purchases->insert_purchase_item($data);
 		}
 		echo json_encode($item);
+	}
+	function get_purchase_item(){
+		$purchase_id = $this->input->post('purchase_id');
+		$data = $this->Mod_purchases->get_purchase_item($purchase_id);
+		echo json_encode($data);
+
 	}
 
 }

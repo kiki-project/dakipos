@@ -315,6 +315,7 @@
 
 <script type="text/javascript">
  $( document ).ready(function() {
+   get_purchase_item('<?php echo $data['id']; ?>');
           if ($('#per-item').is(':checked')) {
               $('#type_komisi').prop('disabled', true);
               $('#nilai_komisi').prop('readonly', true);

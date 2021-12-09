@@ -174,11 +174,11 @@ class Purchases extends CI_Controller {
 		$id = $this->input->post('id');
 		$data = array(
 					'satuan' 		=> $this->input->post('satuan'),
-					'jumlah' 		=> $this->input->post('jumlah'),
-					'jumlah_terima' => $this->input->post('jumlah_terima'),
-					'harga' => $this->input->post('harga'),
-					'potongan' 		=> $this->input->post('potongan'),
-					'total' 		=> $this->input->post('total'),
+					'jumlah' 		=> str_replace(',', '', $this->input->post('jumlah')),
+					'jumlah_terima' => str_replace(',', '', $this->input->post('jumlah_terima')),
+					'harga' 		=> str_replace(',', '', $this->input->post('harga')),
+					'potongan' 		=> str_replace(',', '', $this->input->post('potongan')),
+					'total' 		=> str_replace(',', '', $this->input->post('total')),
 				);
 			$this->Mod_purchases->update_purchase_item($data,$id);
 	}

@@ -28,7 +28,7 @@ class Mod_purchases extends CI_model {
 		return $this->db->query("SELECT count(id) AS row FROM purchases");
 	}
 	function get_purchase_item($id){
-		return $this->db->query("SELECT * FROM purchase_item purchase_id = '$id'");
+		return $this->db->query("SELECT * FROM purchase_item WHERE purchase_id = '$id'");
 	}
 	function insert_purchases($data){
 		$this->db->insert('purchases', $data);

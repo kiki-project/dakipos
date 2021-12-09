@@ -151,6 +151,7 @@ class Purchases extends CI_Controller {
 		$this->Mod_purchases->insert_purchase_item($data);
 		}
 		echo json_encode('add');
+		echo "add";
 	}
 
 }

@@ -158,7 +158,7 @@ class Purchases extends CI_Controller {
 	}
 	function get_purchase_item(){
 		$purchase_id = $this->input->post('purchase_id');
-		$data = $this->Mod_purchases->get_purchase_item($purchase_id);
+		$data = $this->Mod_purchases->get_purchase_item($purchase_id)->result();
 		echo json_encode($data);
 
 	}

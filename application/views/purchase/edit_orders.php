@@ -374,7 +374,8 @@ function submit_item(a){
           data : form_data,
           success: function(response){
             data = JSON.parse(response);
-            if (a == 'pilih') {    
+            if (a == 'pilih') {
+              $('#modal-items').modal('hide');
              get_purchase_item('<?php echo $data['id']; ?>');
             }
 

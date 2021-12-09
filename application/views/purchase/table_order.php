@@ -56,7 +56,8 @@
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["total"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="width:10px;">';
-                    data += '<a href="#" id="btn-save-dimensi'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_dimensi_price('+row['id']+')"><i class="fa fa-save"></i></button>';
+                    data += '<a href="#" id="btn-save-dimensi'+row['id']+'" class="btn btn-sm btn-primary" onclick="save_purchase_item('+row['id']+')"><i class="fa fa-save"></i></button>';
+                    data += '<a href="#" id="btn-delete-satuan'+row['id']+'" class="btn btn-sm btn-danger" onclick="delete_purchase_item('+row['id']+')"><i class="fa fa-trash"></i></button>';
                     data += '</td>';
                     data += '</tr>';
                 });
@@ -65,7 +66,7 @@
         });
     }
 
-    function save_dimensi_price(a){
+    function save_purchase_item(a){
         var satuan = $("#unit"+a).val();
         var berat = $("#"+4008+a).val();
         var panjang = $("#"+4009+a).val();
@@ -92,11 +93,11 @@
             },
         });
     }
-    function delete_dimensi_price(a){
+    function delete_purchase_item(a){
         if(confirm('Hapus data?')){
             $.ajax({
                 type: "POST",
-                url: base_url("json/delete-unit-price"),
+                url: base_url("json/delete-purchase_item"),
                 data: {id: a },
                 success: function (response) {
                 get_purchase_item('<?php echo $id; ?>')

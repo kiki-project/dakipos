@@ -5,9 +5,9 @@
             <th style="width:20px;">No</th>
             <th style="width:150px;">Kode</th>
             <th>Nama</th>
+            <th>Satuan</th>
             <th>Jumlah</th>
             <th>jml Terima</th>
-            <th>Satuan</th>
             <th>Harga</th>
             <th>Pot(%)</th>
             <th>Total</th>
@@ -44,12 +44,12 @@
                     get_units_select_price_type('dimensi'+row['id'], row['satuan'])
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
+                    data += '<td>'+row['kode_item']+'</td>';
+                    data += '<td>'+row['name']+'</td>';
                     data += '<td>';
                     data += '<select class="form-price price-unit" id="dimensi'+row['id']+'" name="price_units"">';
                     data += '</select>';
                     data += '</td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["kode_item"]).format().replace("$", "")+'" id="'+4008+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4008+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["name"]).format().replace("$", "")+'" id="'+4009+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4009+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah_terima"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
@@ -103,7 +103,6 @@
                 data: {id: a },
                 success: function (response) {
                 get_purchase_item('<?php echo $id; ?>');
-                console.log(response)
                 },
             });
         }

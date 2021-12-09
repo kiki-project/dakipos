@@ -152,6 +152,7 @@ class Purchases extends CI_Controller {
 		}
 		echo $kode;
 		echo "add";
+		print_r($data);
 	}
 
 }

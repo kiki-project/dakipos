@@ -169,5 +169,18 @@ class Purchases extends CI_Controller {
 		echo json_encode($id);
 	}
 
+	function update_purchase_item(){
+		
+		$id = $this->input->post('id');
+		$data = array(
+					'satuan' 		=> $this->input->post('satuan'),
+					'jumlah' 		=> $this->input->post('jumlah'),
+					'jumlah_terima' => $this->input->post('jumlah_terima'),
+					'potongan' 		=> $this->input->post('potongan'),
+					'total' 		=> $this->input->post('total'),
+				);
+			$this->Mod_purchases->update_purchase_item($data,$id);
+	}
+
 }
 ?>

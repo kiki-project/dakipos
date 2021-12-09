@@ -20,18 +20,7 @@
 <a href="#" id="btn-refresh_purchase_item" class="btn btn-sm btn-success" onclick="get_purchase_item('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh Tabel</a>
 
 <script>
-    function add_satuan_purchase_item(a){
-        $("#btn-add_satuan_purchase_item").html('Menyiapkan data ..');
-        $.ajax({
-            type: "POST",    
-            data: { item_id: a },
-            url: base_url("json/add-unit-price"),
-            success: function (result) {
-                get_purchase_item(a)
-                $("#btn-add_satuan_purchase_item").html('Tambah satuan');
-            },
-        });
-    }
+    
     function get_purchase_item(a){
         $.ajax({
             type: "POST",    
@@ -41,13 +30,13 @@
                 result = JSON.parse(response);
                 var data = "";
                 $.each(result, function (i, row) {
-                    get_units_select_price_type('purchase_item'+row['id'], row['satuan'])
+                    get_units_select_price_type('satuan_purchase_item'+row['id'], row['satuan'])
                     data += '<tr>';
                     data += '<td>'+(parseInt(i)+parseInt(1))+'</td>';
                     data += '<td>'+row['kode_item']+'</td>';
                     data += '<td>'+row['name']+'</td>';
                     data += '<td>';
-                    data += '<select class="form-price price-unit" id="purchase_item'+row['id']+'" name="price_units"">';
+                    data += '<select class="form-price price-unit" id="satuan_purchase_item'+row['id']+'" name="satuan">';
                     data += '</select>';
                     data += '</td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah"]).format().replace("$", "")+'" id="'+5001+row["id"]+'" oninput="hitung_currency_purchase_item('+row['id']+','+5001+', this.value)" style="text-align:right;"></td>';
@@ -69,25 +58,24 @@
     }
 
     function save_purchase_item(a){
-        var satuan = $("#unit"+a).val();
-        var berat = $("#"+5008+a).val();
-        var panjang = $("#"+5009+a).val();
-        var lebar = $("#"+5001+a).val();
-        var tinggi = $("#"+5002+a).val();
+        var satuan = $("#satuan_purchase_item"+a).val();
+        var jumlah = $("#"+5001+a).val();
+        var jumlah_terima = $("#"+5002+a).val();
+        var potongan = $("#"+5004+a).val();
+        var total = $("#"+5005+a).val();
     
         $("#btn-save-purchase_item"+a).html('..');
 
             $.ajax({
             type: "POST",
-            url: base_url("json/update-unit-price/"),
+            url: base_url("json/update-purchase_item/"),
             data: { 
                 id: a,
                 satuan: satuan, 
-                berat: berat, 
-                panjang: panjang, 
-                lebar: lebar, 
-                tinggi: tinggi, 
-                type: 'purchase_item'
+                jumlah: jumlah, 
+                jumlah_terima: jumlah_terima, 
+                potongan: potongan, 
+                total: total, 
             },
             success: function (response) {
             $("#btn-save-purchase_item"+a).html('<i class="fa fa-save"></i>');

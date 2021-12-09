@@ -114,6 +114,7 @@ $route['delete-purchases/(:any)']	= 'Purchase/Purchases/delete';
 $route['json/insert-purchase_item']	= 'Purchase/Purchases/insert_purchase_item';
 $route['json/get-purchase_item']	= 'Purchase/Purchases/get_purchase_item';
 $route['json/delete-purchase_item']	= 'Purchase/Purchases/delete_purchase_item';
+$route['json/upadate-purchase_item']	= 'Purchase/Purchases/update_purchase_item';
 
 $route['debts-list'] 			= 'Purchase/Debts';
 $route['debts-list/(:any)'] 	= 'Purchase/Debts';

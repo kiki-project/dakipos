@@ -40,6 +40,10 @@ class Mod_purchases extends CI_model {
 		$this->db->where('id',$id);
 		$this->db->update('purchases',$data);	
 	}
+	function update_purchase_item($data,$id){
+		$this->db->where('id',$id);
+		$this->db->update('purchase_item',$data);	
+	}
 	function delete_purchases($id){
 		$this->db->where('id',$id);
 		$this->db->delete('purchases');	

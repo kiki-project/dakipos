@@ -997,3 +997,67 @@ function hitung_price_level(id, code){
   
   
 }
+
+function hitung_currency_purchase_item(id,code, val) {
+  id_code = code+''+id;
+  set_currency_value(id_code, val);
+  hitung_purchase_item(id,code);
+}
+function hitung_purchase_item(id,code){
+  id_jml = 5001;
+  id_jml_terima = 5002;
+  id_harga = 5003;
+  id_pot = 5004;
+  id_total = 5005;
+
+  var jml = $("#"+id_jml+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+
+  var jml_terima = $("#"+id_jml_terima+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+    
+  var harga = $("#"+id_harga+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+    
+  var pot = $("#"+id_pot+id)
+      .val()
+      .replace(".00", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "")
+      .replace(",", "");
+    
+
+    if(pot != 0){
+      var laba = (parseInt(pot) * parseInt(harga)) / 100;
+      var total = (parseInt(harga) - parseInt(laba))
+    }else{
+      var total = (parseInt(jml) * parseInt(harga));
+    }
+  $("#"+id_total+''+id).val(currency(parseInt(total)).format().replace("$", ""));
+   
+
+}

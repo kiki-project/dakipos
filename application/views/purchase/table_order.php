@@ -16,8 +16,9 @@
     <tbody id="tbl-dimensi_harga"></tbody>
 </table>
 </div>
-<a href="#" id="btn-add_item" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah item</a>
+<a href="#" id="btn-add_item" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-items" onclick="get_item_list_radio(10, '')" ><i class="fa fa-plus"></i> Tambah item</a>
 <a href="#" id="btn-refresh_dimensi" class="btn btn-sm btn-success" onclick="get_price_dimensi('<?php echo $id; ?>')"><i class="fa fa-refresh"></i> Refresh Tabel</a>
+
 <script>
     function add_satuan_dimensi(a){
         $("#btn-add_satuan_dimensi").html('Menyiapkan data ..');

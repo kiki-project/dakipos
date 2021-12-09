@@ -147,7 +147,7 @@ class Purchases extends CI_Controller {
 					'total' 		=> $item['harga_pokok'],
 				);
 		$this->Mod_purchases->insert_purchase_item($data);
-
+		echo json_encode($item);
 	}
 
 }

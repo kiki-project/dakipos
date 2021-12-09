@@ -373,7 +373,7 @@ function submit_item(a){
           success: function(response){
             data = JSON.parse(response);
             if (a == 'pilih') {
-              
+              console.log(data);
             }
 
           }

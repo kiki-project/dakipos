@@ -374,21 +374,8 @@ function submit_item(a){
           data : form_data,
           success: function(response){
             data = JSON.parse(response);
-            if (a == 'pilih') {
-              $('#modal-items').modal('hide');
-              $('#sub_total_item').val(1);
-              $('#kode-item').val(data['kode']);
-              $('#item').val(data['name']);
-              $('#item-desc').val(data['description']);
-              $('#jenis_item').val(data['jenis']);
-              $('#satuan').val(data['satuan_dasar']);
-              $('#supplier').val(data['supplier']);
-              $('#pajak_percent').val(data['pajak']);
-              $('#harga').val(currency(data['harga_pokok']).format().replace("$", ""));
-              $('#sub_total_harga').val(currency(data['harga_pokok']).format().replace("$", ""));
-              $('#total_akhir_harga').val(currency(data['harga_pokok']).format().replace("$", ""));
-              $('#kekurangan').val(currency(data['harga_pokok']).format().replace("$", ""));
-              hitung_orders('none')
+            if (a == 'pilih') {    
+             get_purchase_item('<?php echo $data['id']; ?>');
             }
 
           }

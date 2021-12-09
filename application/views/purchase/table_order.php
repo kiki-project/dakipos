@@ -52,8 +52,8 @@
                     data += '</td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah"]).format().replace("$", "")+'" id="'+4010+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4010+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah_terima"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
-                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["harga"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
+                    data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["potongan"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["total"]).format().replace("$", "")+'" id="'+4011+row["id"]+'" oninput="currency_price_dimensi('+row['id']+','+4011+', this.value)" style="text-align:right;"></td>';
                     data += '<td style="width:10px;">';
                     data += '<div class="btn-group" ">';

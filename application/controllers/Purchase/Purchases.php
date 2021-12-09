@@ -146,6 +146,7 @@ class Purchases extends CI_Controller {
 					'purchase_id' 	=> $purchase_id,
 					'item_id' 		=> $item['id'],
 					'kode_item' 	=> $item['kode'],
+					'name' 			=> $item['name'],
 					'jumlah' 		=> 1,
 					'satuan' 		=> $item['satuan_dasar'],
 					'potongan' 		=> 0,

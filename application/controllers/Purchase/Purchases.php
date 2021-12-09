@@ -144,7 +144,7 @@ class Purchases extends CI_Controller {
 		$data = array(
 					'kode_item' 	=> $item['kode'],
 					'jumlah' 		=> 1,
-					'satuan' 		=> $item['satuan'],
+					'satuan' 		=> $item['satuan_dasar'],
 					'harga' 		=> $item['harga_pokok'],
 					'total' 		=> $item['harga_pokok'],
 				);

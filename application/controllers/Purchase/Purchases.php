@@ -138,10 +138,13 @@ class Purchases extends CI_Controller {
 	}
 	function insert_purchase_item(){
 		$kode = $this->input->post('kode');
+		$purchase_id = $this->input->post('purchase_id');
 		$item = $this->Mod_adm->get_items_kode($kode)->row_array();
 		
 		if($item){
 		$data = array(
+					'purchase_id' 	=> $purchase_id,
+					'item_id' 		=> $item['kode_id'],
 					'kode_item' 	=> $item['kode'],
 					'jumlah' 		=> 1,
 					'satuan' 		=> $item['satuan_dasar'],

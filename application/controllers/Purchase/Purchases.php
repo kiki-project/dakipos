@@ -143,8 +143,8 @@ class Purchases extends CI_Controller {
 					'kode_item' 	=> $item['kode'],
 					'jumlah' 		=> 1,
 					'satuan' 		=> $item['satuan'],
-					'harga_pokok' 	=> $item['harga_pokok'],
-					'harga_pokok' 	=> $item['harga_pokok'],
+					'harga' 		=> $item['harga_pokok'],
+					'total' 		=> $item['harga_pokok'],
 				);
 		$this->Mod_purchases->insert_purchase_item($data);
 

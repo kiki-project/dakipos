@@ -176,6 +176,7 @@ class Purchases extends CI_Controller {
 					'satuan' 		=> $this->input->post('satuan'),
 					'jumlah' 		=> $this->input->post('jumlah'),
 					'jumlah_terima' => $this->input->post('jumlah_terima'),
+					'harga' => $this->input->post('harga'),
 					'potongan' 		=> $this->input->post('potongan'),
 					'total' 		=> $this->input->post('total'),
 				);

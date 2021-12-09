@@ -61,6 +61,7 @@
         var satuan = $("#satuan_purchase_item"+a).val();
         var jumlah = $("#"+5001+a).val();
         var jumlah_terima = $("#"+5002+a).val();
+        var harga = $("#"+5003+a).val();
         var potongan = $("#"+5004+a).val();
         var total = $("#"+5005+a).val();
     
@@ -73,6 +74,7 @@
                 id: a,
                 satuan: satuan, 
                 jumlah: jumlah, 
+                harga: harga, 
                 jumlah_terima: jumlah_terima, 
                 potongan: potongan, 
                 total: total, 

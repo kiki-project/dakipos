@@ -139,6 +139,8 @@ class Purchases extends CI_Controller {
 	function insert_purchase_item(){
 		$kode = $this->input->post('kode');
 		$item = $this->Mod_adm->get_items_kode($kode)->row_array();
+		
+		if($item){
 		$data = array(
 					'kode_item' 	=> $item['kode'],
 					'jumlah' 		=> 1,
@@ -147,6 +149,7 @@ class Purchases extends CI_Controller {
 					'total' 		=> $item['harga_pokok'],
 				);
 		$this->Mod_purchases->insert_purchase_item($data);
+		}
 		echo json_encode($item);
 	}
 

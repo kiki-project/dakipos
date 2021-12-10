@@ -291,7 +291,7 @@ function get_units_prchase_item(a,b,c) {
       var data = "";
       data += '<option value=""></option>';
       $.each(result, function (i, row) {
-        if(b == row['kode']){ 
+        if(b == row['satuan']){ 
            select = 'selected="true"';
          }else{
            select = '';
@@ -1080,7 +1080,6 @@ function hitung_purchase_item(id,code){
     }else{
       var total = (parseInt(jml) * parseInt(harga));
     }
-  $("#"+id_total+''+id).val(currency(parseInt(total)).format().replace("$", ""));
+    $("#"+id_total+''+id).val(currency(parseInt(total)).format().replace("$", ""));
    
-
 }

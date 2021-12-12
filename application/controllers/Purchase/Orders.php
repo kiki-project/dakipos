@@ -31,12 +31,12 @@ class Orders extends CI_Controller {
 		$path = base_url().$this->path();
 	
 		$data['pg'] = $this->Main->pagination($offset,$data['total']['row'],$path);
-		$data['module'] = $this->Mod_adm->get_module_by_kode('ORDERS')->row_array();
+		$data['module'] = $this->Mod_adm->get_module_by_kode('PURCHASE_ORDERS')->row_array();
 		$data['rm'] 	= $this->Mod_adm->get_role_module_rel($role_id,$data['module']['id'])->row_array();	
 		return $data;
 	}
 	function path(){
-		$data = $this->Mod_adm->get_module_by_kode('ORDERS')->row_array();
+		$data = $this->Mod_adm->get_module_by_kode('PURCHASE_ORDERS')->row_array();
 		return $data['path'];
 	}
 	function edit(){

@@ -39,25 +39,43 @@ class Purchases extends CI_Controller {
 		$data = $this->Mod_adm->get_module_by_kode('PURCHASES')->row_array();
 		return $data['path'];
 	}
+
 	function edit(){
 		$id = $this->uri->segment(2);
 		$data = $this->main_data();
-		$data['data'] 			= $this->Mod_purchases->get_purchases_id($id)->row_array();
-		$kode 					= $data['data']['kode'];
-		$data['cek'] 			= $this->Mod_purchases->get_purchases_lsno()->row_array();
+		$data['cek'] 			= $this->Mod_orders->get_purchases_lsno()->row_array();
 		$data['supplier'] 		= $this->Mod_adm->get_suppliers()->result();
 		$data['gudang'] 		= $this->Mod_adm->get_gudang()->result();
+		$created = $this->session->userdata('user_id');
 		
-		if (empty($data['data'])) {
+		if($id == 'new'){
+			$data['data'] 			= $this->Mod_orders->get_purchases_finish($created)->row_array();
+			if (empty($data['data'])) {
 			$data['kode'] = $this->Main->generate_notrx($data['module']['code'],$data['module']['code_length'],$data['cek']['no']);
-			$data['action'] = 'Create';
-			$data['submit'] = 'Simpan';
+			$no 	= explode('/', $data['kode']);
+			
+				$add = array(
+					'kode' 			=> $data['kode'],
+					'finish' 		=> 0,
+					'created_at' 	=> date('Y-m-d H:i:s'),
+					'updated_at' 	=> date('Y-m-d H:i:s'),
+					'created_by' 	=> $created,
+					'updated_by' 	=> $created,
+					'no' 	=> $no[0],
+				);
+			
+				$this->Mod_orders->insert_orders($add);
+			$data['data'] = $this->Mod_orders->get_purchases_finish($created)->row_array();
+
+			}
+		$data['action'] = 'Create';
+		$data['submit'] = 'Simpan';
 		}else{
-			$data['kode'] = $kode;
-			$data['action'] = 'Edit';
-			$data['submit'] = 'Update';
+		$data['data'] 	= $this->Mod_orders->get_purchases_id($id)->row_array();
+		$data['action'] = 'Edit';
+		$data['submit'] = 'Update';
 		}
-		
+
 		if ($data['rm']['edit'] != 'None') {
 			$this->Main->content($data['module']['name'],'purchase/edit_purchases', $data);
 		}else{

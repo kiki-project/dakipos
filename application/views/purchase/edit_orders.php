@@ -160,9 +160,6 @@
                     <label>Item :</label>
                     <div class="input-group ">
                       <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" readonly="true" class="form-control">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" ><i class="fa fa-trash"></i></div>
-                      </div>
                     </div>
                   </div>
                   <div class="form-group col-md-4" id="frm-sub_total_item">

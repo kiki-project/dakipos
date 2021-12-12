@@ -177,7 +177,7 @@
                   <div class="form-group col-md-4" id="frm-provinsi">
                     <label>Sub Total:</label>
                     <div class="input-group ">
-                      <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control" value="<?php echo number_format($data['sub_total_harga'],2); ?>">
+                      <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -250,7 +250,7 @@
                   <div class="form-group col-md-6" id="frm-provinsi">
                     <label>Total Akhir Harga:</label>
                     <div class="input-group ">
-                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" class="form-control" value="<?php echo number_format($data['total_akhir_harga'],2); ?>">
+                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" >
                     </div>
                   </div>
                 </div>

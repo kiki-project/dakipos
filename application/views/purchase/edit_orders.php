@@ -159,7 +159,7 @@
                   <div class="form-group col-md-4">
                     <label>Item :</label>
                     <div class="input-group ">
-                      <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" oninput="hitung_orders('none')" class="form-control" value="<?php echo number_format($data['sub_total_item']); ?>">
+                      <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" class="form-control">
                       <div class="input-group-append">
                         <div class="btn btn-danger" onclick="input_clear_currency('sub_total_item')"><i class="fa fa-trash"></i></div>
                       </div>

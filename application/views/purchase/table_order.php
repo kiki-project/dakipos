@@ -30,6 +30,7 @@
                 result = JSON.parse(response);
                 var data = "";
                 var total_harga = 0;
+                var qty = 0;
                 $.each(result, function (i, row) {
                     get_units_prchase_item('satuan_purchase_item'+row['id'], row['satuan'], row['item_id'])
                     data += '<tr>';
@@ -53,9 +54,11 @@
                     data += '</td>';
                     data += '</tr>';
                     total_harga += parseInt(row["total"]);
+                    qty += parseInt(row["jumlah"]);
                 });
                 
                 set_currency_value('harga', currency(total_harga).format().replace("$", ""));
+                set_currency_value('sub_total_item', currency(qty).format().replace("$", ""));
                 $("#tbl-purchase_item").html(data);
             },
         });

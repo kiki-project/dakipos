@@ -613,7 +613,7 @@ function hitung_orders(id) {
     .replace(",", "")
     .replace(",", "");
 
-  var val_sub_total = parseInt(qty) * parseInt(hrg) - parseInt(pot_n);
+  var val_sub_total = parseInt(hrg) - parseInt(pot_n);
 
   if (id == "pot_nota_percent") {
     var pot_nota_n = (ipot_nota_p * val_sub_total) / 100;

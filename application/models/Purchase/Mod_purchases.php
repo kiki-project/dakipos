@@ -10,7 +10,7 @@ class Mod_purchases extends CI_model {
 		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE id = '$id'");
 	}
 	function get_purchases(){
-		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE status = 'Pembelian' AND finish = 1");
+		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE finish = 1");
 	}
 	function get_purchases_lskode($kode){
 		return $this->db->query("SELECT kode FROM purchases WHERE kode LIKE '%$kode%' ORDER BY id DESC");
@@ -19,10 +19,10 @@ class Mod_purchases extends CI_model {
 		return $this->db->query("SELECT no FROM purchases ORDER BY no DESC");
 	}
 	function get_purchases_limit($limit,$offset){
-		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE status = 'Pembelian' AND finish = 1 ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE finish = 1 ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}
 	function get_purchases_limit_src($limit,$offset,$src){
-		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE status = 'Pembelian' AND finish = 1 AND (kode LIKE '%$src%' OR item LIKE '%$src%' OR kode_item LIKE '%$src%') ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
+		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE finish = 1 AND (kode LIKE '%$src%' OR item LIKE '%$src%' OR kode_item LIKE '%$src%') ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}
 	function get_purchases_total(){
 		return $this->db->query("SELECT count(id) AS row FROM purchases");

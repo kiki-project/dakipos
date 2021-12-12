@@ -30,6 +30,12 @@ class Mod_purchases extends CI_model {
 	function get_purchase_item($id){
 		return $this->db->query("SELECT * FROM purchase_item WHERE purchase_id = '$id'");
 	}
+	function get_purchase_item_id($id){
+		return $this->db->query("SELECT * FROM purchase_item WHERE id = '$id'");
+	}
+	function get_price_item_unit($id,$unit){
+		return $this->db->query("SELECT * FROM price_units WHERE item_id = '$id' AND satuan = '$unit'");
+	}
 	function insert_purchases($data){
 		$this->db->insert('purchases', $data);
 	}

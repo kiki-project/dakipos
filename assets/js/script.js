@@ -390,8 +390,16 @@ function frm_groups_item() {
 }
 
 function set_price_unit_purchase(id,satuan){
-console.log(id)
-console.log(satuan)
+
+  $.ajax({
+    type: "POST",
+    url: base_url("json/update-satuan-purchase_item"),
+    data: { id: id, satuan: satuan },
+    success: function (response) {
+      data = JSON.parse(response);
+      
+    },
+  });
 }
 
 function toggle_item_types(source) {

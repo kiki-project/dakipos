@@ -28,7 +28,8 @@
             url: base_url("json/get-purchase_item"),
             success: function (response) {            
                 result = JSON.parse(response);
-                var data = ""; 
+                var data = "";
+                var total_harga = 0;
                 $.each(result, function (i, row) {
                     get_units_prchase_item('satuan_purchase_item'+row['id'], row['satuan'], row['item_id'])
                     data += '<tr>';
@@ -51,7 +52,9 @@
                     data += '</div>';
                     data += '</td>';
                     data += '</tr>';
+                    total_harga += row["total"];
                 });
+                set_currency_value('harga', total_harga)
                 $("#tbl-purchase_item").html(data);
             },
         });

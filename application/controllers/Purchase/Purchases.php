@@ -186,18 +186,17 @@ class Purchases extends CI_Controller {
 		$id = $this->input->post('id');
 		$satuan = $this->input->post('satuan');
 		$purc = $this->Mod_purchases->get_purchase_item_id($id)->row_array();
-		$item = $this->Mod_purchases->get_price_item_unit($purc['item_id'], $purc['satuan'])->row_array();
+		$price = $this->Mod_purchases->get_price_item_unit($purc['item_id'], $purc['satuan'])->row_array();
 		
 		$data = array(
 					'satuan' 		=> $this->input->post('satuan'),
 					'jumlah' 		=> 1,
-					'satuan' 		=> $item['satuan_dasar'],
 					'potongan' 		=> 0,
-					'harga' 		=> $item['harga_pokok'],
-					'total' 		=> $item['harga_pokok'],
+					'harga' 		=> $price['harga_pokok'],
+					'total' 		=> $price['harga_pokok'],
 				);
 			$this->Mod_purchases->update_purchase_item($data,$id);
-
+		echo json_encode($purc);
 	}
 
 }

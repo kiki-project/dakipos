@@ -14,7 +14,7 @@
     <div class="row">
       <section class="col-lg-12">
         <div class="card">
-          <form method="post" action="<?php echo base_url(); ?>insert-orders" id="frm-orders">
+          <form method="post" action="<?php echo base_url(); ?>insert-purchases" id="frm-purchases">
           <div class="card-body" style="overflow:auto;white-space: nowrap;">
             <div class="row">
               <div class="col-md-6">
@@ -336,7 +336,7 @@
   });
 
    function btn_submit(submit){
-    $("#frm-orders").submit(function(event){
+    $("#frm-purchases").submit(function(event){
         event.preventDefault(); //prevent default action 
         var post_url = $(this).attr("action")+'/'+submit; //get form action url
         var request_method = $(this).attr("method"); //get form GET/POST method

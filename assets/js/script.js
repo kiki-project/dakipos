@@ -729,7 +729,7 @@ function hitung_purchases(id) {
     .replace(",", "")
     .replace(",", "");
 
-  var sub_total = parseInt(qty) * parseInt(hrg) - parseInt(pot_n);
+  var sub_total = 1 * parseInt(hrg) - parseInt(pot_n);
 
   if ($("#tambah_total").is(":checked")) {
     var val_sub_total = parseInt(sub_total) + parseInt(biaya_lain);

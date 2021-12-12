@@ -250,7 +250,7 @@
                   <div class="form-group col-md-6" id="frm-provinsi">
                     <label>Total Akhir Harga:</label>
                     <div class="input-group ">
-                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" >
+                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" class="form-control">
                     </div>
                   </div>
                 </div>

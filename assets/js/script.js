@@ -389,6 +389,11 @@ function frm_groups_item() {
   });
 }
 
+function set_price_unit_purchase(id,satuan){
+console.log(id)
+console.log(satuan)
+}
+
 function toggle_item_types(source) {
   var checkboxes = document.querySelectorAll("#cb_item_types");
   for (var i = 0; i < checkboxes.length; i++) {

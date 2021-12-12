@@ -64,7 +64,7 @@ class Purchases extends CI_Controller {
 					'no' 	=> $no[0],
 				);
 			
-				$this->Mod_purchases->insert_orders($add);
+				$this->Mod_purchases->insert_purchases($add);
 			$data['data'] = $this->Mod_purchases->get_purchases_finish($created)->row_array();
 
 			}

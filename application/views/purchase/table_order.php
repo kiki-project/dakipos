@@ -54,8 +54,8 @@
                     data += '</tr>';
                     total_harga += parseInt(row["total"]);
                 });
-                console.log(total_harga)
-                // set_currency_value('harga', total_harga);
+                
+                set_currency_value('harga', parseInt(total_harga));
                 $("#tbl-purchase_item").html(data);
             },
         });

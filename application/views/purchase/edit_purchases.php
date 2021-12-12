@@ -14,225 +14,27 @@
     <div class="row">
       <section class="col-lg-12">
         <div class="card">
-          <form method="post" action="<?php echo base_url(); ?>insert-purchases" id="frm-purchases">
+          <form method="post" action="<?php echo base_url(); ?>insert-orders" id="frm-orders">
           <div class="card-body" style="overflow:auto;white-space: nowrap;">
             <div class="row">
-              <div class="col-md-12 f-color1">
-                <h5><b>Data Umum</b></h5>
-                <hr>
-              </div>
               <div class="col-md-6">
                 <div class="form-row">
                   <div class="form-group col-md-6" id="frm-kode">
                     <label>No Transaksi :</label>
                     <div class="input-group ">
-                      <input type="text" name="kode" id="kode" class="form-control" required="" readonly="" value="<?php echo $kode; ?>">
+                      <input type="text" name="id" id="id" class="form-control none" required="" readonly="" value="<?php echo $data['id']; ?>">
+                      <input type="text" name="kode" id="kode" class="form-control" required="" readonly="" value="<?php echo $data['kode']; ?>">
                     </div>
                     <small class="form-text" style="color: red;" id="err_kode"></small>
-
                   </div>
-                  <div class="form-group col-md-6" id="frm-kode">
-                    <label>Kode Item :</label>
-                    <div class="input-group ">
-                      <input type="text" name="kode_item" id="kode-item" class="form-control" required="" readonly="" value="<?php echo $data['kode_item']; ?>">
-                      <div class="input-group-append">
-                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#modal-items" onclick="get_item_list_radio(10,'none')"><i class="fa fa-plus"></i></a>
-                      </div>
-                    </div>
-                    <small class="form-text" style="color: red;" id="err_kode"></small>
-
-                  </div>
-                </div>
-              
-                  <div class="form-group" id="frm-nama_item">
-                    <label>Nama Item :</label>
-                    <div class="input-group ">
-                      <input type="text" name="item" id="item" class="form-control" readonly="" value="<?php echo $data['item']; ?>">
-                    </div>
-                  </div>
-                <div class="form-group" id="frm-item-desc">
-                  <label>Keterangan Item:</label>
-                  <div class="input-group ">
-                    <textarea class="form-control" name="item_description" readonly="" id="item-desc"><?php echo $data['item_description']; ?></textarea>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-jenis_item">
-                    <label>Jenis Item :</label>
-                    <div class="input-group ">
-                      <input type="text" name="jenis_item" id="jenis_item" readonly="" class="form-control" value="<?php echo $data['jenis_item']; ?>">
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-satuan">
-                    <label>Satuan :</label>
-                    <div class="input-group ">
-                      <input type="text" name="satuan" id="satuan" class="form-control" readonly="" value="<?php echo $data['satuan']; ?>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
                   <div class="form-group col-md-6" id="frm-tanggal">
                     <label>Tanggal : </label>
                     <div class="input-group ">
                       <input type="date" name="tanggal" id="tanggal" class="form-control" value="<?php echo $data['tanggal']; ?>">
                     </div>
                   </div>
-                  <div class="form-group col-md-6" id="frm-jatuh_tempo">
-                    <label>Jatuh Tempo : </label>
-                    <div class="input-group ">
-                      <input type="date" name="jatuh_tempo" id="jatuh_tempo" class="form-control" value="<?php echo $data['jatuh_tempo']; ?>">
-                    </div>
-                  </div>
                 </div>
                 <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-harga">
-                    <label>Harga :</label>
-                      <div class="input-group ">
-                        <input type="text" name="harga" class="form-control" readonly="" id="harga" oninput="set_currency_value('harga', this.value)" style="text-align: right;" value="<?php echo number_format($data['harga'], 2); ?>">
-                        <div class="input-group-append">
-                          <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label>Supplier:</label>
-                    <div class="input-group ">
-                      <select class="form-control" name="supplier" id="supplier">
-                            <option value=""></option>
-                        <?php
-
-                          foreach ($supplier as $key) {
-                            ?>
-                            <option value="<?php echo $key->kode; ?>" <?php if($data['supplier'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
-                            <?php
-                          }
-                         ?>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-sub_total_item">
-                    <label>Sub Total Item :</label>
-                    <div class="input-group ">
-                      <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" oninput="hitung_purchases('none')" class="form-control" value="<?php echo number_format($data['sub_total_item']); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency_purchases('sub_total_item')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Sub Total:</label>
-                    <div class="input-group ">
-                      <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control" value="<?php echo number_format($data['sub_total_harga'],2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-sub_total_item">
-                    <label>Sub Total Terima :</label>
-                    <div class="input-group ">
-                      <input type="text" name="sub_total_terima" style="text-align: right;" id="sub_total_terima" class="form-control" value="<?php echo number_format($data['sub_total_terima']); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger" onclick="input_clear_currency_purchases('sub_total_terima')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Total Akhir Harga:</label>
-                    <div class="input-group ">
-                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" class="form-control" value="<?php echo number_format($data['total_akhir_harga'],2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-sub_total_item">
-                    <label>Potongan (%) :</label>
-                    <div class="input-group ">
-                      <input type="text" name="potongan" style="text-align: right;"  oninput="hitung_currency_purchases('potongan', this.value)" id="potongan" class="form-control" value="<?php echo number_format($data['potongan'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger"  onclick="input_clear_currency_purchases('potongan')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Titip/DP:</label>
-                    <div class="input-group ">
-                      <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency_purchases('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger"  onclick="input_clear_currency_purchases('dp')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-row">
-                          
-                      <div class="form-group col-md-4" id="frm-sub_total_item">
-                        <label>Pot Nota (%) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pot_nota_percent" style="text-align: right;"  oninput="hitung_currency_purchases('pot_nota_percent', this.value)" id="pot_nota_percent" class="form-control" value="<?php echo number_format($data['pot_nota_percent'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency_purchases('pot_nota_percent')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group col-md-8" id="frm-sub_total_item">
-                        <label>Pot Nota (<i>nilai</i>) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pot_nota_nilai" style="text-align: right;"  oninput="hitung_currency_purchases('pot_nota_nilai', this.value)" id="pot_nota_nilai" class="form-control" value="<?php echo number_format($data['pot_nota_nilai'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency_purchases('pot_nota_nilai')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label>Kredit:</label>
-                    <div class="input-group ">
-                      <input type="text" name="kredit" style="text-align: right;" readonly="" id="kredit" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-row">
-                          
-                      <div class="form-group col-md-4" id="frm-sub_total_item">
-                        <label>Pajak (%) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pajak_percent" style="text-align: right;"  oninput="hitung_currency_purchases('pajak_percent', this.value)" id="pajak_percent" class="form-control" value="<?php echo number_format($data['pajak_percent'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency_purchases('pajak_percent')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group col-md-8" id="frm-sub_total_item">
-                        <label>Pajak (<i>nilai</i>) :</label>
-                        <div class="input-group ">
-                          <input type="text" name="pajak_nilai" style="text-align: right;"  oninput="hitung_currency_purchases('pajak_nilai', this.value)" id="pajak_nilai" class="form-control" value="<?php echo number_format($data['pajak_nilai'], 2); ?>">
-                          <div class="input-group-append">
-                            <div class="btn btn-danger"  onclick="input_clear_currency_purchases('pajak_nilai')"><i class="fa fa-trash"></i></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <div class="form-group col-md-6">
                     <label>Masuk ke:</label>
                     <div class="input-group ">
@@ -248,7 +50,186 @@
                       </select>
                     </div>
                   </div>
+                  <div class="form-group col-md-6">
+                    <label>PPN:</label>
+                    <div class="input-group ">
+                      <select class="form-control" name="ppn" id="ppn">
+                            <option value="Non" <?php if($data['ppn'] == 'Non'){ echo "selected='true'"; } ?> >Non</option>
+                            <option value="Include" <?php if($data['ppn'] == 'Include'){ echo "selected='true'"; } ?> >Include</option>
+                            <option value="Exclude" <?php if($data['ppn'] == 'Exclude'){ echo "selected='true'"; } ?> >Exclude</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-row">
+                  <div class="form-group col-md-6" id="frm-Kekurangan">
+                    <label>Supplier:</label>
+                    <div class="input-group ">
+                      <select class="form-control" name="supplier" id="supplier">
+                            <option value=""></option>
+                        <?php
+
+                          foreach ($supplier as $key) {
+                            ?>
+                            <option value="<?php echo $key->kode; ?>" <?php if($data['supplier'] == $key->kode){ echo "selected='true'"; } ?> ><?php echo $key->kode.'-'.$key->name; ?></option>
+                            <?php
+                          }
+                         ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6" id="frm-provinsi">
+                    <label>Status Pesanan:</label>
+                    <div class="input-group ">
+                      <select class="form-control" name="status" id="status">
+                        <option value=""></option>
+                            <option value="Menunggu Pembayaran" <?php if($data['status'] == 'Menunggu Pembayaran'){ echo "selected='true'"; } ?> >Menunggu Pembayaran</option>
+                            <option value="Menunggu Persetujuan" <?php if($data['status'] == 'Menunggu Persetujuan'){ echo "selected='true'"; } ?> >Menunggu Persetujuan</option>
+                            <option value="Disetujui" <?php if($data['status'] == 'Disetujui'){ echo "selected='true'"; } ?> >Disetujui</option>
+                            <option value="Dikerjakan" <?php if($data['status'] == 'Dikerjakan'){ echo "selected='true'"; } ?> >Dikerjakan</option>
+                            <option value="Selesai" <?php if($data['status'] == 'Selesai'){ echo "selected='true'"; } ?> >Selesai</option>
+                            <option value="Dibatalkan" <?php if($data['status'] == 'Dibatalkan'){ echo "selected='true'"; } ?> >Dibatalkan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-row none">
+                  <div class="form-group col-md-6" id="frm-harga">
+                    <label>Harga :</label>
+                      <div class="input-group ">
+                        <input type="text" name="harga" class="form-control" id="harga" oninput="set_currency_value('harga', this.value)" style="text-align: right;" value="<?php echo number_format($data['harga'], 2); ?>">
+                        <div class="input-group-append">
+                          <div class="btn btn-default"><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                    <?php $this->load->view('purchase/table_order', $data); ?>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                  <div class="form-group" id="frm-tanggal">
+                    <label>Tanggal Kirim : </label>
+                    <div class="input-group ">
+                      <input type="date" name="tanggal_kirim" id="tanggal_kirim" class="form-control" value="<?php echo $data['tanggal_kirim']; ?>">
+                    </div>
+                  </div>
+                <div class="form-group" id="frm-desc">
+                  <label>Keterangan :</label>
+                  <div class="input-group ">
+                    <textarea class="form-control" name="description" id="desc"><?php echo $data['description']; ?></textarea>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group col-md-6" id="frm-provinsi">
+                    <label>Titip/DP:</label>
+                    <div class="input-group ">
+                      <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6" id="frm-Kekurangan">
+                    <label>Kekurangan:</label>
+                    <div class="input-group ">
+                      <input type="text" name="kredit" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>Item :</label>
+                    <div class="input-group ">
+                      <input type="text" name="sub_total_item" style="text-align: right;" id="sub_total_item" readonly="true" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Terima :</label>
+                    <div class="input-group ">
+                      <input type="text" name="sub_total_terima" style="text-align: right;" id="sub_total_terima" class="form-control" value="<?php echo number_format($data['sub_total_terima']); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger" onclick="input_clear_currency('sub_total_terima')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4" id="frm-provinsi">
+                    <label>Sub Total:</label>
+                    <div class="input-group ">
+                      <input type="text" name="sub_total_harga" style="text-align: right;" id="sub_total_harga" readonly="" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Potongan (%) :</label>
+                    <div class="input-group ">
+                      <input type="text" name="potongan" style="text-align: right;"  oninput="hitung_currency('potongan', this.value)" id="potongan" class="form-control" value="<?php echo number_format($data['potongan'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('potongan')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Pot Nota (%) :</label>
+                    <div class="input-group ">
+                      <input type="text" name="pot_nota_percent" style="text-align: right;"  oninput="hitung_currency('pot_nota_percent', this.value)" id="pot_nota_percent" class="form-control" value="<?php echo number_format($data['pot_nota_percent'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('pot_nota_percent')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4" id="frm-sub_total_item">
+                    <label>Pot Nota (<i>nilai</i>) :</label>
+                    <div class="input-group ">
+                      <input type="text" name="pot_nota_nilai" style="text-align: right;"  oninput="hitung_currency('pot_nota_nilai', this.value)" id="pot_nota_nilai" class="form-control" value="<?php echo number_format($data['pot_nota_nilai'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('pot_nota_nilai')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-row">
+                    <div class="form-group col-md-4" id="frm-sub_total_item">
+                        <label>Pajak (%) :</label>
+                        <div class="input-group ">
+                          <input type="text" name="pajak_percent" style="text-align: right;"  oninput="hitung_currency('pajak_percent', this.value)" id="pajak_percent" class="form-control" value="<?php echo number_format($data['pajak_percent'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger"  onclick="input_clear_currency('pajak_percent')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-8" id="frm-sub_total_item">
+                        <label>Pajak (<i>nilai</i>) :</label>
+                        <div class="input-group ">
+                          <input type="text" name="pajak_nilai" style="text-align: right;"  oninput="hitung_currency('pajak_nilai', this.value)" id="pajak_nilai" class="form-control" value="<?php echo number_format($data['pajak_nilai'], 2); ?>">
+                          <div class="input-group-append">
+                            <div class="btn btn-danger"  onclick="input_clear_currency('pajak_nilai')"><i class="fa fa-trash"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
                 <div class="form-row">
                   <div class="form-group col-md-6" id="frm-biaya_lain">
                     <label>Biaya Lain :</label>
@@ -264,17 +245,14 @@
                       </div>
                   </div>
                   <div class="form-group col-md-6" id="frm-provinsi">
-                    &nbsp;
+                    <label>Total Akhir Harga:</label>
+                    <div class="input-group ">
+                      <input type="text" name="total_akhir_harga" style="text-align: right;" id="total_akhir_harga" readonly="" class="form-control">
+                    </div>
                   </div>
                 </div>
-                <div class="form-group" id="frm-desc">
-                  <label>Keterangan :</label>
-                  <div class="input-group ">
-                    <textarea class="form-control" name="description" id="desc"><?php echo $data['description']; ?></textarea>
-                  </div>
-                </div>
-
               </div>
+
             </div>
           </div>
             <div class="card-footer" style="text-align: right;">
@@ -297,7 +275,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form method="post" action="<?php echo base_url(); ?>json/get-item-kode" id="frm-items">
+      <form method="post" action="<?php echo base_url(); ?>json/insert-purchase_item" id="frm-items">
+        <input type="text" name="purchase_id" value="<?php echo $data['id']; ?>" style="display:none;">
         <div class="modal-body">          
           <div class="form-group">
             <div class="input-group">
@@ -333,6 +312,7 @@
 
 <script type="text/javascript">
  $( document ).ready(function() {
+   get_purchase_item('<?php echo $data['id']; ?>');
           if ($('#per-item').is(':checked')) {
               $('#type_komisi').prop('disabled', true);
               $('#nilai_komisi').prop('readonly', true);
@@ -356,7 +336,7 @@
   });
 
    function btn_submit(submit){
-    $("#frm-purchases").submit(function(event){
+    $("#frm-orders").submit(function(event){
         event.preventDefault(); //prevent default action 
         var post_url = $(this).attr("action")+'/'+submit; //get form action url
         var request_method = $(this).attr("method"); //get form GET/POST method
@@ -393,19 +373,7 @@ function submit_item(a){
             data = JSON.parse(response);
             if (a == 'pilih') {
               $('#modal-items').modal('hide');
-              $('#sub_total_item').val(1);
-              $('#kode-item').val(data['kode']);
-              $('#item').val(data['name']);
-              $('#item-desc').val(data['description']);
-              $('#jenis_item').val(data['jenis']);
-              $('#satuan').val(data['satuan_dasar']);
-              $('#supplier').val(data['supplier']);
-              $('#pajak_percent').val(data['pajak']);
-              $('#harga').val(currency(data['harga_pokok']).format().replace("$", ""));
-              $('#sub_total_harga').val(currency(data['harga_pokok']).format().replace("$", ""));
-              $('#total_akhir_harga').val(currency(data['harga_pokok']).format().replace("$", ""));
-              $('#kredit').val(currency(data['harga_pokok']).format().replace("$", ""));
-              hitung_purchases('none')
+             get_purchase_item('<?php echo $data['id']; ?>');
             }
 
           }

@@ -186,7 +186,7 @@ class Purchases extends CI_Controller {
 		$id = $this->input->post('id');
 		$satuan = $this->input->post('satuan');
 		$purc = $this->Mod_purchases->get_purchase_item_id($id)->row_array();
-		$price = $this->Mod_purchases->get_price_item_unit($purc['item_id'], $purc['satuan'])->row_array();
+		$price = $this->Mod_purchases->get_price_item_unit($purc['item_id'], $satuan)->row_array();
 		
 		$data = array(
 					'satuan' 		=> $this->input->post('satuan'),

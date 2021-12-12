@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Mod_purchases extends CI_model {
 
 	function cek_purchases($kode){
-		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE kode = '$kode'");
+		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE kode = '$kode' AND finish = 1");
 	}
 	function get_purchases_id($id){
 		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE id = '$id'");

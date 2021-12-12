@@ -82,12 +82,13 @@ class Purchases extends CI_Controller {
 			$this->Main->content_error($data['module']['name'],'purchase/edit_purchases', $data);
 		}
 	}
+	
 	function insert(){
 		$submit = $this->uri->segment(2);
+		$id 	= $this->input->post('id');
 		$kode 	= $this->input->post('kode');
 		$cek 	= $this->Mod_purchases->cek_purchases($kode)->row_array();
 		$created = $this->session->userdata('user_id');
-		$no 	= explode('/', $kode);
 
 		$data_main = array(
 			'kode'	=> $kode, 
@@ -96,29 +97,28 @@ class Purchases extends CI_Controller {
 			'item_description' 	=> $this->input->post('item_description'), 
 			'kode_item' 	=> $this->input->post('kode_item'), 
 			'supplier' 		=> $this->input->post('supplier'), 
-			'jenis_item' 		=> $this->input->post('jenis_item'), 
+			'jenis_item' 	=> $this->input->post('jenis_item'), 
 			'satuan' 		=> $this->input->post('satuan'), 
 			'description' 		=> $this->input->post('description'), 
-			'jenis' 		=> $this->input->post('jenis'), 
-			'masuk_ke' 		=> $this->input->post('masuk_ke'),  
-			'sub_total_item' 		=> str_replace(',', '', $this->input->post('sub_total_item')), 
-			'sub_total_terima' 		=> str_replace(',', '', $this->input->post('sub_total_terima')), 
-			'harga' 		=> str_replace(',', '', $this->input->post('harga')), 
-			'potongan' 		=> str_replace(',', '', $this->input->post('potongan')), 
-			'sub_total_harga' 		=> str_replace(',', '', $this->input->post('sub_total_harga')), 
-			'total_akhir_harga' 		=> str_replace(',', '', $this->input->post('total_akhir_harga')), 
-			'pot_nota_percent' 		=> str_replace(',', '', $this->input->post('pot_nota_percent')), 
-			'pot_nota_nilai' 		=> str_replace(',', '', $this->input->post('pot_nota_nilai')), 
-			'dp' 		=> str_replace(',', '', $this->input->post('dp')), 
-			'kredit' 		=> str_replace(',', '', $this->input->post('kredit')), 
-			'pajak_percent' 		=> str_replace(',', '', $this->input->post('pajak_percent')), 
+			'jenis' 			=> 'Pembelian', 
+			'masuk_ke' 			=> $this->input->post('masuk_ke'),  
+			'sub_total_item' 	=> str_replace(',', '', $this->input->post('sub_total_item')), 
+			'sub_total_terima' 	=> str_replace(',', '', $this->input->post('sub_total_terima')), 
+			'harga' 			=> str_replace(',', '', $this->input->post('harga')), 
+			'potongan' 			=> str_replace(',', '', $this->input->post('potongan')), 
+			'sub_total_harga' 	=> str_replace(',', '', $this->input->post('sub_total_harga')), 
+			'total_akhir_harga' => str_replace(',', '', $this->input->post('total_akhir_harga')), 
+			'pot_nota_percent' 	=> str_replace(',', '', $this->input->post('pot_nota_percent')), 
+			'pot_nota_nilai' 	=> str_replace(',', '', $this->input->post('pot_nota_nilai')), 
+			'dp' 				=> str_replace(',', '', $this->input->post('dp')), 
+			'kredit' 			=> str_replace(',', '', $this->input->post('kredit')), 
+			'pajak_percent' 	=> str_replace(',', '', $this->input->post('pajak_percent')), 
 			'pajak_nilai' 		=> str_replace(',', '', $this->input->post('pajak_nilai')), 
-			'biaya_lain' 		=> str_replace(',', '', $this->input->post('biaya_lain')), 
-			'tambah_total' 		=> $this->input->post('tambah_total'),  
-			'no' 		=> $no['0'],  
-			'tanggal' 		=> $this->input->post('tanggal'), 
-			'jatuh_tempo' 		=> $this->input->post('jatuh_tempo'), 
-			'status' 		=> 'Pembelian',  
+			'tanggal_kirim' 	=> $this->input->post('tanggal_kirim'), 
+			'tanggal' 			=> $this->input->post('tanggal'), 
+			'status' 			=> $this->input->post('status'), 
+			'finish' 			=> 1, 
+
 		);
 
 		if ($submit == 'Update') {
@@ -127,7 +127,7 @@ class Purchases extends CI_Controller {
 					'updated_by' 	=> $created,
 				);
 				$data = array_merge($data_main, $data_b);
-			$this->Mod_purchases->update_purchases($data,$cek['id']);
+			$this->Mod_purchases->update_purchases($data,$id);
 				$err = 0;
 
 		}else{
@@ -141,7 +141,7 @@ class Purchases extends CI_Controller {
 				);
 				$data = array_merge($data_b, $data_main);
 
-			$this->Mod_purchases->insert_purchases($data);
+			$this->Mod_purchases->update_purchases($data,$id);
 				$err = 0;
 			}else{
 				$err = 1;

@@ -72,9 +72,11 @@
                     <tr class="f-color1">
                       <th style="width:10px;">No</th>
                       <th style="width:100px;">No Transaksi</th>
-                      <th style="width:100px;">Kode Item</th>
-                      <th>Nama Item</th>
-                      <th style="width: 50px;text-align:center;">Jenis Item</th>
+                      <th style="width:100px;">Tanggal</th>
+                      <th style="width:100px;">Tanggal Kirim</th>
+                      <th style="width:100px;">Dept/Gudang</th>
+                      <th style="width:100px;">Kode Supplier</th>
+                      <th>Nama Supplier</th>
                       <th style="width: 50px;text-align:center;">Status</th>
                       <th style="width: 50px;text-align:center;">Jml</th>
                       <th style="width: 50px;text-align:center;">Jml diterima</th>
@@ -109,9 +111,11 @@
                   <tr>
                     <td style="text-align: center;"><?php echo $no++; ?></td>
                     <td><?php echo $key->kode; ?></td>
-                    <td><?php echo $key->kode_item; ?></td>
-                    <td><?php echo $key->item; ?></td>
-                    <td style="text-align: center;"><?php echo $key->jenis_item; ?></td>
+                    <td style="text-align: center;"><?php echo $key->tanggal; ?></td>
+                    <td style="text-align: center;"><?php echo $key->tanggal_kirim; ?></td>
+                    <td><?php echo $key->masuk_ke; ?></td>
+                    <td><?php echo $key->supplier; ?></td>
+                    <td><?php echo $key->supplier_name; ?></td>
                     <td <?php if($key->status == 'Pesanan'){ echo "style='text-align: center;color:orange'"; }elseif($key->status == 'Pembelian'){ echo "style='text-align: center;color:green'"; } ?>>
                       <b><?php echo $key->status; ?></b>
                     </td>

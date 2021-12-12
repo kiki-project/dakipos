@@ -52,7 +52,7 @@
                     data += '</div>';
                     data += '</td>';
                     data += '</tr>';
-                    total_harga += row["total"];
+                    total_harga += parseInt(row["total"]);
                 });
                 set_currency_value('harga', total_harga)
                 $("#tbl-purchase_item").html(data);

@@ -27,7 +27,7 @@ class Mod_purchases extends CI_model {
 	function get_purchases_total(){
 		return $this->db->query("SELECT count(id) AS row FROM purchases");
 	}
-	function get_orders_finish($created){
+	function get_purchases_finish($created){
 		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name FROM purchases AS a WHERE finish = 0 AND created_by = $created");
 	}
 	function get_purchase_item($id){

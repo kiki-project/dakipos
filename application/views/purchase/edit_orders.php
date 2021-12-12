@@ -98,7 +98,7 @@
                   </div>
                 </div>
                 
-                <div class="form-row">
+                <div class="form-row none">
                   <div class="form-group col-md-6" id="frm-harga">
                     <label>Harga :</label>
                       <div class="input-group ">

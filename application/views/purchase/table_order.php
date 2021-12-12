@@ -57,8 +57,8 @@
                     qty += parseInt(row["jumlah"]);
                 });
                 
-                set_currency_value('harga', currency(total_harga).format().replace("$", ""));
-                set_currency_value('sub_total_item', currency(qty).format().replace("$", ""));
+                hitung_currency('harga', currency(total_harga).format().replace("$", ""));
+                hitung_currency('sub_total_item', currency(qty).format().replace("$", ""));
                 $("#tbl-purchase_item").html(data);
             },
         });

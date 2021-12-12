@@ -10,7 +10,7 @@ class Mod_purchases extends CI_model {
 		return $this->db->query("SELECT * FROM purchases WHERE id = '$id'");
 	}
 	function get_purchases(){
-		return $this->db->query("SELECT * FROM purchases WHERE status = 'Pembelian'");
+		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = s.supplier ) AS supplier_name FROM purchases AS a WHERE status = 'Pembelian'");
 	}
 	function get_purchases_lskode($kode){
 		return $this->db->query("SELECT kode FROM purchases WHERE kode LIKE '%$kode%' ORDER BY id DESC");

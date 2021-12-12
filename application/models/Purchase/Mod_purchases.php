@@ -58,4 +58,8 @@ class Mod_purchases extends CI_model {
 		$this->db->where('id',$id);
 		$this->db->delete('purchase_item');	
 	}
+	function delete_purchase_item_rel($id){
+		$this->db->where('purchase_id',$id);
+		$this->db->delete('purchase_item');	
+	}
 }

@@ -134,6 +134,7 @@ class Purchases extends CI_Controller {
 	function delete(){
 		$id = $this->uri->segment(2);
 		$this->Mod_purchases->delete_purchases($id);
+		$this->Mod_purchases->delete_purchase_item_rel($id);
 		redirect(base_url().$this->path());
 	}
 	function insert_purchase_item(){

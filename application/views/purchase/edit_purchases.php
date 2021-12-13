@@ -341,7 +341,7 @@
         var post_url = $(this).attr("action")+'/'+submit; //get form action url
         var request_method = $(this).attr("method"); //get form GET/POST method
         var form_data = $(this).serialize(); //Encode form elements for submission
-
+ 
         $.ajax({
           url : post_url,
           type : request_method,

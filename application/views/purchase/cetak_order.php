@@ -59,9 +59,9 @@
         <tr>
             <td colspan="2">Keterangan</td>
             <td>Jml Item : </td>
-            <td><?php echo number_format($data['sub_total_item',2); ?></td>
+            <td><?php echo number_format($data['sub_total_item'],2); ?></td>
             <td>Sub Total : </td>
-            <td><?php echo number_format($data['sub_total_harga',2); ?></td>
+            <td><?php echo number_format($data['sub_total_harga'],2); ?></td>
         </tr>
     </table>
 </div>

@@ -33,6 +33,9 @@ class Mod_purchases extends CI_model {
 	function get_purchase_item($id){
 		return $this->db->query("SELECT * FROM purchase_item WHERE purchase_id = '$id'");
 	}
+	function get_purchase_item_order($id){
+		return $this->db->query("SELECT * FROM purchase_item WHERE order_id = '$id'");
+	}
 	function get_purchase_item_id($id){
 		return $this->db->query("SELECT * FROM purchase_item WHERE id = '$id'");
 	}

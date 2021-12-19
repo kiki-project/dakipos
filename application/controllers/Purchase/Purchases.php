@@ -157,12 +157,17 @@ class Purchases extends CI_Controller {
 	}
 	function insert_purchase_item(){
 		$kode = $this->input->post('kode');
-		$purchase_id = $this->input->post('purchase_id');
+		$id = $this->input->post('id');
+		$type = $this->input->post('type');
 		$item = $this->Mod_adm->get_items_kode($kode)->row_array();
-		
+		if($type == 'order'){
+			$rel_id = 'order_id';
+		}else{
+			$rel_id = 'purchase_id';
+		}
 		if($item){
 		$data = array(
-					'purchase_id' 	=> $purchase_id,
+					$rel_id 	=> $id,
 					'item_id' 		=> $item['id'],
 					'kode_item' 	=> $item['kode'],
 					'name' 			=> $item['name'],
@@ -177,8 +182,13 @@ class Purchases extends CI_Controller {
 		echo json_encode($item);
 	}
 	function get_purchase_item(){
-		$purchase_id = $this->input->post('purchase_id');
-		$data = $this->Mod_purchases->get_purchase_item($purchase_id)->result();
+		$id = $this->input->post('id');
+		$type = $this->input->post('type');
+		if($type == 'order'){
+			$data = $this->Mod_purchases->get_purchase_item_order($id)->result();
+		}else{
+			$data = $this->Mod_purchases->get_purchase_item($id)->result();
+		}
 		echo json_encode($data);
 
 	}
@@ -191,6 +201,7 @@ class Purchases extends CI_Controller {
 	function update_purchase_item(){
 		
 		$id = $this->input->post('id');
+		$type = $this->input->post('type');
 		$data = array(
 					'satuan' 		=> $this->input->post('satuan'),
 					'jumlah' 		=> str_replace(',', '', $this->input->post('jumlah')),

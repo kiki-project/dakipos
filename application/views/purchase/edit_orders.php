@@ -276,7 +276,8 @@
         </button>
       </div>
       <form method="post" action="<?php echo base_url(); ?>json/insert-purchase_item" id="frm-items">
-        <input type="text" name="purchase_id" value="<?php echo $data['id']; ?>" style="display:none;">
+        <input type="text" name="id" value="<?php echo $data['id']; ?>" style="display:none;">
+        <input type="text" name="type" value="order" style="display:none;">
         <div class="modal-body">          
           <div class="form-group">
             <div class="input-group">

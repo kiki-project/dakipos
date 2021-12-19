@@ -24,7 +24,7 @@
     function get_purchase_item(a){
         $.ajax({
             type: "POST",    
-            data: { purchase_id: a },
+            data: { id: a, type: 'order' },
             url: base_url("json/get-purchase_item"),
             success: function (response) {            
                 result = JSON.parse(response);

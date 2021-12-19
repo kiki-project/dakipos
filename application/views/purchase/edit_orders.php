@@ -69,7 +69,7 @@
                   <div class="form-group col-md-6" id="frm-Kekurangan">
                     <label>Supplier:</label>
                     <div class="input-group ">
-                      <select class="form-control" name="supplier" id="supplier">
+                      <select class="form-control" name="supplier" id="supplier" required="">
                             <option value=""></option>
                         <?php
 

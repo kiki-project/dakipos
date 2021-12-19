@@ -22,10 +22,9 @@
 <script>
     
     function get_purchase_item(a){
-        var trx_type = 'order';
         $.ajax({
             type: "POST",    
-            data: { id: a, type: trx_type },
+            data: { id: a, type: 'order' },
             url: base_url("json/get-purchase_item"),
             success: function (response) {            
                 result = JSON.parse(response);

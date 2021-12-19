@@ -228,6 +228,14 @@ class Purchases extends CI_Controller {
 			$this->Mod_purchases->update_purchase_item($data,$id);
 		echo json_encode($purc);
 	}
+	function cetak(){
+		$id = $this->uri->segment(2);
+		$data = $this->main_data();
+		$data['data'] 	= $this->Mod_purchases->get_purchases_id($id)->row_array();
+		$data['item'] 	= $this->Mod_purchases->get_purchase_item($id)->result();
+		$this->Main->content($data['module']['name'],'purchase/cetak_order', $data);
+
+	}
 
 }
 ?>

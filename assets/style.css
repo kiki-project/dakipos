@@ -48,3 +48,9 @@ input[type="number"] {
   background-color: #ccc;
   color: #fff;
 }
+.page-cetak{
+  height: 3508px; 
+  width: 2480px;
+  background-color: #fff;
+  margin: auto;
+}

@@ -28,7 +28,7 @@
         </tr>
     </table>
     <br><br><br>
-    <table style="width:100%;">
+    <table style="width:100%;" border="1">
         <tr style="border-top:1px solid #000;border-bottom:1px solid #000;">
             <th style="text-align:center;">No.</th>
             <th style="text-align:left;">Kode Item</th>
@@ -56,5 +56,12 @@
         <?php
             }
         ?>
+        <tr>
+            <td colspan="2">Keterangan</td>
+            <td>Jml Item : </td>
+            <td><?php echo number_format($key->sub_total_item,2); ?></td>
+            <td>Sub Total : </td>
+            <td><?php echo number_format($key->sub_total_harga,2); ?></td>
+        </tr>
     </table>
 </div>

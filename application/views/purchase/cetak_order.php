@@ -45,13 +45,13 @@
         ?>
         <tr>
             <td style="text-align:center;"><?php echo $no++; ?></td>
-            <td style="text-align:left;"><?php echo $key['kode_item']; ?></td>
-            <td style="text-align:left;"><?php echo $key['name']; ?></td>
-            <td style="text-align:right;"><?php echo number_format($key['jumlah'],2); ?></td>
-            <td style="text-align:left;"><?php echo $key['satuan']; ?></td>
-            <td style="text-align:right;"><?php echo number_format($key['harga'],2); ?></td>
-            <td style="text-align:left;"><?php echo number_format($key['potongan'],2); ?></td>
-            <td style="text-align:right;"><?php echo number_format($key['total'],2); ?></td>
+            <td style="text-align:left;"><?php echo $key->kode_item; ?></td>
+            <td style="text-align:left;"><?php echo $key->name; ?></td>
+            <td style="text-align:right;"><?php echo number_format($key->jumlah,2); ?></td>
+            <td style="text-align:left;"><?php echo $key->satuan; ?></td>
+            <td style="text-align:right;"><?php echo number_format($key->harga,2); ?></td>
+            <td style="text-align:left;"><?php echo number_format($key->potongan,2); ?></td>
+            <td style="text-align:right;"><?php echo number_format($key->total,2); ?></td>
         </tr>
         <?php
             }

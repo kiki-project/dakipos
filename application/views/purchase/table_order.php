@@ -21,7 +21,7 @@
 
 <script>
     
-    function get_purchase_item(a){\
+    function get_purchase_item(a){
         $.ajax({
             type: "POST",    
             data: { id: a, type: 'order' },

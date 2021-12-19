@@ -155,6 +155,7 @@ class Orders extends CI_Controller {
 	}
 	function cetak(){
 		$id = $this->uri->segment(2);
+		$data = $this->main_data();
 		$data['data'] 	= $this->Mod_orders->get_orders_id($id)->row_array();
 		$data['item'] 	= $this->Mod_purchases->get_purchase_item_order($id)->result();
 		$this->Main->content($data['module']['name'],'purchase/cetak_order', $data);

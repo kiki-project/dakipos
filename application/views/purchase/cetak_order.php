@@ -70,7 +70,7 @@
             <td style="text-align:right;"></td>
             <td style="text-align:right;">Potongan : </td>
             <td style="text-align:left;"><?php echo number_format($data['potongan'],2); ?></td>
-            <td style="text-align:right;"><?php echo number_format($data['potongan'],2); ?></td>
+            <td style="text-align:right;"><?php echo number_format($data['pot_nota_nilai'],2); ?></td>
         </tr>
         <tr>
             <td style="text-align:right;"> </td>

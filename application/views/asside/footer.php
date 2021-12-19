@@ -1,5 +1,5 @@
 </div>
-<footer class="main-footer">
+<footer class="main-footer hidden-print">
     <!-- Default to the left -->
     <strong>Copyright &copy; 2021- <?php echo date('Y'); ?> <a href="https://dakisttm.com" target="_blank">dakisttm.com</a>.</strong>
 </footer>

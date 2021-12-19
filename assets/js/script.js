@@ -389,7 +389,7 @@ function frm_groups_item() {
   });
 }
 
-function set_price_unit_purchase(id,satuan,type){
+function set_price_unit_purchase(id,satuan){
 
   $.ajax({
     type: "POST",
@@ -397,9 +397,7 @@ function set_price_unit_purchase(id,satuan,type){
     data: { id: id, satuan: satuan },
     success: function (response) {
       data = JSON.parse(response);
-        get_purchase_item(data['purchase_id'])
-      
-
+      get_purchase_item(data['purchase_id'])
     },
   });
 }

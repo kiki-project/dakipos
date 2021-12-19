@@ -233,7 +233,7 @@ class Purchases extends CI_Controller {
 		$data = $this->main_data();
 		$data['data'] 	= $this->Mod_purchases->get_purchases_id($id)->row_array();
 		$data['item'] 	= $this->Mod_purchases->get_purchase_item($id)->result();
-		$this->Main->content($data['module']['name'],'purchase/cetak_order', $data);
+		$this->Main->content($data['module']['name'],'purchase/cetak_purchase', $data);
 
 	}
 

@@ -22,16 +22,17 @@
 <script>
     
     function get_purchase_item(a){
+        var trx_type = 'order';
+        
         $.ajax({
             type: "POST",    
-            data: { id: a, type: 'order' },
+            data: { id: a, type: trx_type },
             url: base_url("json/get-purchase_item"),
             success: function (response) {            
                 result = JSON.parse(response);
                 var data = "";
                 var total_harga = 0;
                 var qty = 0;
-                var trx_type = 'order';
                 $.each(result, function (i, row) {
                     get_units_prchase_item('satuan_purchase_item'+row['id'], row['satuan'], row['item_id'])
                     data += '<tr>';
@@ -39,7 +40,7 @@
                     data += '<td>'+row['kode_item']+'</td>';
                     data += '<td>'+row['name']+'</td>';
                     data += '<td>';
-                    data += '<select class="form-price price-unit" id="satuan_purchase_item'+row['id']+'" name="satuan" onchange="set_price_unit_purchase('+row['id']+',this.value,'+trx_type+')">';
+                    data += '<select class="form-price price-unit" id="satuan_purchase_item'+row['id']+'" name="satuan" onchange="set_price_unit_purchase('+row['id']+',this.value, 'order')">';
                     data += '</select>';
                     data += '</td>';
                     data += '<td style="text-align:right;"><input type="text" class="form-price" value="'+currency(row["jumlah"]).format().replace("$", "")+'" id="'+5001+row["id"]+'" oninput="hitung_currency_purchase_item('+row['id']+','+5001+', this.value)" style="text-align:right;"></td>';

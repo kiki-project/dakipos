@@ -352,7 +352,7 @@
               $("#err_kode").html('Kode Pesanan sudah dipakai');
               $("#kode").addClass('is-invalid');
             }else{
-              window.location.href="<?php echo base_url().$module['path']; ?>";
+              window.location.href="<?php echo base_url().$this->uri->segment(1); ?>";
             }
 
           }

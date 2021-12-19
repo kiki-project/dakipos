@@ -53,5 +53,5 @@ input[type="number"] {
   max-width: 1000px !important; 
   background-color: #fff;
   margin: auto;
-  padding: 50px;
+  padding: 50px !important;
 }

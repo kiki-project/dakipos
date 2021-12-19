@@ -116,6 +116,7 @@ class Orders extends CI_Controller {
 			'tanggal_kirim' 	=> $this->input->post('tanggal_kirim'), 
 			'tanggal' 			=> $this->input->post('tanggal'), 
 			'status' 			=> $this->input->post('status'), 
+			'ppn' 				=> $this->input->post('ppn'), 
 			'finish' 			=> 1, 
 
 		);

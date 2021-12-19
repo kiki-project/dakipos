@@ -10,9 +10,21 @@
                 Jakarta
             </td>
             <td style="text-align:right;">No Transaksi :</td>
-            <td style="text-align:left;"><?php echo $data['kode']; ?> :</td>
+            <td style="text-align:left;"><?php echo $data['kode']; ?></td>
             <td style="text-align:right;">Dept :</td>
-            <td style="text-align:left;"><?php echo $data['masuk_ke']; ?> :</td>
+            <td style="text-align:left;"><?php echo $data['masuk_ke']; ?></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Tanggal :</td>
+            <td style="text-align:left;"><?php echo $data['tanggal']; ?></td>
+            <td style="text-align:right;">Supplier :</td>
+            <td style="text-align:left;"><?php echo $data['supplier']." ".$data['supplier_name']; ?></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">User :</td>
+            <td style="text-align:left;"><?php echo $data['user']; ?></td>
+            <td style="text-align:right;">PPN :</td>
+            <td style="text-align:left;"><?php echo $data['ppn']; ?></td>
         </tr>
     </table>
 </div>

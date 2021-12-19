@@ -397,6 +397,7 @@ function set_price_unit_purchase(id,satuan,type){
     data: { id: id, satuan: satuan },
     success: function (response) {
       data = JSON.parse(response);
+      console.log(type)
       if(type == 'order'){
         get_purchase_item(data['order_id'])
       }else{

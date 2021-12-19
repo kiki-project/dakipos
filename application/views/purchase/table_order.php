@@ -32,7 +32,6 @@
                 var data = "";
                 var total_harga = 0;
                 var qty = 0;
-                console.log(type)
                 $.each(result, function (i, row) {
                     get_units_prchase_item('satuan_purchase_item'+row['id'], row['satuan'], row['item_id'])
                     data += '<tr>';

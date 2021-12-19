@@ -68,7 +68,6 @@
             <td colspan="3" rowspan="4"><?php echo $data['description']?></td>
             <td style="text-align:right;"> </td>
             <td style="text-align:right;"></td>
-            <td></td>
             <td style="text-align:right;">Potongan : </td>
             <td style="text-align:right;"><?php echo number_format($data['potongan'],2); ?></td>
             <td style="text-align:right;"><?php echo number_format($data['potongan'],2); ?></td>

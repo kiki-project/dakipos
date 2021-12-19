@@ -28,7 +28,7 @@
         </tr>
     </table>
     <br><br><br>
-    <table style="width:100%;" border="1">
+    <table style="width:100%;">
         <tr style="border-top:1px solid #000;border-bottom:1px solid #000;">
             <th style="text-align:center;">No.</th>
             <th style="text-align:left;">Kode Item</th>

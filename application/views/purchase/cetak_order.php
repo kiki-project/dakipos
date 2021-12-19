@@ -58,10 +58,11 @@
         ?>
         <tr>
             <td colspan="2">Keterangan</td>
-            <td>Jml Item : </td>
-            <td><?php echo number_format($data['sub_total_item'],2); ?></td>
-            <td>Sub Total : </td>
-            <td><?php echo number_format($data['sub_total_harga'],2); ?></td>
+            <td style="text-align:right;">Jml Item : </td>
+            <td style="text-align:left;"><?php echo number_format($data['sub_total_item'],2); ?></td>
+            <td></td>
+            <td style="text-align:right;">Sub Total : </td>
+            <td style="text-align:right;"><?php echo number_format($data['sub_total_harga'],2); ?></td>
         </tr>
     </table>
 </div>

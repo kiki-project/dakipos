@@ -114,7 +114,7 @@
             </div>
             <div class="row">
               <div class="col-md-12">
-                    <?php $this->load->view('purchase/table_order', $data); ?>
+                    <?php $this->load->view('purchase/table_purchase', $data); ?>
               </div>
             </div>
             <hr>

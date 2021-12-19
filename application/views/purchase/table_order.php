@@ -22,16 +22,16 @@
 <script>
     
     function get_purchase_item(a){
-        var trx_type = 'order';
         $.ajax({
             type: "POST",    
-            data: { id: a, type: trx_type },
+            data: { id: a, type: 'order' },
             url: base_url("json/get-purchase_item"),
             success: function (response) {            
                 result = JSON.parse(response);
                 var data = "";
                 var total_harga = 0;
                 var qty = 0;
+                var trx_type = 'order';
                 $.each(result, function (i, row) {
                     get_units_prchase_item('satuan_purchase_item'+row['id'], row['satuan'], row['item_id'])
                     data += '<tr>';

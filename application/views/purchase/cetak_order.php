@@ -27,4 +27,17 @@
             <td style="text-align:left;"><?php echo $data['ppn']; ?></td>
         </tr>
     </table>
+    <br><br><br>
+    <table style="width:100%;">
+        <tr style="border-top:1px solid #000;border-bottom:1px solid #000;">
+            <th style="text-align:center;">No.</th>
+            <th style="text-align:left;">Kode Item</th>
+            <th style="text-align:left;">Nama Item</th>
+            <th style="text-align:right;">Jml</th>
+            <th style="text-align:left">Satuan</th>
+            <th style="text-align:right;">Harga</th>
+            <th style="text-align:left;">Pot.</th>
+            <th style="text-align:right;">Total</th>
+        </tr>
+    </table>
 </div>

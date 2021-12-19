@@ -1,7 +1,7 @@
 <div class="page-cetak">
     <table style="width:100%;" border="1">
         <tr>
-            <td rowspan="3">
+            <td rowspan="3" style="text-align:center;">
                 <img src="<?php echo base_url(); ?>assets/doc/logo/main_logo.png" alt="" style="width: 106px;height: 98px;">
             </td>
             <td rowspan="3">

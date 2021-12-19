@@ -62,7 +62,7 @@
             <td style="text-align:right;"><?php echo number_format($data['sub_total_item'],2); ?></td>
             <td></td>
             <td style="text-align:right;">Sub Total : </td>
-            <td style="text-align:right;" colspan="2"><?php echo number_format($data['harga'],2); ?></td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
         </tr>
         <tr>
             <td colspan="3" rowspan="4" style="vertical-align:top;"><i><?php echo $data['description']?></i></td>
@@ -90,6 +90,20 @@
             <td style="text-align:right;"></td>
             <td style="text-align:right;">DP : </td>
             <td style="text-align:right;" colspan="2"><?php echo number_format($data['dp'],2); ?></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="width:200px; text-align:center;">Hormat Kami<td>
+            <td style="width:200px; text-align:center;">Penerima<td>
+        </tr>
+        <tr>
+            <td><br><br></td>
+            <td><br><br></td>
+        </tr>
+        <tr>
+            <td style="width:200px; text-align:center;">(.........................)	<td>
+            <td style="width:200px; text-align:center;">(.........................)	<td>
         </tr>
     </table>
 </div>

@@ -65,7 +65,7 @@
             <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
         </tr>
         <tr>
-            <td colspan="3" rowspan="4" style="vertical-align:top;"><?php echo $data['description']?></td>
+            <td colspan="3" rowspan="4" style="vertical-align:top;"><i><?php echo $data['description']?></i></td>
             <td style="text-align:right;"> </td>
             <td style="text-align:right;"></td>
             <td style="text-align:right;">Potongan : </td>

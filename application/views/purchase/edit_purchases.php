@@ -120,12 +120,20 @@
             <hr>
             <div class="row">
               <div class="col-md-4">
+                <div class="form-row">
                   <div class="form-group" id="frm-tanggal">
-                    <label>Tanggal Kirim : </label>
+                    <label>Jatuh Tempo : </label>
                     <div class="input-group ">
-                      <input type="date" name="tanggal_kirim" id="tanggal_kirim" class="form-control" value="<?php echo $data['tanggal_kirim']; ?>">
+                      <input type="date" name="jatuh_tempo" id="jatuh_tempo" class="form-control" value="<?php echo $data['jatuh_tempo']; ?>">
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label>Hari JT : </label>
+                    <div class="input-group ">
+                      <input type="number" name="hari_jt" id="hari_jt" class="form-control" value="<?php echo $data['hari_jt']; ?>">
+                    </div>
+                  </div>
+                </div>
                 <div class="form-group" id="frm-desc">
                   <label>Keterangan :</label>
                   <div class="input-group ">

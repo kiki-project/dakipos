@@ -34,13 +34,13 @@
             <th style="text-align:left;">Kode Item</th>
             <th style="text-align:left;">Nama Item</th>
             <th style="text-align:right;">Jml</th>
-            <th style="text-align:left">Satuan</th>
+            <th style="text-align:left">&nbsp;&nbsp;Satuan</th>
             <th style="text-align:right;">Harga</th>
-            <th style="text-align:left;">Pot.</th>
+            <th style="text-align:left;">&nbsp;&nbsp;Pot.</th>
             <th style="text-align:right;">Total</th>
         </tr>
         <?php 
-            $no = 0;
+            $no = 1;
             foreach ($item as $key) {
         ?>
         <tr>
@@ -48,9 +48,9 @@
             <td style="text-align:left;"><?php echo $key->kode_item; ?></td>
             <td style="text-align:left;"><?php echo $key->name; ?></td>
             <td style="text-align:right;"><?php echo number_format($key->jumlah,2); ?></td>
-            <td style="text-align:left;"><?php echo $key->satuan; ?></td>
+            <td style="text-align:left;">&nbsp;&nbsp;<?php echo $key->satuan; ?></td>
             <td style="text-align:right;"><?php echo number_format($key->harga,2); ?></td>
-            <td style="text-align:left;"><?php echo number_format($key->potongan,2); ?></td>
+            <td style="text-align:left;">&nbsp;&nbsp;<?php echo number_format($key->potongan,2); ?></td>
             <td style="text-align:right;"><?php echo number_format($key->total,2); ?></td>
         </tr>
         <?php

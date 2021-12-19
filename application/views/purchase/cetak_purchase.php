@@ -58,18 +58,18 @@
         ?>
         <tr style="border-top:1px solid #000;">
             <td colspan="2">Keterangan</td>
+            <td></td>
             <td style="text-align:right;">Jml Item : </td>
             <td style="text-align:right;"><?php echo number_format($data['sub_total_item'],2); ?></td>
-            <td></td>
             <td style="text-align:right;">Sub Total : </td>
             <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
         </tr>
         <tr>
             <td colspan="3" rowspan="4" style="vertical-align:top;"><i><?php echo $data['description']?></i></td>
             <td style="text-align:right;"> </td>
-            <td style="text-align:right;"></td>
             <td style="text-align:right;">Potongan : </td>
             <td style="text-align:left;"><?php echo number_format($data['potongan'],2); ?></td>
+            <td style="text-align:right;">Total Aktif :</td>
             <td style="text-align:right;"><?php echo number_format($data['pot_nota_nilai'],2); ?></td>
         </tr>
         <tr>

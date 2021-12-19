@@ -62,7 +62,7 @@
             <td style="text-align:right;"><?php echo number_format($data['sub_total_item'],2); ?></td>
             <td></td>
             <td style="text-align:right;">Sub Total : </td>
-            <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['harga'],2); ?></td>
         </tr>
         <tr>
             <td colspan="3" rowspan="4" style="vertical-align:top;"><i><?php echo $data['description']?></i></td>

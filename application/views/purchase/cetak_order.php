@@ -1,10 +1,10 @@
 <div class="page-cetak">
     <table style="width:100%;" border="1">
         <tr>
-            <td colspan="3">
+            <td rowspan="3">
                 <img src="<?php echo base_url(); ?>assets/doc/logo/main_logo.png" alt="" style="width: 106px;height: 98px;">
             </td>
-            <td colspan="3">
+            <td rowspan="3">
                 <b>Pesanan Pembelian (PO)</b><br>
                 <b>DAKI STTM</b><br>
                 Jakarta

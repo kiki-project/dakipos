@@ -41,7 +41,7 @@
         </tr>
         <?php 
             $no = 0;
-            foreach ($item as) {
+            foreach ($item as $key) {
         ?>
         <tr>
             <td style="text-align:center;"><?php echo $no++; ?></td>

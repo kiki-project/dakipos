@@ -68,26 +68,31 @@
             <td colspan="3" rowspan="4" style="vertical-align:top;"><i><?php echo $data['description']?></i></td>
             <td style="text-align:right;">Potongan : </td>
             <td style="text-align:right;"><?php echo number_format($data['potongan'],2); ?></td>
-            <td style="text-align:right;">Sub Total : </td>
+            <td style="text-align:right;">Total Aktif : </td>
             <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
         </tr>
         <tr>
-            <td style="text-align:right;">Jml Item : </td>
-            <td style="text-align:right;"><?php echo number_format($data['sub_total_item'],2); ?></td>
-            <td style="text-align:right;">Sub Total : </td>
-            <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
+            <td style="text-align:right;">Pajak : </td>
+            <td style="text-align:right;"><?php echo number_format($data['pajak_nilai'],2); ?></td>
+            <td style="text-align:right;">DP PO : </td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['dp'],2); ?></td>
         </tr>
         <tr>
-            <td style="text-align:right;">Jml Item : </td>
-            <td style="text-align:right;"><?php echo number_format($data['sub_total_item'],2); ?></td>
-            <td style="text-align:right;">Sub Total : </td>
-            <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
+            <td style="text-align:right;">Biaya Lain : </td>
+            <td style="text-align:right;"><?php echo number_format($data['biaya_lain'],2); ?></td>
+            <td style="text-align:right;">Tunai : </td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['tunai'],2); ?></td>
         </tr>
         <tr>
-            <td style="text-align:right;">Jml Item : </td>
-            <td style="text-align:right;"><?php echo number_format($data['sub_total_item'],2); ?></td>
-            <td style="text-align:right;">Sub Total : </td>
-            <td style="text-align:right;" colspan="2"><?php echo number_format($data['sub_total_harga'],2); ?></td>
+            <td style="text-align:right;">Tanggal JT : </td>
+            <td style="text-align:right;"><?php echo number_format($data['jatuh_tempo'],2); ?></td>
+            <td style="text-align:right;">Kredit : </td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['kredit'],2); ?></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;" colspan="2"></td>
+            <td style="text-align:right;">Kembali : </td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['kembali'],2); ?></td>
         </tr>
     </table>
     <table>

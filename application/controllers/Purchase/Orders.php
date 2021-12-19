@@ -7,6 +7,7 @@ class Orders extends CI_Controller {
 		$this->load->model('Mod_adm');
 		$this->load->model('Main');
 		$this->load->model('Purchase/Mod_orders');
+		$this->load->model('Purchase/Mod_purchases');
 		$this->load->helper('string');
 	}
 	public function index()
@@ -151,6 +152,13 @@ class Orders extends CI_Controller {
 		$id = $this->uri->segment(2);
 		$this->Mod_orders->delete_orders($id);
 		redirect(base_url().$this->path());
+	}
+	function cetak(){
+		$id = $this->uri->segment(2);
+		$data['data'] 	= $this->Mod_orders->get_orders_id($id)->row_array();
+		$data['item'] 	= $this->Mod_purchases->get_purchase_item_order($id)->result();
+		$this->Main->content($data['module']['name'],'purchase/cetak_order', $data);
+
 	}
 
 }

@@ -69,8 +69,27 @@
             <td style="text-align:right;"> </td>
             <td style="text-align:right;"></td>
             <td style="text-align:right;">Potongan : </td>
+            <td style="text-align:left;"><?php echo number_format($data['potongan'],2); ?></td>
             <td style="text-align:right;"><?php echo number_format($data['potongan'],2); ?></td>
-            <td style="text-align:right;"><?php echo number_format($data['potongan'],2); ?></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;"> </td>
+            <td style="text-align:right;"></td>
+            <td style="text-align:right;">Pajak : </td>
+            <td style="text-align:left;"><?php echo number_format($data['pajak_nilai'],2); ?></td>
+            <td style="text-align:right;"><?php echo number_format($data['pajak_nilai'],2); ?></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;"> </td>
+            <td style="text-align:right;"></td>
+            <td style="text-align:right;">Total Akhir : </td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['total_akhir_harga'],2); ?></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;"> </td>
+            <td style="text-align:right;"></td>
+            <td style="text-align:right;">DP : </td>
+            <td style="text-align:right;" colspan="2"><?php echo number_format($data['dp'],2); ?></td>
         </tr>
     </table>
 </div>

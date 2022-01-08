@@ -88,11 +88,7 @@
                       <select class="form-control" name="status" id="status">
                         <option value=""></option>
                             <option value="Menunggu Pembayaran" <?php if($data['status'] == 'Menunggu Pembayaran'){ echo "selected='true'"; } ?> >Menunggu Pembayaran</option>
-                            <option value="Menunggu Persetujuan" <?php if($data['status'] == 'Menunggu Persetujuan'){ echo "selected='true'"; } ?> >Menunggu Persetujuan</option>
-                            <option value="Disetujui" <?php if($data['status'] == 'Disetujui'){ echo "selected='true'"; } ?> >Disetujui</option>
-                            <option value="Dikerjakan" <?php if($data['status'] == 'Dikerjakan'){ echo "selected='true'"; } ?> >Dikerjakan</option>
                             <option value="Selesai" <?php if($data['status'] == 'Selesai'){ echo "selected='true'"; } ?> >Selesai</option>
-                            <option value="Dibatalkan" <?php if($data['status'] == 'Dibatalkan'){ echo "selected='true'"; } ?> >Dibatalkan</option>
                       </select>
                     </div>
                   </div>

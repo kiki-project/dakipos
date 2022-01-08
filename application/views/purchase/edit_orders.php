@@ -253,7 +253,7 @@
           </div>
             <div class="card-footer" style="text-align: right;">
               <a href="<?php echo base_url(); ?>cetak-purchase_order/<?php echo $data['id']; ?>" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Cetak</a>
-              <a href=#" target="_blank" class="btn btn-primary"><i class="fa fa-credit-card"></i> Bayar</a>
+              <a href="#" target="_blank" class="btn btn-danger"><i class="fa fa-credit-card"></i> Bayar</a>
               <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>
             </div>
           </form>

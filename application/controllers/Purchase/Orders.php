@@ -162,9 +162,9 @@ class Orders extends CI_Controller {
 		$src = $this->input->post('src');
 
 		if ($src != 'none') {
-			$data = $this->Mod_orders->get_orders_limit_src($limit,0,$src)->result();
+			$data = $this->Mod_orders->get_prc_orders_limit_src($limit,0,$src)->result();
 		}else{
-			$data = $this->Mod_orders->get_orders_limit($limit,0)->result();
+			$data = $this->Mod_orders->get_prc_orders_limit($limit,0)->result();
 		}
 		echo json_encode($data);
 	}

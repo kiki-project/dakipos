@@ -30,10 +30,10 @@ class Mod_orders extends CI_model {
 	function get_orders_finish($created){
 		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name,(SELECT name FROM users WHERE id = a.created_by ) AS user  FROM purchase_order AS a WHERE finish = 0 AND created_by = $created");
 	}
-	function get_orders_limit_src($limit,$offset,$src){
+	function get_prc_orders_limit_src($limit,$offset,$src){
 		return $this->db->query("SELECT * FROM purchase_order WHERE (kode_purchase is null OR kode_purchase = '') AND kode LIKE '%$src%' OR supplier LIKE '%$src%' ORDER BY created_at DESC  LIMIT $limit OFFSET $offset ");
 	}
-	function get_orders_limit($limit,$offset){
+	function get_prc_orders_limit($limit,$offset){
 		return $this->db->query("SELECT * FROM purchase_order WHERE (kode_purchase is null OR kode_purchase = '') ORDER BY created_at DESC LIMIT $limit OFFSET $offset ");
 	}
 	function insert_orders($data){

@@ -336,7 +336,7 @@
             <div class="input-group">
               <input type="text" name="src" class="form-control" placeholder="Search here..." oninput="get_order_list_radio(10,this.value)">
               <div class="input-group-append">
-                <button type="submit" name="submit" value="src" class="btn btn-info pull-right" onclick="submit_order('src')"><i class="fa fa-search"></i>&nbsp;Cari</button>
+                <a href="#" name="submit" value="src" class="btn btn-info pull-right"><i class="fa fa-search"></i>&nbsp;Cari</a>
               </div>
             </div>
           </div>

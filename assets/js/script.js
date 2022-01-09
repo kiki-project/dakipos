@@ -643,6 +643,8 @@ function hitung_orders(id) {
   $("#sub_total_harga").val(currency(val_sub_total).format().replace("$", ""));
   $("#total_akhir_harga").val(
     currency(val_hrg_akhir).format().replace("$", "")
+  );$("#total_bayar").val(
+    currency(val_hrg_akhir).format().replace("$", "")
   );
   $("#kekurangan").val(currency(kurang).format().replace("$", ""));
 }
@@ -764,6 +766,9 @@ function hitung_purchases(id) {
 
   $("#sub_total_harga").val(currency(val_sub_total).format().replace("$", ""));
   $("#total_akhir_harga").val(
+    currency(val_hrg_akhir).format().replace("$", "")
+  );
+  $("#total_bayar").val(
     currency(val_hrg_akhir).format().replace("$", "")
   );
   $("#kredit").val(currency(kurang).format().replace("$", ""));

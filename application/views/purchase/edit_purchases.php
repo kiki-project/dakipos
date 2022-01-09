@@ -89,7 +89,7 @@
                     <div class="input-group ">
                       <input type="text" name="kode_order" style="text-align: right;"  class="form-control" value="<?php echo $data['kode_order']; ?>">
                       <div class="input-group-append">
-                        <a href="#" class="btn btn-success"  data-toggle="modal" data-target="#modal-order"  ><i class="fa fa-search"></i></a>
+                        <a href="#" class="btn btn-success"  data-toggle="modal" data-target="#modal-order"  onclick="get_order_list_radio(10, '')" ><i class="fa fa-search"></i></a>
                       </div>
                     </div>
                   </div>

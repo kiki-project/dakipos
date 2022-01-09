@@ -538,7 +538,6 @@ function get_order_list_radio(a, b) {
         data += "<td>" + row["jumlah"] + "</td>";
         data += "<td>" + row["harga"] + "</td>";
         data += "<td>" + row["total_akhir_harga"] + "</td>";
-        data += "<td>" + row["supplier"] + "</td>";
         data += "</tr>";
       });
       $("#items-list-json").html(data);

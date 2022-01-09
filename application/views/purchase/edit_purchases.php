@@ -87,7 +87,7 @@
                   <div class="form-group col-md-6" id="frm-provinsi">
                     <label>Pesanan:</label>
                     <div class="input-group ">
-                      <input type="text" name="kode_order" style="text-align: right;"  class="form-control" value="<?php echo $data['kode_order']; ?>">
+                      <input type="text" name="kode_order" style="text-align: right;" id="kode_order"  class="form-control" value="<?php echo $data['kode_order']; ?>">
                       <div class="input-group-append">
                         <a href="#" class="btn btn-success"  data-toggle="modal" data-target="#modal-order"  onclick="get_order_list_radio(10, '')" ><i class="fa fa-search"></i></a>
                       </div>
@@ -447,6 +447,8 @@ function submit_order(a){
             data = JSON.parse(response);
             if (a == 'pilih') {
               $('#modal-order').modal('hide');
+              $("#kode_order").val(data['kode']);
+
              get_purchase_item('<?php echo $data['id']; ?>');
             }
 

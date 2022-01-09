@@ -252,13 +252,18 @@
         <div class="modal-body">    
           
                 
-                <div class="form-row">
                   <div class="form-group col-md-12" id="frm-provinsi">
-                    <label>Titip/DP:</label>
-                    <div class="input-group ">
-                      <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label>Titip/DP:</label>
+                      </div>
+                      <div class="col-md-8">
+                      <div class="input-group ">
+                        <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
+                        <div class="input-group-append">
+                          <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -271,7 +276,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
         </div>
         <div class="modal-footer">             
            <button type="submit" class="btn btn-success" id="btn-submit-bayar" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>

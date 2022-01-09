@@ -540,7 +540,7 @@ function get_order_list_radio(a, b) {
         data += "<td>" + row["total_akhir_harga"] + "</td>";
         data += "</tr>";
       });
-      $("#items-list-json").html(data);
+      $("#order-list-json").html(data);
     },
   });
 }

@@ -128,27 +128,6 @@
                     <textarea class="form-control" name="description" id="desc"><?php echo $data['description']; ?></textarea>
                   </div>
                 </div>
-                
-                <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Titip/DP:</label>
-                    <div class="input-group ">
-                      <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6" id="frm-Kekurangan">
-                    <label>Kekurangan:</label>
-                    <div class="input-group ">
-                      <input type="text" name="kredit" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
               <div class="col-md-4">
                 <div class="form-row">
@@ -253,9 +232,55 @@
           </div>
             <div class="card-footer" style="text-align: right;">
               <a href="<?php echo base_url(); ?>cetak-purchase_order/<?php echo $data['id']; ?>" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Cetak</a>
-              <a href="#" target="_blank" class="btn btn-warning"><i class="fa fa-credit-card"></i> Bayar</a>
+              <a href="#" target="_blank" class="btn btn-warning"  data-toggle="modal" data-target="#modal-bayar" ><i class="fa fa-credit-card"></i> Bayar</a>
               <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>
             </div>
+            
+  <!-- Modal -->
+<div class="modal fade" id="modal-bayar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" ><i class="fa fa-dropbox f-color1"></i> <span>Bayar</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="<?php echo base_url(); ?>json/insert-purchase_item" id="frm-items">
+        <input type="text" name="id" value="<?php echo $data['id']; ?>" style="display:none;">
+        <input type="text" name="type" value="order" style="display:none;">
+        <div class="modal-body">    
+          
+                
+                <div class="form-row">
+                  <div class="form-group col-md-6" id="frm-provinsi">
+                    <label>Titip/DP:</label>
+                    <div class="input-group ">
+                      <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6" id="frm-Kekurangan">
+                    <label>Kekurangan:</label>
+                    <div class="input-group ">
+                      <input type="text" name="kredit" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">
+                      <div class="input-group-append">
+                        <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+        <div class="modal-footer">             
+           <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
           </form>
         </div>
       </section>

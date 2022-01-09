@@ -73,7 +73,7 @@ class Orders extends CI_Controller {
 		}else{
 		$data['data'] 	= $this->Mod_orders->get_orders_id($id)->row_array();
 		$data['action'] = 'Edit';
-		$data['submit'] = 'Update';
+		$data['submit'] = 'Simpan';
 		}
 
 		if ($data['rm']['edit'] != 'None') {

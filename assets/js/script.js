@@ -518,6 +518,33 @@ function get_item_list_radio(a, b) {
     },
   });
 }
+function get_order_list_radio(a, b) {
+  $.ajax({
+    type: "POST",
+    url: base_url("json/get-order-list/"),
+    data: { limit: a, src: b },
+
+    success: function (response) {
+      result = JSON.parse(response);
+      var data = "";
+      $.each(result, function (i, row) {
+        data += "<tr>";
+        data +=
+          '<td><input type="radio" id="rd_kode" name="kode" value="' +
+          row["kode"] +
+          '"></td>';
+        data += "<td>" + row["kode"] + "</td>";
+        data += "<td>" + row["supplier"] + "</td>";
+        data += "<td>" + row["jumlah"] + "</td>";
+        data += "<td>" + row["harga"] + "</td>";
+        data += "<td>" + row["total_akhir_harga"] + "</td>";
+        data += "<td>" + row["supplier"] + "</td>";
+        data += "</tr>";
+      });
+      $("#items-list-json").html(data);
+    },
+  });
+}
 
 function replace_satu_harga(data){
   if(data != 'none'){

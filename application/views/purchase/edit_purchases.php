@@ -334,9 +334,9 @@
         <div class="modal-body">          
           <div class="form-group">
             <div class="input-group">
-              <input type="text" name="src" class="form-control" placeholder="Search here..." oninput="get_item_list_radio(10,this.value)">
+              <input type="text" name="src" class="form-control" placeholder="Search here..." oninput="get_order_list_radio(10,this.value)">
               <div class="input-group-append">
-                <button type="submit" name="submit" value="src" class="btn btn-info pull-right" onclick="submit_item('src')"><i class="fa fa-search"></i>&nbsp;Cari</button>
+                <button type="submit" name="submit" value="src" class="btn btn-info pull-right" onclick="submit_order('src')"><i class="fa fa-search"></i>&nbsp;Cari</button>
               </div>
             </div>
           </div>
@@ -344,16 +344,14 @@
             <thead>
               <tr>
                 <th style="width: 20px;"></th>
-                <th>Kode Item</th>
-                <th>Nama Item</th>
-                <th>Jenis</th>
-                <th>Stok</th>
-                <th>Stok Minimum</th>
-                <th>Satuan</th>
-                <th>Supplier</th>
+                <th>No Transaksi</th>
+                <th>Kode Supplier</th>
+                <th>jumlah</th>
+                <th>Harga</th>
+                <th>Total Akhir</th>
               </tr>
             </thead>
-            <tbody id="items-list-json"></tbody>
+            <tbody id="order-list-json"></tbody>
           </table>
         </div>
         <div class="modal-footer">

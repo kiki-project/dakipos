@@ -156,6 +156,18 @@ class Orders extends CI_Controller {
 		$this->Mod_orders->delete_orders($id);
 		redirect(base_url().$this->path());
 	}
+	function json_get_order(){
+		
+		$limit = $this->input->post('limit');
+		$src = $this->input->post('src');
+
+		if ($src != 'none') {
+			$data = $this->Mod_orders->get_orders_limit_src($limit,0,$src)->result();
+		}else{
+			$data = $this->Mod_orders->get_orders_limit($limit,0)->result();
+		}
+		echo json_encode($data);
+	}
 	function cetak(){
 		$id = $this->uri->segment(2);
 		$data = $this->main_data();

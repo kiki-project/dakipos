@@ -105,6 +105,7 @@ $route['orders-list/(:any)'] 	= 'Purchase/Orders';
 $route['edit-orders/(:any)']	= 'Purchase/Orders/edit';
 $route['insert-orders/(:any)']	= 'Purchase/Orders/insert';
 $route['delete-orders/(:any)']	= 'Purchase/Orders/delete';
+$route['json/get-order-list'] 		= 'Purchase/Orders/json_get_order';
 $route['cetak-purchase_order/(:any)']	= 'Purchase/Orders/cetak';
 
 $route['purchases-list'] 			= 'Purchase/Purchases';

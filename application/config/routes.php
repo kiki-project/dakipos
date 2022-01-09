@@ -118,6 +118,7 @@ $route['json/get-purchase_item']	= 'Purchase/Purchases/get_purchase_item';
 $route['json/delete-purchase_item']	= 'Purchase/Purchases/delete_purchase_item';
 $route['json/update-purchase_item']	= 'Purchase/Purchases/update_purchase_item';
 $route['json/update-satuan-purchase_item']	= 'Purchase/Purchases/update_satuan_purchase_item';
+$route['json/set-order-purchase']	= 'Purchase/Purchases/set_order_purchase';
 $route['cetak-purchase/(:any)']	    = 'Purchase/Purchases/cetak';
 
 $route['debts-list'] 			= 'Purchase/Debts';

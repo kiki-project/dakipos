@@ -6,6 +6,9 @@ class Mod_purchases extends CI_model {
 	function cek_purchases($kode){
 		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name,(SELECT name FROM users WHERE id = a.created_by ) AS user  FROM purchases AS a WHERE kode = '$kode' AND finish = 1");
 	}
+	function get_order_id($id){
+		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name,(SELECT name FROM users WHERE id = a.created_by ) AS user  FROM purchase_order AS a WHERE id = '$id'");
+	}
 	function get_purchases_id($id){
 		return $this->db->query("SELECT *,(SELECT name FROM suppliers WHERE kode = a.supplier ) AS supplier_name,(SELECT name FROM users WHERE id = a.created_by ) AS user  FROM purchases AS a WHERE id = '$id'");
 	}
@@ -54,6 +57,10 @@ class Mod_purchases extends CI_model {
 	}
 	function update_purchase_item($data,$id){
 		$this->db->where('id',$id);
+		$this->db->update('purchase_item',$data);	
+	}
+	function update_purchase_item_by_order($data,$id){
+		$this->db->where('order_id',$id);
 		$this->db->update('purchase_item',$data);	
 	}
 	function delete_purchases($id){

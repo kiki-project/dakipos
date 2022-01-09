@@ -530,8 +530,8 @@ function get_order_list_radio(a, b) {
       $.each(result, function (i, row) {
         data += "<tr>";
         data +=
-          '<td><input type="radio" id="rd_kode" name="kode" value="' +
-          row["kode"] +
+          '<td><input type="radio" id="rd_kode" name="order_id" value="' +
+          row["id"] +
           '"></td>';
         data += "<td>" + row["kode"] + "</td>";
         data += "<td>" + row["supplier"] + "</td>";

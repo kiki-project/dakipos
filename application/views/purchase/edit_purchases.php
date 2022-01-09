@@ -82,18 +82,15 @@
                       </select>
                     </div>
                   </div>
+                </div>
+                <div class="form-row">
                   <div class="form-group col-md-6" id="frm-provinsi">
-                    <label>Status Pesanan:</label>
+                    <label>Pesanan:</label>
                     <div class="input-group ">
-                      <select class="form-control" name="status" id="status">
-                        <option value=""></option>
-                            <option value="Menunggu Pembayaran" <?php if($data['status'] == 'Menunggu Pembayaran'){ echo "selected='true'"; } ?> >Menunggu Pembayaran</option>
-                            <option value="Menunggu Persetujuan" <?php if($data['status'] == 'Menunggu Persetujuan'){ echo "selected='true'"; } ?> >Menunggu Persetujuan</option>
-                            <option value="Disetujui" <?php if($data['status'] == 'Disetujui'){ echo "selected='true'"; } ?> >Disetujui</option>
-                            <option value="Dikerjakan" <?php if($data['status'] == 'Dikerjakan'){ echo "selected='true'"; } ?> >Dikerjakan</option>
-                            <option value="Selesai" <?php if($data['status'] == 'Selesai'){ echo "selected='true'"; } ?> >Selesai</option>
-                            <option value="Dibatalkan" <?php if($data['status'] == 'Dibatalkan'){ echo "selected='true'"; } ?> >Dibatalkan</option>
-                      </select>
+                      <input type="text" name="kode_order" style="text-align: right;"  class="form-control" value="<?php echo $data['kode_order']; ?>">
+                      <div class="input-group-append">
+                        <button class="btn btn-success"  ><i class="fa fa-search"></i></button>
+                      </div>
                     </div>
                   </div>
                 </div>

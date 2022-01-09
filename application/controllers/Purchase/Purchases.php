@@ -117,7 +117,6 @@ class Purchases extends CI_Controller {
 			'jatuh_tempo' 		=> $this->input->post('jatuh_tempo'), 
 			'hari_jt' 			=> $this->input->post('hari_jt'), 
 			'tanggal' 			=> $this->input->post('tanggal'), 
-			'status' 			=> $this->input->post('status'), 
 			'finish' 			=> 1, 
 
 		);

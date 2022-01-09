@@ -448,7 +448,8 @@ function submit_order(a){
             if (a == 'pilih') {
               $('#modal-order').modal('hide');
               $("#kode_order").val(data['kode']);
-
+              console.log(data)
+              console.log(data['kode'])
              get_purchase_item('<?php echo $data['id']; ?>');
             }
 

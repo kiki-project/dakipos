@@ -260,7 +260,14 @@
                       <div class="col-md-8">
                       <div class="input-group ">
                         <div class="input-group-prepend">
-                          <select name="bank" id="" class="form-control"> BANK</select>
+                          <select name="bank" id="" class="form-control"> 
+                            <option value="">- Pilih Rekening-</option>
+                            <?php foreach ($bank as $key) {
+                            ?>
+                            <option value="<?php echo $key->kode; ?>" <?php if($data['kode_bank'] == $key->kode ){ echo "selected='true'";} ?>><?php echo $key->kode."-".$key->description; ?></option>
+                            <?php
+                            } ?>
+                          </select>
                         </div>
                         <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
                         <div class="input-group-append">

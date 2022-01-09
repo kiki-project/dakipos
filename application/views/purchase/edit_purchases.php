@@ -89,7 +89,7 @@
                     <div class="input-group ">
                       <input type="text" name="kode_order" style="text-align: right;"  class="form-control" value="<?php echo $data['kode_order']; ?>">
                       <div class="input-group-append">
-                        <button class="btn btn-success"  ><i class="fa fa-search"></i></button>
+                        <a href="#" class="btn btn-success"  ><i class="fa fa-search"></i></a>
                       </div>
                     </div>
                   </div>

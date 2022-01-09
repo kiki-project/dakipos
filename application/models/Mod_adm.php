@@ -108,6 +108,9 @@ class Mod_adm extends CI_model {
 	function get_item_status($status, $created){
 		return $this->db->query("SELECT * FROM items WHERE status = '$status' AND created_by = $created");
 	}
+	function get_banks(){		
+		return $this->db->query("SELECT * FROM banks");
+	}
 	function insert_user($data){
 		$this->db->insert('users',$data);
 	}

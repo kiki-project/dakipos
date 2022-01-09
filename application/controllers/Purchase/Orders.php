@@ -46,6 +46,7 @@ class Orders extends CI_Controller {
 		$data['cek'] 			= $this->Mod_orders->get_orders_lsno()->row_array();
 		$data['supplier'] 		= $this->Mod_adm->get_suppliers()->result();
 		$data['gudang'] 		= $this->Mod_adm->get_gudang()->result();
+		$data['bank'] 			= $this->Mod_adm->get_banks()->result();
 		$created = $this->session->userdata('user_id');
 		
 		if($id == 'new'){

@@ -259,6 +259,9 @@
                       </div>
                       <div class="col-md-8">
                       <div class="input-group ">
+                        <div class="input-group-prepend">
+                          <select name="bank" id="" class="form-control"> BANK</select>
+                        </div>
                         <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
                         <div class="input-group-append">
                           <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>

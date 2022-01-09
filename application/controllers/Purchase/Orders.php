@@ -118,6 +118,7 @@ class Orders extends CI_Controller {
 			'tanggal' 			=> $this->input->post('tanggal'), 
 			'status' 			=> $this->input->post('status'), 
 			'ppn' 				=> $this->input->post('ppn'), 
+			'kode_bank' 		=> $this->input->post('kode_bank'), 
 			'finish' 			=> 1, 
 
 		);

@@ -89,7 +89,7 @@
                     <div class="input-group ">
                       <input type="text" name="kode_order" style="text-align: right;"  class="form-control" value="<?php echo $data['kode_order']; ?>">
                       <div class="input-group-append">
-                        <a href="#" class="btn btn-success"  ><i class="fa fa-search"></i></a>
+                        <a href="#" class="btn btn-success"  data-toggle="modal" data-target="#modal-order"  ><i class="fa fa-search"></i></a>
                       </div>
                     </div>
                   </div>
@@ -277,6 +277,53 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" ><i class="fa fa-dropbox f-color1"></i> <span>Items</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="<?php echo base_url(); ?>json/insert-purchase_item" id="frm-items">
+        <input type="text" name="id" value="<?php echo $data['id']; ?>" style="display:none;">
+        <input type="text" name="type" value="purchase" style="display:none;">
+        <div class="modal-body">          
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" name="src" class="form-control" placeholder="Search here..." oninput="get_item_list_radio(10,this.value)">
+              <div class="input-group-append">
+                <button type="submit" name="submit" value="src" class="btn btn-info pull-right" onclick="submit_item('src')"><i class="fa fa-search"></i>&nbsp;Cari</button>
+              </div>
+            </div>
+          </div>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th style="width: 20px;"></th>
+                <th>Kode Item</th>
+                <th>Nama Item</th>
+                <th>Jenis</th>
+                <th>Stok</th>
+                <th>Stok Minimum</th>
+                <th>Satuan</th>
+                <th>Supplier</th>
+              </tr>
+            </thead>
+            <tbody id="items-list-json"></tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-info" id="item-brand-submit" name="submit" value="simpan" onclick="submit_item('pilih')"><i class="fa fa-check"></i> Pilih</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Modal Order-->
+<div class="modal fade" id="modal-order" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" ><i class="fa fa-dropbox f-color1"></i> <span>Pesanan</span></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

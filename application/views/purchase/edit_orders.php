@@ -258,9 +258,10 @@
                         <label>Titip/DP:</label>
                       </div>
                       <div class="col-md-8">
-                      <div class="input-group ">
                         <div class="row">
-                          <select name="kode_bank" id="" class="form-control col-md-5"> 
+                          <div class="input-group col-md-5">
+
+                          <select name="kode_bank" id="" class="form-control "> 
                             <option value="">- Pilih Rekening-</option>
                             <?php foreach ($bank as $key) {
                             ?>
@@ -268,7 +269,9 @@
                             <?php
                             } ?>
                           </select>
-                        <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control col-md-7" value="<?php echo number_format($data['dp'], 2); ?>">
+                          </div>
+                      <div class="input-group col-md-7">
+                        <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
                         <div class="input-group-append">
                           <div class="btn btn-danger"  onclick="input_clear_currency('dp')"><i class="fa fa-trash"></i></div>
                         </div>

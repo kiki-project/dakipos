@@ -309,7 +309,7 @@
                   </div>
         </div>
         <div class="modal-footer">             
-           <button type="submit" class="btn btn-success" id="btn-submit-bayar" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>
+           <button type="submit" class="btn btn-warning" id="btn-submit-bayar" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-credit-card"></i> Bayar</button>
 
         </div>
       </form>

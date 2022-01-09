@@ -646,7 +646,7 @@ function hitung_orders(id) {
   );$("#total_bayar").val(
     currency(val_hrg_akhir).format().replace("$", "")
   );
-  $("#kekurangan").val(currency(kurang).format().replace("$", ""));
+  $("#kredit").val(currency(kurang).format().replace("$", ""));
 }
 function hitung_currency_purchases(id, val) {
   set_currency_value(id, val);

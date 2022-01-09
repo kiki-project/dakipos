@@ -328,7 +328,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form method="post" action="<?php echo base_url(); ?>json/insert-purchase_item" id="frm-items">
+      <form method="post" action="<?php echo base_url(); ?>json/set-order-purchase" id="frm-order">
         <input type="text" name="id" value="<?php echo $data['id']; ?>" style="display:none;">
         <input type="text" name="type" value="purchase" style="display:none;">
         <div class="modal-body">          
@@ -355,7 +355,7 @@
           </table>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-info" id="item-brand-submit" name="submit" value="simpan" onclick="submit_item('pilih')"><i class="fa fa-check"></i> Pilih</button>
+          <button type="submit" class="btn btn-info" id="item-brand-submit" name="submit" value="simpan" onclick="submit_order('pilih')"><i class="fa fa-check"></i> Pilih</button>
         </div>
       </form>
     </div>
@@ -426,6 +426,28 @@ function submit_item(a){
             if (a == 'pilih') {
               $('#modal-items').modal('hide');
              get_purchase_item('<?php echo $data['id']; ?>');
+            }
+
+          }
+        })
+      });
+}
+function submit_order(a){
+    $("#frm-order").submit(function(event){
+        event.preventDefault(); //prevent default action 
+        var post_url = $(this).attr("action") //get form action url
+        var request_method = $(this).attr("method"); //get form GET/POST method
+        var form_data = $(this).serialize(); //Encode form elements for submission
+
+        $.ajax({
+          url : post_url,
+          type : request_method,
+          data : form_data,
+          success: function(response){
+            data = JSON.parse(response);
+            if (a == 'pilih') {
+              $('#modal-order').modal('hide');
+             get_purchase_order('<?php echo $data['id']; ?>');
             }
 
           }

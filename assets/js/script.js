@@ -535,7 +535,7 @@ function get_order_list_radio(a, b) {
           '"></td>';
         data += "<td>" + row["kode"] + "</td>";
         data += "<td>" + row["supplier"] + "</td>";
-        data += "<td>" + row["jumlah"] + "</td>";
+        data += "<td>" + row["sub_total_item"] + "</td>";
         data += "<td>" + row["harga"] + "</td>";
         data += "<td>" + row["total_akhir_harga"] + "</td>";
         data += "</tr>";

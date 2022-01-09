@@ -274,7 +274,7 @@
                 </div>
         </div>
         <div class="modal-footer">             
-           <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>
+           <button type="submit" class="btn btn-success" id="btn-submit-bayar" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>
 
         </div>
       </form>

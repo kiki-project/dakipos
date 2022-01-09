@@ -231,13 +231,13 @@ class Purchases extends CI_Controller {
 	function set_order_purchase(){
 		$id = $this->input->post('id');
 		$order_id = $this->input->post('order_id');
-		$data = $this->Mod_purchases->get_order_id($order_id)->row_array();
+		$order = $this->Mod_purchases->get_order_id($order_id)->row_array();
 		
 		$data = array(
 					'purchase_id' 		=> $id,
 				);
 			$this->Mod_purchases->update_purchase_item_by_order($data,$order_id);
-		echo json_encode($data);
+		echo json_encode($order);
 
 	}
 	function cetak(){

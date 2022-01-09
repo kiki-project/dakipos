@@ -536,8 +536,8 @@ function get_order_list_radio(a, b) {
         data += "<td>" + row["kode"] + "</td>";
         data += "<td>" + row["supplier"] + "</td>";
         data += "<td>" + row["sub_total_item"] + "</td>";
-        data += "<td>" + row["harga"] + "</td>";
-        data += "<td>" + row["total_akhir_harga"] + "</td>";
+        data += "<td>" + currency(row["harga"]).format().replace("$", "") + "</td>";
+        data += "<td>" + currency(row["total_akhir_harga"]).format().replace("$", "") + "</td>";
         data += "</tr>";
       });
       $("#order-list-json").html(data);

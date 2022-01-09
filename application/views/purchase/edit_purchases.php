@@ -447,7 +447,7 @@ function submit_order(a){
             data = JSON.parse(response);
             if (a == 'pilih') {
               $('#modal-order').modal('hide');
-             get_purchase_order('<?php echo $data['id']; ?>');
+             get_purchase_item('<?php echo $data['id']; ?>');
             }
 
           }

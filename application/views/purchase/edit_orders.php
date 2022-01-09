@@ -241,7 +241,7 @@
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" ><i class="fa fa-dropbox f-color1"></i> <span>Bayar</span></h5>
+        <h5 class="modal-title" ><i class="fa fa-credit-card f-color1"></i> <span>Pembayaran</span></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -253,7 +253,7 @@
           
                 
                 <div class="form-row">
-                  <div class="form-group col-md-6" id="frm-provinsi">
+                  <div class="form-group col-md-12" id="frm-provinsi">
                     <label>Titip/DP:</label>
                     <div class="input-group ">
                       <input type="text" name="dp" style="text-align: right;"  oninput="hitung_currency('dp', this.value)" id="dp" class="form-control" value="<?php echo number_format($data['dp'], 2); ?>">
@@ -262,7 +262,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-group col-md-6" id="frm-Kekurangan">
+                  <div class="form-group col-md-12" id="frm-Kekurangan">
                     <label>Kekurangan:</label>
                     <div class="input-group ">
                       <input type="text" name="kredit" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">

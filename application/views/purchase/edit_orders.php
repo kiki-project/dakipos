@@ -266,13 +266,17 @@
                       </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="form-group col-md-12" id="frm-Kekurangan">
-                    <label>Kekurangan:</label>
-                    <div class="input-group ">
-                      <input type="text" name="kredit" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">
-                      <div class="input-group-append">
-                        <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label>Kekurangan:</label>
+                      </div>
+                      <div class="col-md-8">
+                      <div class="input-group ">
+                        <input type="text" name="kredit" style="text-align: right;" readonly="" id="kekurangan" class="form-control" value="<?php echo number_format($data['kredit'], 2); ?>">
+                        <div class="input-group-append">
+                          <div class="btn btn-default" ><i class="fa fa-trash"></i></div>
+                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>

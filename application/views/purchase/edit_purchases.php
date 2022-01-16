@@ -262,6 +262,7 @@
           </div>
             <div class="card-footer" style="text-align: right;">
               <a href="<?php echo base_url(); ?>cetak-purchase/<?php echo $data['id']; ?>" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Cetak</a>
+              <a href="#" target="_blank" class="btn btn-warning"  data-toggle="modal" data-target="#modal-bayar" ><i class="fa fa-credit-card"></i> Bayar</a>
               <button type="submit" class="btn btn-success" id="btn-submit" name="submit" value="<?php echo $submit ?>" onclick="btn_submit('<?php echo $submit ?>')" ><i class="fa fa-save"></i> <?php echo $submit ?></button>
             </div>
           </form>
@@ -310,7 +311,6 @@
           </table>
         </div>
         <div class="modal-footer">
-          <a href="#" target="_blank" class="btn btn-warning"  data-toggle="modal" data-target="#modal-bayar" ><i class="fa fa-credit-card"></i> Bayar</a>
           <button type="submit" class="btn btn-info" id="item-brand-submit" name="submit" value="simpan" onclick="submit_item('pilih')"><i class="fa fa-check"></i> Pilih</button>
         </div>
       </form>

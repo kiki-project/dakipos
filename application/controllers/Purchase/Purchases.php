@@ -233,9 +233,17 @@ class Purchases extends CI_Controller {
 		$order_id = $this->input->post('order_id');
 		$order = $this->Mod_purchases->get_order_id($order_id)->row_array();
 		
-		$data = array(
+
+
+			$data = array(
 					'purchase_id' 		=> $id,
 				);
+			
+			$data_prc = array(
+					'kode_order' 		=> $order[''],
+				);
+				
+			$this->Mod_purchases->update_purchases($data_prc,$id);
 			$this->Mod_purchases->update_purchase_item_by_order($data,$order_id);
 		echo json_encode($order);
 

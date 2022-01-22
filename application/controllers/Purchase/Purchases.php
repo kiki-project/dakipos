@@ -240,7 +240,7 @@ class Purchases extends CI_Controller {
 				);
 			
 			$data_prc = array(
-					'kode_order' 		=> $order[''],
+					'kode_order' 		=> $order['kode'],
 				);
 				
 			$this->Mod_purchases->update_purchases($data_prc,$id);
